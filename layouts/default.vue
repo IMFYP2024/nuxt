@@ -2,10 +2,10 @@
   <slot />
   <div class="navbar-container">
     <div class="navbar">
-      <a href="/ar" class="nav-link" :class="{ 'active': currentPage === 'ar' }">
+      <router-link to="/mindar" class="nav-link" :class="{ 'active': currentPage === 'mindar' }">
         <i class="fas fa-vr-cardboard"></i>
         <span>AR</span>
-      </a>
+      </router-link>
       <router-link to="/about" class="nav-link" :class="{ 'active': currentPage === 'about' }">
         <i class="fas fa-info-circle"></i>
         <span>關於</span>
@@ -18,7 +18,7 @@
         <i class="fas fa-star"></i>
         <span>集點</span>
       </router-link>
-      <router-link to="/introduce" class="nav-link" :class="{ 'active': currentPage === 'introduce' }">
+      <router-link to="/test1" class="nav-link" :class="{ 'active': currentPage === 'introduce' }">
         <i class="fas fa-book"></i>
         <span>介紹</span>
       </router-link>
@@ -38,7 +38,7 @@ export default {
     lineLeftPosition() {
       
       switch (this.currentPage) {
-        case 'ar':
+        case 'mindar':
           return 'calc(0%)';
         case 'about':
           return 'calc(20%)';
@@ -65,8 +65,8 @@ export default {
     updateCurrentPage(path) {
       
       switch (path) {
-        case '/ar':
-          this.currentPage = 'ar';
+        case '/mindar':
+          this.currentPage = 'mindar';
           break;
         case '/about':
           this.currentPage = 'about';
