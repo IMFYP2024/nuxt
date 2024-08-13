@@ -1,5 +1,18 @@
 <template>
   <div>
+    <h1>關於學校</h1>
+    <Modal
+      :title="modalTitle"
+      :showModal="showModal"
+      @closing="closeModal"
+    >
+      <template #itemText>
+        <div>
+          <img src="public/images/puzzle.png" alt="Sample Photo" class="modal-image"/>
+          <p>點擊下方的照片與上方的照片即可交換照片，完成拼圖後會有神秘力量</p>
+        </div>
+      </template>
+    </Modal>
     <div v-if="!isComplete">
       <div id="board">
         <img
@@ -10,7 +23,15 @@
           @touchstart="onTouchStart"
         />
       </div>
-      <h2 style="text-align: center;">Turns: <span>{{ turns }}</span></h2>
+<div class="turns-container">
+  <h2>Turns: <span>{{ turns }}</span></h2>
+    <div class="icon-trigger" @click="showModal = true">
+      <Icon name="icon-park-solid:tips-one" class="large-icon" />
+    </div>
+</div>
+
+
+      
       <div id="pieces">
         <img
           v-for="piece in pieces"
@@ -21,12 +42,11 @@
         />
       </div>
       <div class="center-content">
-        <UButton color="white" variant="solid" @click="istoggleon = !istoggleon">Tips</UButton>
-        <p v-show="istoggleon">點擊下方的照片與上方的照片即可交換照片，完成拼圖後會有神秘力量</p>
+        <p v-show="istoggleon"></p>
       </div>
     </div>
     <div v-if="isComplete" class="container">
-      <img src="/images/puzzle.png" class="card-img" >
+      <img src="public/images/puzzle.png" class="card-img" >
       <div>
         <h1>全校各棟大樓編號表</h1>
         <p>
@@ -49,9 +69,6 @@
 
 8開頭-奇秀樓：體育館右側轉直走，靠近男宿，位於操場旁邊，1樓可借用體育器材。提供體育器材和相關設施。
 </p>
-      <div class="center-content">
-      <a href="/qna" class="qna-link">想了解更多點擊這裡到 QnA</a>
-    </div>
     </div>
     </div>
     
@@ -72,7 +89,12 @@ const boardTiles = ref([]);
 const pieces = ref([]);
 const turns = ref(0);
 const isComplete = ref(false);
+const modalTitle = ref('範例圖');
+const showModal = ref(true); // 初始設置為 false 以關閉模態窗口
 
+const closeModal = () => {
+  showModal.value = false;
+};
 const initializeBoard = () => {
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < columns; c++) {
@@ -166,6 +188,23 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.large-icon {
+  width: 36px;
+  height: 36px;
+  color: black;
+}
+.turns-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* 根據需要調整間距 */
+}
+.modal-image {
+  max-width: 100%; 
+  height: auto; 
+  display: block;
+  margin: 0 auto; 
+}
 
 #board {
   width: 350px;
