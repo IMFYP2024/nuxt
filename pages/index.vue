@@ -49,19 +49,19 @@ export default {
       this.animate();
     },
     loadGLBModels(loader) {
-      loader.load('/images/fly_c.glb', (glb) => {
+      loader.load('/Images/fly_c.glb', (glb) => {
         this.addObjectToScene(glb.scene, { x: 0, y: 4.5, z: -1 }, 1, 0, 'fontObject');
       });
-      loader.load('/images/Ar_darkblue.glb', (glb) => {
+      loader.load('/Iimages/Ar_darkblue.glb', (glb) => {
         this.addObjectToScene(glb.scene, { x: 0, y: 2.2, z: 0 }, 0.5, Math.PI / 2, 'glbObject1');
       });
-      loader.load('/images/introducedark1.glb', (glb) => {
+      loader.load('/Iimages/introducedark1.glb', (glb) => {
         this.addObjectToScene(glb.scene, { x: 0, y: 0.7, z: 0 }, 0.5, Math.PI / 2, 'glbObject2');
       });
-      loader.load('/images/pointcard_darkblue.glb', (glb) => {
+      loader.load('/Iimages/pointcard_darkblue.glb', (glb) => {
         this.addObjectToScene(glb.scene, { x: 0, y: -0.8, z: 0 }, 0.5, Math.PI / 2, 'glbObject3');
       });
-      loader.load('/images/pointcard_darkblue.glb', (glb) => {
+      loader.load('/Iimages/pointcard_darkblue.glb', (glb) => {
         this.addObjectToScene(glb.scene, { x: 0, y: -2.3, z: 0 }, 0.5, Math.PI / 2, 'glbObject4');
       });
     },
