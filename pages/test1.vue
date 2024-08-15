@@ -1,8 +1,8 @@
 <template>
   <div class="page-container">
     <!-- 學院選單 -->
-     <div v-if="!isCollegeSelected" class="college-selector">
-      <h2>請選擇學院</h2>
+    <div v-if="!isCollegeSelected" class="college-selector">
+      <h2>學院介紹</h2>
       <div class="college-grid">
         <div 
           v-for="(tab, index) in tabs" 
@@ -243,31 +243,36 @@ export default {
       this.isCollegeSelected = true;
     }
   },
-  mounted() {
+ mounted() {
     this.$nextTick(() => {
-      const buttons = document.querySelectorAll('.tabs button');
-      buttons.forEach(button => {
-        button.classList.remove('active');
-      });
-      const infoButton = document.querySelector(`.tabs button[data-type="info"]`);
-      if (infoButton) {
-        infoButton.classList.add('active');
-      }
+        setTimeout(() => {
+            const infoButton = document.querySelector(`.tabs button[data-type="info"]`);
+            if (infoButton) {
+                infoButton.click(); // 手动触发点击事件
+                infoButton.classList.add('active'); // 确保它被设置为激活状态
+            }
+        }, 300); // 延迟 300 毫秒以确保页面完全加载
     });
-  }
+}
 }
 </script>
 
+
 <style>
 @import url('https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all/all.css');
+
 /* 新增的選單樣式 */
+.college-selector h2 {
+  margin-top: 75%;
+  margin-bottom: 100px; /* 增加上方的空间，防止被挡住 */
+  z-index: 10; /* 确保标题位于菱形之上 */
+}
 .college-selector {
-  display: flex;
+   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
 }
+
 
 .college-grid {
   position: relative;
@@ -277,13 +282,15 @@ export default {
 
 .college-item {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transform: rotate(45deg);
   cursor: pointer;
+  text-align: center;
 }
 
 .diamond {
@@ -300,57 +307,84 @@ export default {
 .college-item:hover .diamond {
   transform: scale(1.1) rotate(0deg);
 }
+  .college-item .college-icon {
+    font-size: 2rem; /* 图标大小 */
+      /* 调整图标与文字之间的间距 */
+  }
 
-.college-icon, .college-item p {
-  color: white;
-  text-align: center;
-}
+  .college-icon, .college-item p {
+    margin: 0;
+    font-size: 1rem;
+    transform: rotate(-45deg);
+    text-align: center;
+    color: white;
+  
+  }
 
-.college-icon {
-  font-size: 2rem;
-}
+  .college-icon {
+    font-size: 2rem;
+    margin-left: -30px;
+  }
 
-.college-item p {
+  .college-item p {
   margin: 0;
-  font-size: 1rem;
+    font-size: 1.1rem; /* 文字大小 */
+    line-height: 1.2; 
+    transform: rotate(-45deg); 
+    text-align: center;
+    margin-top: -10px;
+    margin-left: 40px;
+  }
+.college-item .content-container {
+  transform: rotate(-45deg); /* 反向旋转内容，确保内容正常显示 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 /* 菱形颜色和位置调整 */
 .item-1 {
   background-color: #1E90FF;
-  top: 0;
+  top: -1%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .item-2 {
   background-color: #00BFFF;
-  top: 50%;
-  left: 100%;
+  top: 113%;
+  left: -2%;
   transform: translate(-50%, -50%) rotate(45deg);
+}
+.item-2 .college-icon {
+  margin-left: 5px; /* 微调 */
 }
 
 .item-3 {
   background-color: #FFD700;
-  top: 100%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-
+.item-3 .college-icon {
+  margin-left: -8px; /* 微调 */
+}
 .item-4 {
   background-color: #FF6347;
-  top: 50%;
-  left: 0;
+  top: 37%;
+  left: 1%;
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .item-5 {
   background-color: #8A2BE2;
-  top: 50%;
-  left: 50%;
+  top: 113%;
+  left: 99%;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-
+.item-5 .college-icon {
+  margin-left: -6px; /* 微调 */
+}
 
 
 /* 現有的樣式保持不變 */
