@@ -101,7 +101,7 @@
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ddd;
-    background-color: #fff;
+    background-color: white;
   }
   
   .icon-trigger {
