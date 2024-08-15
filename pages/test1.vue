@@ -283,6 +283,7 @@ export default {
 .college-item {
   position: absolute;
   width: 120px;
+  width: 120px;
   height: 120px;
   display: flex;
   flex-direction: column;
