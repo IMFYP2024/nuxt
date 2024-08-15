@@ -28,7 +28,8 @@ export default {
 
       this.controls = new OrbitControls(this.camera, this.renderer.domElement);
       this.controls.update();
-
+      this.controls.enableRotate = false;
+      this.controls.enableZoom = false;
       const loader = new GLTFLoader();
       this.loadGLBModels(loader);
 
