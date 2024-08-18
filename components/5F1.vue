@@ -39,7 +39,7 @@ import { ref } from 'vue';
 const areas = [
   { 
     id: 1, 
-    top: 120, 
+    top: 80, 
     left: 140, 
     width: 30, 
     height: 30, 
@@ -51,7 +51,7 @@ const areas = [
   },
   { 
     id: 2, 
-    top: 155, 
+    top: 85, 
     left: 60, 
     width: 30, 
     height: 30, 
@@ -63,7 +63,7 @@ const areas = [
   },
   { 
     id: 3, 
-    top: 140, 
+    top: 100, 
     left: 190, 
     width: 30, 
     height: 30, 
@@ -87,7 +87,7 @@ const areas = [
   },
   { 
     id: 6, 
-    top: 155, 
+    top: 85, 
     left: 40, 
     width: 30, 
     height: 30, 
@@ -99,7 +99,7 @@ const areas = [
   },
   { 
     id: 7, 
-    top: 140, 
+    top: 100, 
     left: 210, 
     width: 30, 
     height: 30, 
