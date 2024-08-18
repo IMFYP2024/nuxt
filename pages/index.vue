@@ -59,7 +59,7 @@ export default {
       loader.load('/Images/introducedark1.glb', (glb) => {
         this.addObjectToScene(glb.scene, { x: 0, y: 0.7, z: 0 }, 0.5, Math.PI / 2, 'glbObject2');
       });
-      loader.load('/Images/pointcard_darkblue.glb', (glb) => {
+      loader.load('/Images/about.glb', (glb) => {
         this.addObjectToScene(glb.scene, { x: 0, y: -0.8, z: 0 }, 0.5, Math.PI / 2, 'glbObject3');
       });
       loader.load('/Images/pointcard_darkblue.glb', (glb) => {
@@ -128,10 +128,10 @@ export default {
           this.$router.push({ name: 'deintroduce' }).then(() => this.cleanUpThree());
           break;
         case 'glbObject3':
-          this.$router.push({ name: 'point' }).then(() => this.cleanUpThree());
+          this.$router.push({ name: 'about' }).then(() => this.cleanUpThree());
           break;
         case 'glbObject4':
-          this.$router.push({ name: 'about' }).then(() => this.cleanUpThree());
+          this.$router.push({ name: 'point' }).then(() => this.cleanUpThree());
           break;
         case 'fontObject':
           console.log('Clicked font object');

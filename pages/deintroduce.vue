@@ -274,7 +274,7 @@ export default {
 @import url('https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all/all.css');
 .back-button {
   position: absolute;
-  top: 80%;
+  top: 70%;
   left: 5%;
   background-color: #6e73dc;
   color: #ffffff;

@@ -177,8 +177,9 @@ export default {
 
 .detail-container .detail {
   font-size: 16px;
-  font-weight: normal;
-  color: rgb(255, 255, 255);
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+
   line-height: 1.6;
   word-break: break-word; 
   white-space: normal; 
