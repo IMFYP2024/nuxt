@@ -18,7 +18,7 @@
         <i class="fas fa-star"></i>
         <span>集點</span>
       </router-link>
-      <router-link to="/test1" class="nav-link" :class="{ 'active': currentPage === 'introduce' }">
+      <router-link to="/deintroduce" class="nav-link" :class="{ 'active': currentPage === 'deintroduce' }">
         <i class="fas fa-book"></i>
         <span>介紹</span>
       </router-link>
