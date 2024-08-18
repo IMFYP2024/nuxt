@@ -125,7 +125,7 @@ export default {
           this.$router.push({ name: 'mindar' }).then(() => this.cleanUpThree());
           break;
         case 'glbObject2':
-          this.$router.push({ name: 'test1' }).then(() => this.cleanUpThree());
+          this.$router.push({ name: 'deintroduce' }).then(() => this.cleanUpThree());
           break;
         case 'glbObject3':
           this.$router.push({ name: 'point' }).then(() => this.cleanUpThree());
