@@ -8,7 +8,7 @@
     >
       <template #itemText>
         <div>
-          <img src="public/images/puzzle.png" alt="Sample Photo" class="modal-image"/>
+          <img src="public/Images/puzzle.png" alt="Sample Photo" class="modal-image"/>
           <p>點擊下方的照片與上方的照片即可交換照片，完成拼圖後會有神秘力量</p>
         </div>
       </template>
@@ -46,7 +46,7 @@
       </div>
     </div>
     <div v-if="isComplete" class="container">
-      <img src="public/images/puzzle.png" class="card-img" >
+      <img src="public/Images/puzzle.png" class="card-img" >
       <div>
         <h1>全校各棟大樓編號表</h1>
         <p>
@@ -98,9 +98,9 @@ const closeModal = () => {
 const initializeBoard = () => {
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < columns; c++) {
-      const tile = { src: "/images/blank.jpg", key: `tile-${r}-${c}`, alt: `Tile ${r * columns + c + 1}` };
+      const tile = { src: "/Images/blank.jpg", key: `tile-${r}-${c}`, alt: `Tile ${r * columns + c + 1}` };
       if ((r === 0 && c === 0) || (r === 2 && c === 2)) {
-        tile.src = `/images/${1 + r * columns + c}.png`;
+        tile.src = `/Images/${1 + r * columns + c}.png`;
       }
       boardTiles.value.push(tile);
     }
@@ -113,7 +113,7 @@ const initializePieces = () => {
     if (i === 1 || i === 11) {
       continue;
     }
-    const piece = { src: `/images/${i}.png`, key: `piece-${i}`, alt: `Piece ${i}` };
+    const piece = { src: `/Images/${i}.png`, key: `piece-${i}`, alt: `Piece ${i}` };
     piecesArray.push(piece);
   }
 

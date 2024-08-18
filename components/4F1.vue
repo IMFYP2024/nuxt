@@ -1,6 +1,6 @@
 <template>
   <div class="floor-plan" @click="handleOutsideClick">
-    <img src="/images/iCloud/4F.JPEG" alt="Floor Plan" class="floor-plan-image" />
+    <img src="/Images/iCloud/4F.JPEG" alt="Floor Plan" class="floor-plan-image" />
     <div
       v-for="area in areas"
       :key="area.id"
@@ -44,7 +44,7 @@ const areas = [
     icon: 'icomoon-free:arrow-left2', 
     name: '休閑區', 
     description: '大家都很愛去那邊吃飯', 
-    image: '/images/iCloud/4F1.JPEG',
+    image: '/Images/iCloud/4F1.JPEG',
     extraInfo: '還是要看有沒有開風扇'
   },
   { 
@@ -56,7 +56,7 @@ const areas = [
     icon: 'icomoon-free:arrow-right2', 
     name: '資管系辦公室', 
     description: '老師都很親切',
-    image:"/images/iCloud/4F3.JPEG",
+    image:"/Images/iCloud/4F3.JPEG",
     extraInfo: '有什麽問題都可以去問'
   },
   { 
@@ -68,7 +68,7 @@ const areas = [
     icon: 'icomoon-free:arrow-left2', 
     name: '資管系教室', 
     description: '電腦設備很好，同學有時會偷打遊戲',
-    image:"/images/iCloud/4F2.JPEG",
+    image:"/Images/iCloud/4F2.JPEG",
     extraInfo: '但是是禁止的哦'
   },
   { 
@@ -81,7 +81,7 @@ const areas = [
     color: 'black',
     name: '休閑區', 
     description: '大家都很愛去那邊吃飯', 
-    image: '/images/iCloud/4F1.JPEG',
+    image: '/Images/iCloud/4F1.JPEG',
     extraInfo: '還是要看有沒有開風扇'
   },
   { 
@@ -93,7 +93,7 @@ const areas = [
     icon: 'mdi:number-2-circle', 
     name: '資管系辦公室', 
     description: '老師都很親切',
-    image:"/images/iCloud/4F3.JPEG",
+    image:"/Images/iCloud/4F3.JPEG",
     extraInfo: '有什麽問題都可以去問'
   },
   { 
@@ -105,7 +105,7 @@ const areas = [
     icon: 'mdi:number-3-circle', 
     name: '資管系教室', 
     description: '電腦設備很好，同學有時會偷打遊戲',
-    image:"/images/iCloud/4F2.JPEG",
+    image:"/Images/iCloud/4F2.JPEG",
     extraInfo: '但是是禁止的哦'
   }
 ];
