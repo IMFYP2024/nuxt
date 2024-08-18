@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     handleMessage(event) {
-      if (event.data.action === 'floorselect' && event.data.url) {
+      if (event.data.action === 'navigate' && event.data.url) {
         this.$router.push(event.data.url);
       }
     }
