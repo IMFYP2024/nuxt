@@ -80,7 +80,7 @@ const currentSubComponent = computed(() => {
     height: 100vh;
     padding: 20px;
     box-sizing: border-box;
-    background-image: url('/images/bg.jpg');
+    background-image: url('/Images/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
