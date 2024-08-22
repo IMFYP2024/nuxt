@@ -1,7 +1,7 @@
 <template>
   
     <div class="floor-plan" @click="handleOutsideClick">
-      <img src="/Images/iCloud/6.JPG" alt="Floor Plan" class="floor-plan-image" />
+      <img src="/Images/iCloud/3.JPEG" alt="Floor Plan" class="floor-plan-image" />
       <div
         v-for="area in areas"
         :key="area.id"
@@ -38,39 +38,39 @@
   const areas = [
     { 
       id: 1, 
-      top: 110, 
-      left: 220, 
-      width: 30, 
-      height: 30, 
+      top: 130, 
+      left: 270, 
+      width: 25, 
+      height: 25, 
       icon: 'bi:1-circle', 
-      name: '休閑區', 
-      description: '大家都很愛去那邊吃飯', 
-      image: '/Images/iCloud/6F3.JPEG',
-      extraInfo: '順便討論專題'
+      name: '電腦教室', 
+      description: '學生上課的地方',
+      image:"/Images/iCloud/3F1.JPEG",
+      extraInfo: ''
     },
     { 
       id: 2, 
-      top: 125, 
-      left: 280, 
-      width: 30, 
-      height: 30, 
+      top: 70, 
+      left: 290, 
+      width: 25, 
+      height: 25, 
       icon: 'bi:2-circle', 
-      name: '專題研究室', 
-      description: '專題生都一定會待的地方',
-      image:"/Images/iCloud/6F5.JPEG",
-      extraInfo: '聽説會有柴犬出沒'
+      name: '教學資訊組', 
+      description: '負責電腦教室教室管理與使用，數位學習平臺',
+      image:"/Images/iCloud/3F2.JPEG",
+      extraInfo: '全校授權軟體與相關作業'
     },
     { 
       id: 3, 
-      top: 65, 
-      left: 200, 
-      width: 30, 
-      height: 30, 
+      top: 70, 
+      left: 220, 
+      width: 25, 
+      height: 25, 
       icon: 'bi:3-circle', 
-      name: '電腦教室和專題研究室', 
-      description: '前端是學生上課的',
-      image:"/Images/iCloud/6F4.JPEG",
-      extraInfo: '但後方也是專題生的研究室'
+      name: '電腦教室', 
+      description: '學生上課的地方',
+      image:"/Images/iCloud/3F3.JPEG",
+      extraInfo: ''
     }
   ];
   

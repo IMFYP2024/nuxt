@@ -1,7 +1,7 @@
 <template>
   
     <div class="floor-plan" @click="handleOutsideClick">
-      <img src="/Images/iCloud/6.JPG" alt="Floor Plan" class="floor-plan-image" />
+      <img src="/Images/iCloud/7F1.JPEG" alt="Floor Plan" class="floor-plan-image" />
       <div
         v-for="area in areas"
         :key="area.id"
@@ -39,38 +39,60 @@
     { 
       id: 1, 
       top: 110, 
-      left: 220, 
-      width: 30, 
-      height: 30, 
+      left: 260, 
+      width: 25, 
+      height: 25, 
       icon: 'bi:1-circle', 
-      name: '休閑區', 
-      description: '大家都很愛去那邊吃飯', 
-      image: '/Images/iCloud/6F3.JPEG',
-      extraInfo: '順便討論專題'
+      name: '課後輔導區', 
+      description: '有課堂的問題都可以去', 
+      image: '/Images/iCloud/7F3.JPEG',
+      extraInfo: ''
     },
     { 
       id: 2, 
-      top: 125, 
-      left: 280, 
-      width: 30, 
-      height: 30, 
+      top: 150, 
+      left: 100, 
+      width: 25, 
+      height: 25, 
       icon: 'bi:2-circle', 
-      name: '專題研究室', 
-      description: '專題生都一定會待的地方',
-      image:"/Images/iCloud/6F5.JPEG",
-      extraInfo: '聽説會有柴犬出沒'
+      name: '雲端特色教學電腦教室', 
+      description: '資工都一定會待的地方',
+      image:"/Images/iCloud/7F2.JPEG",
+      extraInfo: ''
     },
     { 
       id: 3, 
-      top: 65, 
-      left: 200, 
-      width: 30, 
-      height: 30, 
+      top: 105, 
+      left: 300, 
+      width: 25, 
+      height: 25, 
       icon: 'bi:3-circle', 
-      name: '電腦教室和專題研究室', 
-      description: '前端是學生上課的',
-      image:"/Images/iCloud/6F4.JPEG",
-      extraInfo: '但後方也是專題生的研究室'
+      name: '電腦教室', 
+      description: '普遍是資工系學生上課的地方',
+      image:"/Images/iCloud/7F4.JPEG",
+      extraInfo: ''
+    },
+    {id: 4, 
+        top: 150, 
+      left: 80, 
+      width: 25, 
+      height: 25,   
+      icon: 'icomoon-free:arrow-left2', 
+      name: '雲端特色教學電腦教室', 
+      description: '資工都一定會待的地方',
+      image:"/Images/iCloud/7F2.JPEG",
+      extraInfo: ''
+    },
+    {id: 5, 
+        top: 105, 
+      left: 320, 
+      width: 25, 
+      height: 25,  
+      icon: 'icomoon-free:arrow-right2', 
+      name: '電腦教室', 
+      description: '普遍是資工系學生上課的地方',
+      image:"/Images/iCloud/7F4.JPEG",
+      extraInfo: ''
     }
   ];
   
