@@ -1,7 +1,7 @@
 <template>
   
   <div class="floor-plan" @click="handleOutsideClick">
-    <a href="/other-page" class="link-to-other-page">前往資管系介紹</a>
+    <a href="/deintroduce" class="link-to-other-page">前往資管系介紹</a>
     <img src="/Images/4F.JPG" alt="Floor Plan" class="floor-plan-image" />
     <div
       v-for="area in areas"
