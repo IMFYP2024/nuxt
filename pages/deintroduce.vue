@@ -229,30 +229,40 @@ export default {
     };
   },
   methods: {
-     changeTab(tabType, activeTabType = tabType) {
+    changeTab(tabType, activeTabType = tabType) {
     this.showDropdown = false;
-    setTimeout(() => {
-      this.currentTab = tabType;
-      if (tabType === 'teeest') {
-        this.activeTab = 'info';
-      } else {
-        this.activeTab = activeTabType;
-      }
-      const selectedTab = this.tabs.find(tab => tab.type === tabType);
-      this.backgroundColor = selectedTab.color; // 更新背景颜色
-      document.documentElement.style.setProperty('--button-color', selectedTab.color); // 设置CSS变量
-      this.showDropdown = true;
-    }, 300);
-  },
+     setTimeout(() => {
+    this.currentTab = tabType;
+    if (tabType === 'teeest') {
+      this.activeTab = 'info';
+    } else {
+      this.activeTab = activeTabType;
+    }
+    const selectedTab = this.tabs.find(tab => tab.type === tabType);
+    if (selectedTab) {
+      this.backgroundColor = selectedTab.color; 
+      document.documentElement.style.setProperty('--button-color', selectedTab.color); 
+    } else {
+      console.error(`Tab type ${tabType} not found in tabs array.`);
+    }
+    this.showDropdown = true;
+  }, 300);
+},
   selectCollege(tabType) {
     this.currentTab = tabType;
     this.isCollegeSelected = true;
     const selectedTab = this.tabs.find(tab => tab.type === tabType);
-    this.backgroundColor = selectedTab.color; // 设置背景颜色
-    document.documentElement.style.setProperty('--button-color', selectedTab.color); // 设置CSS变量
+    this.backgroundColor = selectedTab.color; 
+    document.documentElement.style.setProperty('--button-color', selectedTab.color);
   },
   goBack() {
-    this.isCollegeSelected = false;
+    const mainTabs = ['info', 'business', 'design', 'smart', 'language']; 
+
+    if (!mainTabs.includes(this.currentTab)) {
+      this.changeTab(this.activeTab); 
+    } else {
+      this.isCollegeSelected = false;
+    }
   }
 },
  mounted() {
@@ -333,8 +343,7 @@ export default {
   transform: scale(1.1) rotate(0deg);
 }
   .college-item .college-icon {
-    font-size: 2rem; /* 图标大小 */
-      /* 调整图标与文字之间的间距 */
+    font-size: 2rem; 
   }
 
   .college-icon, .college-item p {
@@ -361,7 +370,7 @@ export default {
     margin-left: 40px;
   }
 .college-item .content-container {
-  transform: rotate(-45deg); /* 反向旋转内容，确保内容正常显示 */
+  transform: rotate(-45deg); 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -382,7 +391,7 @@ export default {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .item-2 .college-icon {
-  margin-left: 5px; /* 微调 */
+  margin-left: 5px; 
 }
 
 .item-3 {
@@ -392,7 +401,7 @@ export default {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .item-3 .college-icon {
-  margin-left: -8px; /* 微调 */
+  margin-left: -8px; 
 }
 .item-4 {
   background-color: #9FB6C6;
@@ -408,11 +417,11 @@ export default {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .item-5 .college-icon {
-  margin-left: -6px; /* 微调 */
+  margin-left: -6px;
 }
 
 
-/* 現有的樣式保持不變 */
+
 .active-blue {
   /*background-color: rgb(24, 66, 144) !important; /* 蓝色 */
   color: white !important; /* 白色字体 */
@@ -460,8 +469,8 @@ body {
   border-top-right-radius: 10px;
   z-index: 1;
   position: relative;
-  width: 100%; /* 確保按鈕填滿容器 */
-  background-color: transparent;/* 確保按鈕填滿容器 */
+  width: 100%; 
+  background-color: transparent;
 }
 
 .tabs button.active {
@@ -474,8 +483,8 @@ body {
 }
 
 .tabs button:hover {
-  background-color: rgba(24, 66, 144, 0.7); /* 鼠标悬停时应用背景颜色 */
-  color: white; /* 鼠标悬停时应用字体颜色 */
+  background-color: rgba(24, 66, 144, 0.7); 
+  color: white; 
 }
 
 .page-container {
@@ -483,7 +492,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;  
-  min-height: 100vh; /* 確保高度覆盖整个视窗 */
+  min-height: 100vh; 
 }
 
 .card-container {
@@ -491,9 +500,9 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 100vh; /* 背景覆盖整个视窗高度 */
+  min-height: 100vh; 
   /*background-image: url('/Images/bg.png');*/
-  /*background-size: cover; /* 背景图片覆盖整个容器 */
+  /*background-size: cover;  */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -506,7 +515,7 @@ body {
   justify-content: flex-start;
   color: white;
   padding: 2rem;
-  width: 100%; /* 確保宽度填满容器 */
+  width: 100%; 
   margin: 0;
   min-height: calc(100vh - 80px);
 }

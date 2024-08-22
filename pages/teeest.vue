@@ -77,7 +77,7 @@ export default {
   mounted() {
     
     this.moveAndShowIntroduction(this.items[0]);
-    this.isActive = false; 
+    this.isActive = true; 
   }
 };
 </script>

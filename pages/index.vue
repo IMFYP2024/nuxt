@@ -1,5 +1,10 @@
 <template>
-  <div ref="threeContainer" class="three-container"></div>
+  <div>
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="/videos/IMG_0184.mov" type="video/mp4">
+    </video>
+    <div ref="threeContainer" class="three-container"></div>
+  </div>
 </template>
 
 <script>
@@ -22,19 +27,16 @@ export default {
     initThree() {
       this.scene = new THREE.Scene();
       this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      this.renderer = new THREE.WebGLRenderer();
+      this.renderer = new THREE.WebGLRenderer({ alpha: true });
       this.renderer.setSize(window.innerWidth, window.innerHeight);
+      this.renderer.setClearColor(0x000000, 0); // 透明背景
       this.$refs.threeContainer.appendChild(this.renderer.domElement);
 
       this.controls = new OrbitControls(this.camera, this.renderer.domElement);
       this.controls.update();
-      this.controls.enableRotate = false;
-      this.controls.enableZoom = false;
+
       const loader = new GLTFLoader();
       this.loadGLBModels(loader);
-
-      const video = this.setupVideo();
-      this.scene.add(video);
 
       this.addLights();
 
@@ -51,20 +53,20 @@ export default {
     },
     loadGLBModels(loader) {
       loader.load('/Images/fly_c.glb', (glb) => {
-        this.addObjectToScene(glb.scene, { x: 0, y: 4.5, z: -1 }, 1, 0, 'fontObject');
+        this.addObjectToScene(glb.scene, { x: 0, y: 4, z: -1 }, 1, 0, 'fontObject');
       });
       loader.load('/Images/Ar_darkblue.glb', (glb) => {
-        this.addObjectToScene(glb.scene, { x: 0, y: 2.2, z: 0 }, 0.5, Math.PI / 2, 'glbObject1');
+        this.addObjectToScene(glb.scene, { x: 0, y: 1.5, z: 0 }, 0.5, Math.PI / 2, 'glbObject1');
       });
       loader.load('/Images/introducedark1.glb', (glb) => {
-        this.addObjectToScene(glb.scene, { x: 0, y: 0.7, z: 0 }, 0.5, Math.PI / 2, 'glbObject2');
+        this.addObjectToScene(glb.scene, { x: 0, y: 0, z: 0 }, 0.5, Math.PI / 2, 'glbObject2');
       });
       loader.load('/Images/about.glb', (glb) => {
-        this.addObjectToScene(glb.scene, { x: 0, y: -0.8, z: 0 }, 0.5, Math.PI / 2, 'glbObject3');
+        this.addObjectToScene(glb.scene, { x: 0, y: -1.5, z: 0 }, 0.5, Math.PI / 2, 'glbObject3');
       });
-      loader.load('/Images/pointcard_darkblue.glb', (glb) => {
+      /*loader.load('/Images/pointcard_darkblue.glb', (glb) => {
         this.addObjectToScene(glb.scene, { x: 0, y: -2.3, z: 0 }, 0.5, Math.PI / 2, 'glbObject4');
-      });
+      });*/
     },
     addObjectToScene(object, position, scale, rotationX, name) {
       object.position.set(position.x, position.y, position.z);
@@ -75,7 +77,7 @@ export default {
       });
       this.scene.add(object);
     },
-    setupVideo() {
+    /*setupVideo() {
       const video = document.createElement('video');
       video.src = '/videos/IMG_0184.mov';
       video.crossOrigin = 'anonymous';
@@ -92,6 +94,7 @@ export default {
       videoBox.name = 'videoBox';
       return videoBox;
     },
+    */
     addLights() {
       const light = new THREE.DirectionalLight(0xffffff, 3);
       light.position.set(5, 6, 14);
@@ -130,9 +133,9 @@ export default {
         case 'glbObject3':
           this.$router.push({ name: 'about' }).then(() => this.cleanUpThree());
           break;
-        case 'glbObject4':
+        /*case 'glbObject4':
           this.$router.push({ name: 'point' }).then(() => this.cleanUpThree());
-          break;
+          break;*/
         case 'fontObject':
           console.log('Clicked font object');
           break;
@@ -172,17 +175,16 @@ export default {
       this.controls = null;
       this.raycaster = null;
       this.mouse = null;
-    }
+    },
+    
   }
 };
 
-
-</script>
-<script setup>
 definePageMeta({
-  layout: 'default'
-})
+  layout: false
+});
 </script>
+
 
 <style>
 html, body {
@@ -191,11 +193,24 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
-
-.three-container {
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  z-index: -2; 
+}
+.three-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
   overflow: hidden;
 }
 </style>
