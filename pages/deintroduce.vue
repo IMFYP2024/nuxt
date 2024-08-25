@@ -166,7 +166,7 @@
 
           <!-- 其他內容 -->
           <div v-else>
-            <teeest :course="currentTab" @back="changeTab('info')" />
+            <teeest v-if="currentTab === 'teeest'" :course="currentTab" @back="changeTab('info')" />
           </div>
         </div>
       </transition>
@@ -176,9 +176,8 @@
 
 <script>
 import teeest from './teeest.vue';
-
 export default {
-  name: 'MainPage',
+  name: 'Deintroduce',
   components: {
     teeest,
   },
@@ -230,54 +229,90 @@ export default {
   },
   methods: {
     changeTab(tabType, activeTabType = tabType) {
-    this.showDropdown = false;
-     setTimeout(() => {
-    this.currentTab = tabType;
-    if (tabType === 'teeest') {
-      this.activeTab = 'info';
-    } else {
-      this.activeTab = activeTabType;
-    }
-    const selectedTab = this.tabs.find(tab => tab.type === tabType);
-    if (selectedTab) {
+      this.showDropdown = false;
+      setTimeout(() => {
+        this.currentTab = tabType;
+        if (tabType === 'teeest') {
+          this.activeTab = 'info';
+        } else {
+          this.activeTab = activeTabType;
+        }
+        const selectedTab = this.tabs.find(tab => tab.type === tabType);
+        if (selectedTab) {
+          this.backgroundColor = selectedTab.color; 
+          document.documentElement.style.setProperty('--button-color', selectedTab.color); 
+        } else {
+          console.error(`Tab type ${tabType} not found in tabs array.`);
+        }
+        this.$router.push({ query: { college: this.activeTab, dept: tabType } });
+        this.showDropdown = true;
+      }, 300);
+    },
+    selectCollege(tabType) {
+      this.currentTab = tabType;
+      this.isCollegeSelected = true;
+      const selectedTab = this.tabs.find(tab => tab.type === tabType);
       this.backgroundColor = selectedTab.color; 
-      document.documentElement.style.setProperty('--button-color', selectedTab.color); 
-    } else {
-      console.error(`Tab type ${tabType} not found in tabs array.`);
-    }
-    this.showDropdown = true;
-  }, 300);
-},
-  selectCollege(tabType) {
-    this.currentTab = tabType;
-    this.isCollegeSelected = true;
-    const selectedTab = this.tabs.find(tab => tab.type === tabType);
-    this.backgroundColor = selectedTab.color; 
-    document.documentElement.style.setProperty('--button-color', selectedTab.color);
-  },
-  goBack() {
-    const mainTabs = ['info', 'business', 'design', 'smart', 'language']; 
+      document.documentElement.style.setProperty('--button-color', selectedTab.color);
+    },
+    selectCollegeAndDept(college, dept) {
+      const selectedCollege = this.tabs.find(tab => tab.type === college);
+      if (selectedCollege) {
+        this.selectCollege(college);
+        if (college === 'info') {
+          const deptItem = this.infoItems.find(item => item.link === dept);
+          if (deptItem) {
+            this.changeTab(deptItem.link, 'info');
+          } else {
+            console.error(`Department ${dept} not found in infoItems.`);
+          }
+        }
+        // 你可以在這裡添加其他學院的條件判斷，例如:
+        // else if (college === 'business') { ... }
+      } else {
+        console.error(`College type ${college} not found.`);
+      }
+    },
+    goBack() {
+      const mainTabs = ['info', 'business', 'design', 'smart', 'language']; 
 
-    if (!mainTabs.includes(this.currentTab)) {
-      this.changeTab(this.activeTab); 
-    } else {
-      this.isCollegeSelected = false;
+      if (!mainTabs.includes(this.currentTab)) {
+        this.changeTab(this.activeTab); 
+      } else {
+        this.isCollegeSelected = false;
+      }
     }
-  }
-},
- mounted() {
+  },
+  mounted() {
     this.$nextTick(() => {
-        setTimeout(() => {
-            const infoButton = document.querySelector(`.tabs button[data-type="info"]`);
-            if (infoButton) {
-                infoButton.click(); // 手动触发点击事件
-                infoButton.classList.add('active'); // 确保它被设置为激活状态
+        // 取得URL中的參數
+        const queryCollege = this.$route.query.college;
+        const queryDept = this.$route.query.dept;
+
+        if (queryCollege && queryDept) {
+            this.selectCollegeAndDept(queryCollege, queryDept);
+        } else {
+            setTimeout(() => {
+                const infoButton = document.querySelector(`.tabs button[data-type="info"]`);
+                if (infoButton) {
+                    infoButton.click(); // 手动触发点击事件
+                    infoButton.classList.add('active'); // 确保它被设置为激活状态
+                }
+            }, 300); // 延迟 300 毫秒以确保页面完全加载
+        }
+
+        // 手动设置激活状态
+        if (queryDept && this.currentTab === queryDept) {
+            const activeButton = document.querySelector(`.tabs button[data-type="${queryDept}"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
             }
-        }, 300); // 延迟 300 毫秒以确保页面完全加载
+        }
     });
 }
 }
 </script>
+
 
 
 <style>
