@@ -3,14 +3,20 @@
     <div class="floor-plan" @click="handleOutsideClick">
       <img src="/Images/iCloud/3.JPEG" alt="Floor Plan" class="floor-plan-image" />
       <div
-        v-for="area in areas"
-        :key="area.id"
-        class="clickable-area"
-        :style="{ top: area.top + 'px', left: area.left + 'px', width: area.width + 'px', height: area.height + 'px' }"
-        @click.stop="openModal(area)"
-      >
-        <Icon :name="area.icon" class="icon" />
-      </div>
+  v-for="area in areas"
+  :key="area.id"
+  class="clickable-area"
+  :style="{ 
+    top: (area.top / 241) * 100 + '%', 
+    left: (area.left / 394) * 100 + '%', 
+    width: area.width + 'px', 
+    height: area.height + 'px' 
+  }"
+  @click.stop="openModal(area)"
+>
+  <Icon :name="area.icon" class="icon" />
+</div>
+
       <transition name="fade">
         <Modal
           v-if="showed"
@@ -121,8 +127,6 @@
   .modal-image {
     width: 100%;
     height: auto;
-    max-width: 600px; /* Adjust as needed */
-    max-height: 400px; /* Adjust as needed */
   }
   
   /* Fade transition for modal */
@@ -135,21 +139,7 @@
   .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
     opacity: 0;
   }
-  .link-to-other-page {
-    display: inline-block;
-    padding: 8px 12px;
-    font-size: 14px;
-    border-radius: 5px;
-    background-color: green; /* 更換為柔和的藍色 */
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    transition: background-color 0.3s ease;
-  }
-  
-  .link-to-other-page:hover {
-    background-color: #0056b3; /* 更深的藍色 */
-  }
+
   
   @media (max-width: 600px) {
     .floor-plan-image {

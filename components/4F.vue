@@ -1,17 +1,23 @@
 <template>
   
   <div class="floor-plan" @click="handleOutsideClick">
-    <a href="/deintroduce" class="link-to-other-page">前往資管系介紹</a>
+    <a href="/deintroduce/deintroduce?college=info&dept=teeest" class="link-to-other-page">前往資管系介紹</a>
     <img src="/Images/4F.JPG" alt="Floor Plan" class="floor-plan-image" />
-    <div
-      v-for="area in areas"
-      :key="area.id"
-      class="clickable-area"
-      :style="{ top: area.top + 'px', left: area.left + 'px', width: area.width + 'px', height: area.height + 'px' }"
-      @click.stop="openModal(area)"
-    >
-      <Icon :name="area.icon" class="icon" />
-    </div>
+          <div
+        v-for="area in areas"
+        :key="area.id"
+        class="clickable-area"
+        :style="{ 
+          top: (area.top / 241) * 100 + '%', 
+          left: (area.left / 394) * 100 + '%', 
+          width: area.width + 'px', 
+          height: area.height + 'px' 
+        }"
+        @click.stop="openModal(area)"
+      >
+        <Icon :name="area.icon" class="icon" />
+      </div>
+
     <transition name="fade">
       <Modal
         v-if="showed"

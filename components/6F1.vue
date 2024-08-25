@@ -2,14 +2,20 @@
     <div class="floor-plan" @click="handleOutsideClick">
       <img src="/Images/iCloud/6F2.JPEG" alt="Floor Plan" class="floor-plan-image" />
       <div
-        v-for="area in areas"
-        :key="area.id"
-        class="clickable-area"
-        :style="{ top: area.top + 'px', left: area.left + 'px', width: area.width + 'px', height: area.height + 'px' }"
-        @click.stop="openModal(area)"
-      >
-        <Icon :name="area.icon" :style="{ color: area.color }" class="icon" />
-      </div>
+  v-for="area in areas"
+  :key="area.id"
+  class="clickable-area"
+  :style="{ 
+    top: (area.top / 241) * 100 + '%', 
+    left: (area.left / 394) * 100 + '%', 
+    width: area.width + 'px', 
+    height: area.height + 'px' 
+  }"
+  @click.stop="openModal(area)"
+>
+  <Icon :name="area.icon" class="icon" />
+</div>
+
       <transition name="fade">
         <Modal
           v-if="showed"
