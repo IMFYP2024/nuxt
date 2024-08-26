@@ -3,20 +3,20 @@
   <div class="floor-plan" @click="handleOutsideClick">
     <a href="/other-page" class="link-to-other-page">前往資工系介紹</a>
     <img src="/Images/iCloud/5.0.JPG" alt="Floor Plan" class="floor-plan-image" />
-          <div
-        v-for="area in areas"
-        :key="area.id"
-        class="clickable-area"
-        :style="{ 
-          top: (area.top / 241) * 100 + '%', 
-          left: (area.left / 394) * 100 + '%', 
-          width: area.width + 'px', 
-          height: area.height + 'px' 
-        }"
-        @click.stop="openModal(area)"
-      >
-        <Icon :name="area.icon" class="icon" />
-      </div>
+    <div
+  v-for="area in areas"
+  :key="area.id"
+  class="clickable-area"
+  :style="{ 
+    top: (area.top / 241) * 100 + '%', 
+    left: (area.left / 394) * 100 + '%', 
+    width: area.width + 'px', 
+    height: area.height + 'px' 
+  }"
+  @click.stop="openModal(area)"
+>
+  <Icon :name="area.icon" class="icon" />
+</div>
 
     <transition name="fade">
       <Modal
@@ -45,7 +45,7 @@ import { ref } from 'vue';
 const areas = [
   { 
     id: 1, 
-    top: 150, 
+    top: 130, 
     left: 220, 
     width: 30, 
     height: 30, 
@@ -57,7 +57,7 @@ const areas = [
   },
   { 
     id: 2, 
-    top: 155, 
+    top: 135, 
     left: 280, 
     width: 30, 
     height: 30, 
@@ -69,8 +69,8 @@ const areas = [
   },
   { 
     id: 3, 
-    top: 100, 
-    left: 200, 
+    top: 90, 
+    left: 290, 
     width: 30, 
     height: 30, 
     icon: 'bi:3-circle', 
@@ -81,7 +81,7 @@ const areas = [
   },
   { 
     id: 4, 
-    top: 140, 
+    top: 120, 
     left: 315, 
     width: 30, 
     height: 30, 

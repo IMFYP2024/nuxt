@@ -45,7 +45,7 @@ import { ref } from 'vue';
 const areas = [
   { 
     id: 1, 
-    top: 140, 
+    top: 120, 
     left: 220, 
     width: 30, 
     height: 30, 
@@ -57,7 +57,7 @@ const areas = [
   },
   { 
     id: 2, 
-    top: 155, 
+    top: 135, 
     left: 280, 
     width: 30, 
     height: 30, 
@@ -69,8 +69,8 @@ const areas = [
   },
   { 
     id: 3, 
-    top: 95, 
-    left: 200, 
+    top: 85, 
+    left: 290, 
     width: 30, 
     height: 30, 
     icon: 'bi:3-circle', 

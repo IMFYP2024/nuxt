@@ -69,7 +69,7 @@
     { 
       id: 3, 
       top: 65, 
-      left: 200, 
+      left: 290, 
       width: 30, 
       height: 30, 
       icon: 'bi:3-circle', 
