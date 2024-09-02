@@ -1,6 +1,5 @@
 <template>
   <div>
-    <a href="/deintroduce?college=info&dept=teeest">點點</a>
     <video autoplay muted loop playsinline class="background-video">
       <source src="/videos/IMG_0184.mov" type="video/mp4">
     </video>
