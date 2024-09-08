@@ -19,7 +19,9 @@
       </div>
       <transition name="fade" mode="out-in">
         <div :key="currentTab" class="card-container" :style="{ backgroundColor: backgroundColor }">
-          <button class="back-button" @click="goBack">返回</button>
+         <button class="back-button" @click="goBack">
+          <i class="fi fi-sr-arrow-small-left"></i>
+        </button>
 
           <!-- 各學院內容 -->
           <div v-if="currentTab === 'info'" class="about-section">
@@ -85,7 +87,7 @@
 <script>
 import CollegeSelector from './CollegeSelector.vue';
 import teeest from './teeest.vue';
-import SectionContent from './SectionContent.vue'; // 将内容组件化
+import SectionContent from './SectionContent.vue'; 
 
 export default {
   name: 'Introduce',
@@ -144,22 +146,31 @@ export default {
     this.currentDept = dept || this.getDefaultDept(tabType);
     this.isCollegeSelected = true;
 
-    // 设置背景颜色
+    // 設置背景顏色
     const selectedTab = this.tabs.find(tab => tab.type === tabType);
     if (selectedTab) {
       this.backgroundColor = selectedTab.color;
     }
   },
   changeTab(tabType) {
-    this.currentTab = tabType;
-    this.currentDept = this.getDefaultDept(tabType);
+  const mainTabs = ['info', 'business', 'design', 'smart', 'language'];
 
-    // 设置背景颜色
-    const selectedTab = this.tabs.find(tab => tab.type === tabType);
-    if (selectedTab) {
-      this.backgroundColor = selectedTab.color;
-    }
-  },
+  // 每次選擇學院保存 activeTab
+  if (mainTabs.includes(tabType)) {
+    this.activeTab = tabType;  // 保存當前學院
+  }
+
+  this.currentTab = tabType;
+  this.currentDept = this.getDefaultDept(tabType);
+
+  console.log('切換到 Tab:', tabType); 
+  console.log('當前科系:', this.currentDept);
+
+  const selectedTab = this.tabs.find(tab => tab.type === tabType);
+  if (selectedTab) {
+    this.backgroundColor = selectedTab.color;
+  }
+},
   getDefaultDept(college) {
     const defaultDepts = {
       info: 'teeest',
@@ -171,8 +182,22 @@ export default {
     return defaultDepts[college] || '';
   },
   goBack() {
-    this.isCollegeSelected = false;
+  const mainTabs = ['info', 'business', 'design', 'smart', 'language']; 
+  console.log('點擊返回按鈕'); 
+
+ 
+  if (!mainTabs.includes(this.currentTab)) {
+    console.log('科系介绍->學院科系選單'); 
+    this.currentDept = '';  // 清空當前科系，返回到学院的科系選單
+    this.currentTab = this.activeTab || 'info'; 
+  } else if (mainTabs.includes(this.currentTab)) {
+    console.log('學院科系選單->學院選單'); // 調試信息
+    this.isCollegeSelected = false;  
+    this.currentTab = ''; 
+  } else {
+    console.log(' currentTab 和 currentDept出錯'); 
   }
+}
 },
   mounted() {
     const queryCollege = this.$route.query.college;
@@ -182,16 +207,16 @@ export default {
     this.currentTab = queryCollege;
     this.currentDept = queryDept || this.getDefaultDept(queryCollege);
 
-    // 设置背景颜色
+    // 背景顏色
     const selectedTab = this.tabs.find(tab => tab.type === queryCollege);
     if (selectedTab) {
       this.backgroundColor = selectedTab.color;
     }
 
-    this.isCollegeSelected = true; // 显示学院内容
+    this.isCollegeSelected = true; // 顯示學院内容
   }
 
-  // 如果传递了dept参数，直接调用changeTab以显示特定科系
+  
   if (queryDept) {
     this.changeTab(queryDept, queryCollege);
   }
@@ -274,16 +299,15 @@ export default {
 }
 
 .back-button {
-  position: absolute;
-  top: 70%;
-  left: 5%;
-  background-color: #6e73dc;
-  color: #ffffff;
-  border: none;
-  padding: 8px 16px;
-  font-size: 14px;
-  border-radius: 4px;
+ position: fixed; 
+  top: 15%; 
+  left: 4%; 
+  background: none;
+  border: none; 
+  padding: 0; 
   cursor: pointer;
   z-index: 1000;
+  font-size: 48px;
+  color: #000; 
 }
 </style>

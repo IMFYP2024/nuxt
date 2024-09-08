@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     navigateToCollege(tabType) {
-      // 构建 URL，并导航到 introduce 页面，传递所选的学院类型
+   
       const url = `/deintroduce?college=${tabType}`;
       window.location.href = url;
     }
