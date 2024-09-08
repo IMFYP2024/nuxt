@@ -58,10 +58,22 @@
     { 
       id: 3, 
       top: 55, 
-      left: 285, 
+      left: 295, 
       width: 30, 
       height: 30, 
       icon: 'bi:2-circle', 
+      name: '第一和第二韻律教室', 
+      description: '好像會有上有氧運動體育課的人會來',
+      image:"/Images/iCloud/9F2.JPEG",
+      extraInfo: ''
+    },
+    { 
+      id: 3, 
+      top: 75, 
+      left: 295, 
+      width: 30, 
+      height: 30, 
+      icon: 'icomoon-free:arrow-up2', 
       name: '第一和第二韻律教室', 
       description: '好像會有上有氧運動體育課的人會來',
       image:"/Images/iCloud/9F2.JPEG",

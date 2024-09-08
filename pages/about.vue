@@ -23,14 +23,12 @@
           @touchstart="onTouchStart"
         />
       </div>
-<div class="turns-container">
-  <h2>Turns: <span>{{ turns }}</span></h2>
-    <div class="icon-trigger" @click="showModal = true">
-      <Icon name="icon-park-solid:tips-one" class="large-icon" />
-    </div>
-</div>
-
-
+      <div class="turns-container">
+        <h2>Turns: <span>{{ turns }}</span></h2>
+        <div class="icon-trigger" @click="showModal = true">
+          <Icon name="icon-park-solid:tips-one" class="large-icon" />
+        </div>
+      </div>
       
       <div id="pieces">
         <img
@@ -46,33 +44,13 @@
       </div>
     </div>
     <div v-if="isComplete" class="container">
-      <img src="public/Images/puzzle.png" class="card-img" >
+      <img src="public/Images/puzzle.png" class="card-img">
       <div>
         <h1>全校各棟大樓編號表</h1>
-        <p>
-舉例:2401--2-資訊館，4樓，01號教室<br><br>
-1開頭-行政大樓：位於三民路校門口進來的左側第一棟，負責處理學校的行政事務，包括註冊、課程安排和學生服務等。<br><br>
-
-2開頭-資訊館：位於行政大樓的左側，走到走廊的盡頭，左轉即可看到，整棟大樓有電梯。提供教室和辦公室，供教職員和學生使用。<br><br>
-
-3開頭-中正大樓：從三民路校門口左側第二棟，新生體檢是在這棟進行。主要教學大樓，內有教室和實驗室。
-
-活動中心：從中正大樓過去，靠近昌明樓的左側，主要用於學生社團活動，包括課程和輔導組。<br><br>
-
-4開頭-昌明樓：位於校園中心，從三民路校門口直走即到，主要設有設計群的教室和辦公室。核心教學區之一，支援設計相關課程。<br><br>
-
-5開頭-翰英樓：靠近操場和司令台的一整排，提供相關設施和服務。<br><br>
-
-6開頭-弘業樓：從三民路校門口進來的右側，位於體育館樓上那一整棟。主要的教學和研究設施。<br><br>
-
-7開頭-中商大樓：位於中華路，穿過操場，經過翰英樓，圖書館就在附近。用於商業相關課程的教學設施。<br><br>
-
-8開頭-奇秀樓：體育館右側轉直走，靠近男宿，位於操場旁邊，1樓可借用體育器材。提供體育器材和相關設施。
-</p>
+        <p>我們學校是1919年6月所創立的至今已經有一百零五年的歷史了，我們學校的全校學生總數: {{ totalStudentCount }} 人，教師總數: {{ totalTeacherCount }} 人，
+          由此可見我們學校的師資以及學生是很龐大的。學校有幾個校區，其中三民校區是最為人所熟知的校區之一，該校區有多棟建築物，如行政大樓、資訊館、中正大樓、活動中心、昌明樓等，為學生提供優質的學習環境。</p>
+      </div>
     </div>
-    </div>
-    
-    
   </div>
 </template>
 
@@ -88,13 +66,17 @@ const otherTile = ref(null);
 const boardTiles = ref([]);
 const pieces = ref([]);
 const turns = ref(0);
-const isComplete = ref(false);
+const isComplete = ref(true);
 const modalTitle = ref('範例圖');
-const showModal = ref(true); // 初始設置為 false 以關閉模態窗口
+const showModal = ref(true);
+
+const totalStudentCount = ref(0);
+const totalTeacherCount = ref(0);
 
 const closeModal = () => {
   showModal.value = false;
 };
+
 const initializeBoard = () => {
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < columns; c++) {
@@ -157,37 +139,48 @@ const checkPuzzleCompletion = () => {
     expectedOrder.push(`${i}.png`);
   }
 
-  console.log('Expected Order:', expectedOrder);
-  console.log('Board:' ,board);
   isComplete.value = expectedOrder.every((src, index) => {
     const imgElement = document.querySelector(`#board img:nth-child(${index + 1})`);
     if (imgElement) {
-      
       const boardFileName = imgElement.src.split('/').pop();
       return src === boardFileName;
     } else {
       return false; 
     }
   });
-  
-};
-
 
   if (isComplete.value) {
     console.log('Puzzle completed!');
   }
+};
 
+const fetchData = async () => {
+  try {
+    const response = await fetch('http://163.17.135.197/nuxt_api.php');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const result = await response.json();
 
-
+    totalStudentCount.value = result.reduce((sum, item) => sum + Number(item.student_count), 0);
+    totalTeacherCount.value = result.reduce((sum, item) => sum + Number(item.teacher_count), 0);
+    console.log('Total Student Count:', totalStudentCount.value);
+    console.log('Total Teacher Count:', totalTeacherCount.value);
+  } catch (error) {
+    console.error('There was a problem with the fetch operation:', error);
+  }
+};
 
 
 onMounted(() => {
   initializeBoard();
   initializePieces();
+  fetchData();
 });
 </script>
 
 <style scoped>
+/* Your existing styles */
 .large-icon {
   width: 36px;
   height: 36px;
@@ -285,33 +278,16 @@ p {
     max-width: 600px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    opacity: 0;
-    animation: fadeIn 3s forwards;
+    position: relative;
 }
-
-
-p:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-}
-.qna-link {
-  color: red; 
-  text-decoration: underline;
-  cursor: pointer;
-  display: inline-block; /* 讓連結更容易被點擊 */
-  margin-top: 20px; /* 上邊距確保連結不會緊貼其他內容 */
-}
-
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-
 </style>

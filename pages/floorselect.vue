@@ -2,9 +2,7 @@
   <div class="building-container">
     <h1>資訊舘</h1>
     <!-- 建築物頂部的圖標 -->
-    <div class="icon-trigger">
-      <Icon name="icon-park-solid:click" style="color:black" />
-    </div>
+
 
     <!-- 建築物和柱子容器 -->
     <div class="building-and-pillar">
@@ -25,7 +23,8 @@
       @closing="closeModal"
     >
       <template #itemText>
-        <p>你可以試著點擊 <Icon name="bi:1-circle" /> 來查看一些樓層的區域信息</p>
+        <img src="/Images/1.0.1.png" alt="">
+        <p>資訊舘的入口是需從行政大樓進入的，進入後會有一個分岔路往左才是資訊樓，往右是中正大樓</p>
       </template>
     </Modal>
   </div>
@@ -36,7 +35,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 const floors = ['1F', '2F', '3F', '4F', '5F', '6F', '7F', '8F', '9F'];
-const modalTitle = ref('資訊舘的建成故事');
+const modalTitle = ref('資訊舘');
 const showModal = ref(false); 
 const router = useRouter();
 const navigateToBuilding = (floor) => {
@@ -45,6 +44,7 @@ const navigateToBuilding = (floor) => {
 const closeModal = () => {
   showModal.value = false;
 };
+
 </script>
 
 <style scoped>
@@ -66,13 +66,6 @@ h1 {
   margin-bottom: 20px; /* 設置底部距離 */
 }
 
-.icon-trigger {
-  position: absolute;
-  top: 300px; /* 位置稍微向上調整 */
-  left: 76%;
-  transform: translateX(-50%);
-  cursor: pointer;
-}
 
 .building {
   display: flex;

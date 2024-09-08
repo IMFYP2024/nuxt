@@ -3,6 +3,12 @@
     <h1>大樓介紹</h1>
 
     <div class="select-wrapper">
+      <div v-if="selectedFloor === '4F'" >
+        <a href="/deintroduce/deintroduce?college=info&dept=teeest" class="link-to-other-page">前往資管系介紹</a>
+      </div>
+      <div v-if="selectedFloor === '5F'" >
+        <a href="/deintroduce/deintroduce?college=info&dept=teeest" class="link-to-other-page">前往資工系介紹</a>
+      </div>
       <select v-model="selectedFloor" class="floor-select">
         <option v-for="floor in floors" :key="floor" :value="floor">
           {{ floor }}
@@ -93,7 +99,19 @@ const currentSubComponent = computed(() => {
     color: white;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   }
-  
+
+  .link-to-other-page {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: green; /* 更換為柔和的藍色 */
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
   .select-wrapper {
     display: flex;
     align-items: center;

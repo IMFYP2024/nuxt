@@ -77,6 +77,18 @@
       description: '前端是學生上課的',
       image:"/Images/iCloud/6F4.JPEG",
       extraInfo: '但後方也是專題生的研究室'
+    },
+    { 
+      id: 4, 
+      top: 85, 
+      left: 290, 
+      width: 30, 
+      height: 30, 
+      icon: 'icomoon-free:arrow-up2', 
+      name: '電腦教室和專題研究室', 
+      description: '前端是學生上課的',
+      image:"/Images/iCloud/6F4.JPEG",
+      extraInfo: '但後方也是專題生的研究室'
     }
   ];
   

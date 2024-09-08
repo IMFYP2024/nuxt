@@ -1,7 +1,6 @@
 <template>
   
   <div class="floor-plan" @click="handleOutsideClick">
-    <a href="/deintroduce/deintroduce?college=info&dept=teeest" class="link-to-other-page">前往資管系介紹</a>
     <img src="/Images/4F.JPG" alt="Floor Plan" class="floor-plan-image" />
           <div
         v-for="area in areas"
@@ -45,7 +44,7 @@ import { ref } from 'vue';
 const areas = [
   { 
     id: 1, 
-    top: 120, 
+    top: 100, 
     left: 220, 
     width: 30, 
     height: 30, 
@@ -57,7 +56,7 @@ const areas = [
   },
   { 
     id: 2, 
-    top: 135, 
+    top: 115, 
     left: 280, 
     width: 30, 
     height: 30, 
@@ -69,11 +68,23 @@ const areas = [
   },
   { 
     id: 3, 
-    top: 85, 
+    top: 60, 
     left: 290, 
     width: 30, 
     height: 30, 
     icon: 'bi:3-circle', 
+    name: '資管系教室', 
+    description: '電腦設備很好，同學有時會偷打遊戲',
+    image:"/Images/iCloud/4F2.JPEG",
+    extraInfo: '但是是禁止的哦'
+  },
+  { 
+    id: 4, 
+    top:85, 
+    left: 295, 
+    width: 30, 
+    height: 30, 
+    icon: 'icomoon-free:arrow-up2', 
     name: '資管系教室', 
     description: '電腦設備很好，同學有時會偷打遊戲',
     image:"/Images/iCloud/4F2.JPEG",
@@ -142,21 +153,8 @@ const handleOutsideClick = (event) => {
 .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
   opacity: 0;
 }
-.link-to-other-page {
-  display: inline-block;
-  padding: 8px 12px;
-  font-size: 14px;
-  border-radius: 5px;
-  background-color: green; /* 更換為柔和的藍色 */
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
 
-.link-to-other-page:hover {
-  background-color: #0056b3; /* 更深的藍色 */
-}
+
 
 @media (max-width: 600px) {
   .floor-plan-image {

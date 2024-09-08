@@ -66,7 +66,20 @@
       description: ' ',
       image:"/Images/iCloud/8F1.JPEG",
       extraInfo: ''
+    },
+    { 
+      id: 3, 
+      top: 85, 
+      left: 295, 
+      width: 30, 
+      height: 30, 
+      icon: 'icomoon-free:arrow-up2', 
+      name: '雲端智慧聯網尖端研究室', 
+      description: ' ',
+      image:"/Images/iCloud/8F1.JPEG",
+      extraInfo: ''
     }
+    
   ];
   
   const selectedArea = ref(null);

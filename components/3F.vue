@@ -67,6 +67,18 @@
       extraInfo: '全校授權軟體與相關作業'
     },
     { 
+      id: 4, 
+      top: 90, 
+      left: 295, 
+      width: 25, 
+      height: 25, 
+      icon: 'icomoon-free:arrow-up2', 
+      name: '教學資訊組', 
+      description: '負責電腦教室教室管理與使用，數位學習平臺',
+      image:"/Images/iCloud/3F2.JPEG",
+      extraInfo: '全校授權軟體與相關作業'
+    },
+    { 
       id: 3, 
       top: 70, 
       left: 220, 
