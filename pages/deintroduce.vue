@@ -297,9 +297,9 @@ export default {
   margin: 0;
   min-height: calc(100vh - 80px);
 }
-@media (max-height: 667px) {
+@media (max-height: 668px) {
   .back-button {
-    top: 13% !important;
+    top: 15% !important;
     left: 4%; 
     position: fixed; 
     background: none;
@@ -312,9 +312,9 @@ export default {
   }
 }
 
-@media (min-height: 668px) and (max-height: 883px) {
+@media (min-height: 669px) and (max-height: 843px) {
   .back-button {
-    top: 10%!important; 
+    top: 12%!important; 
     left: 4%; 
     position: fixed; 
     background: none;
@@ -327,7 +327,7 @@ export default {
   }
 }
 
-@media (max-height: 884px) {
+@media (min-height: 844px) {
   .back-button {
     top: 12%!important; 
     left: 4%; 
