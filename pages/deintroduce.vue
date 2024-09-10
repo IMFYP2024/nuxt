@@ -76,7 +76,7 @@
 
           <!-- 其他內容 -->
           <div v-else>
-            <teeest v-if="currentTab === 'teeest'" :course="currentTab" @back="changeTab('info')" />
+            <im v-if="currentTab === 'im'" :course="currentTab" @back="changeTab('info')" />
           </div>
         </div>
       </transition>
@@ -86,14 +86,14 @@
 
 <script>
 import CollegeSelector from './CollegeSelector.vue';
-import teeest from './teeest.vue';
+import im from './im.vue';
 import SectionContent from './SectionContent.vue'; 
 
 export default {
   name: 'Introduce',
   components: {
     CollegeSelector,
-    teeest,
+    im,
     SectionContent
   },
   data() {
@@ -110,7 +110,7 @@ export default {
         { name: '語文學院', type: 'language', icon: 'fi fi-rr-book-font', color: '#3497CC' }
       ],
       infoItems: [
-        { text: '資訊管理系', link: 'teeest', color: '#5A7D8C' },
+        { text: '資訊管理系', link: 'im', color: '#5A7D8C' },
         { text: '資訊工程系', link: 'cs', color: '#5A7D8C' },
         { text: '流通管理系', link: 'logistics', color: '#5A7D8C' }
       ],
@@ -173,7 +173,7 @@ export default {
 },
   getDefaultDept(college) {
     const defaultDepts = {
-      info: 'teeest',
+      info: 'im',
       business: 'international',
       design: 'business',
       smart: 'business-management',
@@ -297,17 +297,49 @@ export default {
   margin: 0;
   min-height: calc(100vh - 80px);
 }
-
-.back-button {
- position: fixed; 
-  top: 15%; 
-  left: 4%; 
-  background: none;
-  border: none; 
-  padding: 0; 
-  cursor: pointer;
-  z-index: 1000;
-  font-size: 48px;
-  color: #000; 
+@media (max-height: 667px) {
+  .back-button {
+    top: 13% !important;
+    left: 4%; 
+    position: fixed; 
+    background: none;
+    border: none; 
+    padding: 0; 
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 48px;
+    color: #000; 
+  }
 }
+
+@media (min-height: 668px) and (max-height: 883px) {
+  .back-button {
+    top: 10%!important; 
+    left: 4%; 
+    position: fixed; 
+    background: none;
+    border: none; 
+    padding: 0; 
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 48px;
+    color: #000; 
+  }
+}
+
+@media (max-height: 884px) {
+  .back-button {
+    top: 12%!important; 
+    left: 4%; 
+    position: fixed; 
+    background: none;
+    border: none; 
+    padding: 0; 
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 48px;
+    color: #000; 
+  }
+}
+
 </style>

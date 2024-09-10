@@ -16,6 +16,7 @@
     "@rollup/plugin-inject": "^5.0.5",
     "@tresjs/nuxt": "^2.1.1",
     "aframe": "^0.1.1",
+    "chart.js": "^4.4.4",
     "minimatch": "^10.0.1",
     "nuxt": "^3.11.2",
     "swiper": "^11.1.4",

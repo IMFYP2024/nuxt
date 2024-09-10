@@ -173,7 +173,7 @@
 </template>
 
 <script>
-import teeest from './teeest.vue';
+import teeest from './im.vue';
 
 export default {
   name: 'MainPage',

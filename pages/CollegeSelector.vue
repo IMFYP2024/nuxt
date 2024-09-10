@@ -40,11 +40,31 @@ export default {
 </script>
 
 <style>
-.college-selector-page h2 {
-  margin-top: 55%;
-  margin-bottom: 100px;
-  z-index: 10;
+@media (max-height: 670px) {
+  .college-selector-page h2 {
+    margin-top: 15%; /* 調整標題位置 */
+    margin-bottom: 100px;
+    z-index: 10;
+  }
 }
+
+@media (min-height: 671px) and (max-height: 883px) {
+  .college-selector-page h2 {
+    margin-top: 35%; /* 調整標題位置 */
+    margin-bottom: 100px;
+    z-index: 10;
+  }
+}
+
+@media (min-height: 884px) {
+  .college-selector-page h2 {
+    margin-top: 55%; /* 調整標題位置 */
+    margin-bottom: 100px;
+    z-index: 10;
+  }
+}
+
+
 
 .college-selector-page {
   display: flex;
@@ -78,28 +98,43 @@ export default {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .item-1 .college-icon {
-  margin-left: -15px; 
+  margin-left: -28%; 
+  margin-TOP: 13%; 
+  margin-bottom: 35%; 
 }
 
 .item-2 {
   background-color: #8A95CA;
-  top: 115%;
+  top: 116%;
   left: -2%;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-
+.item-2 .college-icon {
+  margin-left: -20%; 
+  margin-TOP: 10%; 
+  margin-bottom: 35%; 
+}
 .item-3 {
   background-color: #B69DD5;
   top: 75%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
 }
-
+.item-3 .college-icon {
+  margin-left: -20%; 
+  margin-TOP: 10%; 
+  margin-bottom: 35%; 
+}
 .item-4 {
   background-color: #9FB6C6;
   top: 37%;
   left: 100%;
   transform: translate(-50%, -50%) rotate(45deg);
+}
+.item-4 .college-icon {
+  margin-left: -20%; 
+  margin-TOP: 10%; 
+  margin-bottom: 35%; 
 }
 
 .item-5 {
@@ -109,7 +144,9 @@ export default {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .item-5 .college-icon {
-  margin-left: -8px; 
+  margin-left: -20%; 
+  margin-TOP: 10%; 
+  margin-bottom: 35%; 
 }
 
 .college-icon, .college-item p {
@@ -122,12 +159,16 @@ export default {
 
 .college-icon {
   font-size: 2rem;
+  margin-bottom: 50PX;
 }
 
 .college-item p {
-  margin: 0;
-  font-size: 1.1rem;
+  margin: 10%;
+  font-size: 1rem;
   line-height: 1.2;
-  margin-top: -10px;
+  margin-top: -40%;
+  margin-right: -5%;
+  margin-left: 15%;
+  margin-bottom: 20%;
 }
 </style>
