@@ -82,6 +82,12 @@ export default {
 
 .modal-body {
   padding: 16px;
+  text-align: center; /* 讓內容居中對齊 */
+}
+
+.modal-body img {
+  max-width: 100%;
+  height: auto; /* 保持圖片比例 */
 }
 
 @keyframes fadeInOverlay {

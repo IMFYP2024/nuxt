@@ -4,10 +4,10 @@
 
     <div class="select-wrapper">
       <div v-if="selectedFloor === '4F'" >
-        <a href="/deintroduce/deintroduce?college=info&dept=teeest" class="link-to-other-page">前往資管系介紹</a>
+        <a href="/deintroduce?college=info&dept=teeest" class="link-to-other-page">前往資管系介紹</a>
       </div>
       <div v-if="selectedFloor === '5F'" >
-        <a href="/deintroduce/deintroduce?college=info&dept=teeest" class="link-to-other-page">前往資工系介紹</a>
+        <a href="/deintroduce?college=info&dept=teeest" class="link-to-other-page">前往資工系介紹</a>
       </div>
       <select v-model="selectedFloor" class="floor-select">
         <option v-for="floor in floors" :key="floor" :value="floor">
@@ -34,7 +34,7 @@
       @closing="closeModal"
     >
       <template #itemText>
-        <p>你可以試著點擊 <Icon name="bi:1-circle" /> 來查看一些樓層的區域信息</p>
+        <p>你可以試著點擊<b>數字</b>來查看一些樓層的區域信息</p>
       </template>
     </Modal>
   </div>
@@ -79,14 +79,16 @@ const currentSubComponent = computed(() => {
 
   
   <style scoped>
+  body{
+    background-image: url('/Images/bg.jpg');
+  }
   .background {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    padding: 20px;
+    width: 100vw;
     box-sizing: border-box;
-    background-image: url('/Images/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -132,9 +134,7 @@ const currentSubComponent = computed(() => {
     margin-left: 10px;
   }
   
-  .icon-trigger:hover {
-    color: #ddd;
-  }
+  
   
   .components-container {
     display: flex;
@@ -145,7 +145,7 @@ const currentSubComponent = computed(() => {
   
   .main-component,
   .sub-component {
-    flex: 1;
+    flex: 0.4;
     width: 100%;
     box-sizing: border-box;
   }

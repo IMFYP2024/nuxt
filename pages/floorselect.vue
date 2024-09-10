@@ -1,9 +1,5 @@
 <template>
   <div class="building-container">
-    <h1>資訊舘</h1>
-    <!-- 建築物頂部的圖標 -->
-
-
     <!-- 建築物和柱子容器 -->
     <div class="building-and-pillar">
       <div class="building">
@@ -23,147 +19,124 @@
       @closing="closeModal"
     >
       <template #itemText>
-        <img src="/Images/1.0.1.png" alt="">
-        <p>資訊舘的入口是需從行政大樓進入的，進入後會有一個分岔路往左才是資訊樓，往右是中正大樓</p>
+        <img src="/Images/building.jpeg" alt="資訊舘圖片">
+        <p><b>1987年</b>新建「資訊館」破土典禮，由於它是與行政大樓緊挨的一起，所以他的入口比較特殊，是需要從行政大樓進入的</p>
       </template>
     </Modal>
   </div>
 </template>
 
-
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 const floors = ['1F', '2F', '3F', '4F', '5F', '6F', '7F', '8F', '9F'];
-const modalTitle = ref('資訊舘');
-const showModal = ref(false); 
+const modalTitle = ref('資訊舘的建成故事');
+const showModal = ref(false);
 const router = useRouter();
+
 const navigateToBuilding = (floor) => {
   router.push({ path: 'building', query: { floor } });
 };
+
 const closeModal = () => {
   showModal.value = false;
 };
-
 </script>
 
 <style scoped>
 .building-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  height: 90vh; /* 減去導航欄的高度 */
-  padding-bottom: 5%; /* 使用百分比來控制間距 */
-  background-color: #f0f0f0;
-  position: relative;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; /* 確保在垂直滾動時不會溢出 */
 }
 
-h1 {
-  margin-top: 5px; /* 調整標題距離容器頂部的距離 */
-  font-size: 36px; /* 設置標題的字體大小 */
-  color: black; /* 設置字體顏色 */
-  text-align: center; /* 標題居中對齊 */
-  margin-bottom: 20px; /* 設置底部距離 */
+.building-and-pillar {
+  display: flex;
+  align-items: flex-end;
+  height: 70vh;
 }
-
 
 .building {
   display: flex;
   flex-direction: column-reverse;
-  width: 200px;
+  width: 150px;
   border: 2px solid black;
   background-color: #ccc;
+  overflow-y: auto; /* 允許垂直滾動 */
 }
 
 .floor {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 44px; /* 確保每個樓層有足夠的點擊區域 */
   border-top: 1px solid black;
   background-color: white;
   font-weight: bold;
+  font-size: 16px; /* 調整字體大小以保證可讀性 */
 }
 
 .pillar {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
+  width: 50px; /* 增加柱子的寬度，便於點擊 */
   height: 550px;
-  margin-left: 0; /* 移除左側邊距 */
+  margin-left: 0;
   background-color: #f9efd0;
   border: 2px solid black;
+  cursor: pointer; /* 增加點擊效果 */
 }
 
 .pillar-text {
-  writing-mode: vertical-rl; /* 文字豎立顯示 */
-  text-orientation: upright; /* 保持文字方向 */
-  font-size: 60px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 50px;
   color: #333;
   font-weight: bold;
 }
 
-/* 將 building 和 pillar 緊密排列 */
-.building-and-pillar {
-  display: flex;
-  align-items: flex-end; /* 確保它們在垂直方向對齊 */
-  height: 70vh;
-}
-
-/* 自適應樣式 */
-@media screen and (min-width: 620px) {
-  .h1{
-    font-size: 36px;
-  }
+@media screen and (max-width: 620px) {
   .building {
-    width: 100px; /* 縮小建築物的寬度以適應小螢幕 */
+    width: 120px;
   }
-  .building-container{
-    height: 80vh;
-  }
+
   .floor {
-    height: 50px; /* 調整樓層高度以適應更小的螢幕 */
-    font-size: 14px; /* 確保文字大小適中 */
+    height: 44px;
+    font-size: 14px; /* 小螢幕上的字體稍微縮小 */
   }
 
   .pillar {
-    width: 70px; /* 縮小柱子的寬度 */
-    height: 600px; /* 縮小柱子的高度 */
-  }
-
-  .pillar-text {
-    font-size: 30px; /* 縮小文字大小以適應小螢幕 */
-  }
-
-  .icon-trigger {
-    font-size: 36px; /* 縮小圖標以適應小螢幕 */
-  }
-}
-@media (min-width: 361px) {
-  .building {
-    width: 110px;
-    height: 60vh;
-  }
-  .building-container{
-    height: 80vh;
-  }
-  .floor {
-    height: 60px;
-  }
-
-  .pillar {
-    width: 80px;
-    height: 550px;
+    width: 90px;
+    height: 500px;
   }
 
   .pillar-text {
     font-size: 35px;
   }
+}
 
-  .icon-trigger {
-    font-size: 48px; /* 小螢幕上的圖標稍微縮小 */
+@media screen and (max-width: 360px) {
+  .building {
+    width: 100px;
   }
-} 
 
+  .floor {
+    height: 40px;
+    font-size: 12px; /* 更小螢幕上的字體大小 */
+  }
+
+  .pillar {
+    width: 30px;
+    height: 480px;
+  }
+
+  .pillar-text {
+    font-size: 30px;
+  }
+}
 </style>

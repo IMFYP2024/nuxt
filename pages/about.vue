@@ -46,7 +46,7 @@
     <div v-if="isComplete" class="container">
       <img src="public/Images/puzzle.png" class="card-img">
       <div>
-        <h1>全校各棟大樓編號表</h1>
+        <h1>學校故事</h1>
         <p>我們學校是1919年6月所創立的至今已經有一百零五年的歷史了，我們學校的全校學生總數: {{ totalStudentCount }} 人，教師總數: {{ totalTeacherCount }} 人，
           由此可見我們學校的師資以及學生是很龐大的。學校有幾個校區，其中三民校區是最為人所熟知的校區之一，該校區有多棟建築物，如行政大樓、資訊館、中正大樓、活動中心、昌明樓等，為學生提供優質的學習環境。</p>
       </div>
@@ -66,7 +66,7 @@ const otherTile = ref(null);
 const boardTiles = ref([]);
 const pieces = ref([]);
 const turns = ref(0);
-const isComplete = ref(true);
+const isComplete = ref(false);
 const modalTitle = ref('範例圖');
 const showModal = ref(true);
 
