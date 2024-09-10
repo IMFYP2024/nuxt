@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div class="background1">
     <h1>大樓介紹</h1>
 
     <div class="select-wrapper">
@@ -78,11 +78,11 @@ const currentSubComponent = computed(() => {
 </script>
 
   
-  <style scoped>
+  <style >
   body{
-    background-image: url('/Images/bg.jpg');
+    margin: 0;
   }
-  .background {
+  .background1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,9 +92,11 @@ const currentSubComponent = computed(() => {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: url('/Images/bg.jpg');
+
   }
   
-  h1 {
+  .background1 h1 {
     margin-bottom: 10px;
     font-size: 24px;
     color: white;

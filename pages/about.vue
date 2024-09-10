@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>關於學校</h1>
     <Modal
       :title="modalTitle"
       :showModal="showModal"
@@ -13,7 +12,8 @@
         </div>
       </template>
     </Modal>
-    <div v-if="!isComplete">
+    <div v-if="!isComplete" class="container">
+      <h1>關於學校</h1>
       <div id="board">
         <img
           v-for="tile in boardTiles"
@@ -186,11 +186,16 @@ onMounted(() => {
   height: 36px;
   color: black;
 }
-.turns-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; /* 根據需要調整間距 */
+.turns-container{
+    display: flex;
+    height: 15vh;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+}
+.turns-container h2{
+  font-size: 30px;
 }
 .modal-image {
   max-width: 100%; 
@@ -230,7 +235,6 @@ onMounted(() => {
 }
 
 .container {
-  background-color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -280,6 +284,7 @@ p {
     transition: all 0.3s ease;
     position: relative;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
