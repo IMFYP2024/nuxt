@@ -4,10 +4,10 @@
 
     <div class="select-wrapper">
       <div v-if="selectedFloor === '4F'" >
-        <a href="/deintroduce?college=info&dept=teeest" class="link-to-other-page">前往資管系介紹</a>
+        <a href="/deintroduce?college=info&dept=im" class="link-to-other-page">前往資管系介紹</a>
       </div>
       <div v-if="selectedFloor === '5F'" >
-        <a href="/deintroduce?college=info&dept=teeest" class="link-to-other-page">前往資工系介紹</a>
+        <a href="/deintroduce?college=info&dept=im" class="link-to-other-page">前往資工系介紹</a>
       </div>
       <select v-model="selectedFloor" class="floor-select">
         <option v-for="floor in floors" :key="floor" :value="floor">
