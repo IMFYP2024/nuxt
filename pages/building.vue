@@ -90,7 +90,6 @@ const currentSubComponent = computed(() => {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    animation: fadeInBackground 1s ease-in-out;
   }
   
   h1 {
