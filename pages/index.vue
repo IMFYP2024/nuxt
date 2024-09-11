@@ -199,7 +199,7 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%; 
+  height: 100%!important; 
   width: 100%;
   object-fit: cover;
   z-index: -2; 
