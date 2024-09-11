@@ -157,7 +157,7 @@ const handleOutsideClick = (event) => {
 }
 
 .floor-plan-image {
-  width: 394px;
+  width: 100%;
   height: 241px;
 }
 

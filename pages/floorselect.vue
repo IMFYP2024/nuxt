@@ -57,7 +57,7 @@ const closeModal = () => {
 .building-and-pillar {
   display: flex;
   align-items: flex-end;
-  height: 70vh;
+  height: 60%;
 }
 
 .building {
