@@ -1,5 +1,5 @@
 <template>
-  <div class="college-selector-page">
+  <div class="college-selector-page" >
     <h2>學院介紹</h2>
     <div class="college-grid">
       <div 
@@ -40,6 +40,10 @@ export default {
 </script>
 
 <style>
+.background{
+  
+}
+
 @media (max-height: 670px) {
   .college-selector-page h2 {
     margin-top: 15%; /* 調整標題位置 */
@@ -70,6 +74,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url('/Images/bg.jpg');
+  height: 100vh;
+    width: 100vw;
 }
 
 .college-grid {
