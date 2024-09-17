@@ -34,7 +34,7 @@
   
     // 创建相机
     const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-    camera.position.set(0,2, 11);
+    camera.position.set(0,2, 9);
   
     // 初始化 OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -61,11 +61,21 @@
     scene.add(groundMesh);
   
     // 添加聚光灯
-    const spotLight = new THREE.SpotLight(0xffffff, 3000, 100, 0.22, 1);
-    spotLight.position.set(0, 25, 10);
-    spotLight.castShadow = true;
-    spotLight.shadow.bias = -0.0001;
-    scene.add(spotLight);
+const spotLight = new THREE.SpotLight(0xffffff, 3000, 100, Math.PI / 3, 1);
+spotLight.position.set(0, 25, 20); // 调整位置
+spotLight.angle = Math.PI / 3; // 增加角度范围
+spotLight.distance = 100; // 确保足够距离覆盖两个模型
+spotLight.castShadow = true;
+spotLight.shadow.bias = -0.0001;
+
+// 设置聚光灯的目标为两个模型之间的位置
+const lightTarget = new THREE.Object3D();
+lightTarget.position.set(1, 1.05, 1.5); // 两个模型之间的点
+scene.add(lightTarget);
+spotLight.target = lightTarget;
+
+scene.add(spotLight);
+
   
     // 加载模型
     const loader = new GLTFLoader().setPath('/Images/');
@@ -94,7 +104,7 @@
       console.error('An error happened', error);
     });
 
-    // 第二个模型
+    // // 第二个模型
     loader.load('zixun.glb', (gltf) => {
       const mesh2 = gltf.scene;
 
@@ -106,8 +116,9 @@
       });
 
       // 设置第二个模型的位置和旋转
-      mesh2.position.set(0.25, 2.5, 3);  // 不同的位置
-      // mesh2.rotation.y = Math.PI / 2;  // 绕 X 轴旋转 90 度
+    // 设置 mesh2 的位置在右边
+    mesh2.position.set(1.3, 1.05, 1);  // 将 X 轴位置设为 5
+      mesh2.rotation.y = Math.PI / 4;  // 绕 X 轴旋转 90 度
 
       scene.add(mesh2);
     }, (xhr) => {

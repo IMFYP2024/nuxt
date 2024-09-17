@@ -171,6 +171,8 @@ const handleOutsideClick = (event) => {
 
 .icon {
   font-size: 24px;
+  color: red;
+
 }
 
 .modal-image {

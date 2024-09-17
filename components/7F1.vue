@@ -48,7 +48,7 @@
       left: 260, 
       width: 25, 
       height: 25, 
-      icon: 'bi:1-circle', 
+      icon: 'mdi:number-1-circle', 
       name: '課後輔導區', 
       description: '有課堂的問題都可以去', 
       image: '/Images/iCloud/7F3.JPEG',
@@ -60,7 +60,7 @@
       left: 100, 
       width: 25, 
       height: 25, 
-      icon: 'bi:2-circle', 
+      icon: 'mdi:number-2-circle', 
       name: '雲端特色教學電腦教室', 
       description: '資工都一定會待的地方',
       image:"/Images/iCloud/7F2.JPEG",
@@ -72,7 +72,7 @@
       left: 300, 
       width: 25, 
       height: 25, 
-      icon: 'bi:3-circle', 
+      icon: 'mdi:number-3-circle', 
       name: '電腦教室', 
       description: '普遍是資工系學生上課的地方',
       image:"/Images/iCloud/7F4.JPEG",
@@ -144,6 +144,8 @@
   
   .icon {
     font-size: 24px;
+    color: red;
+
   }
   
   .modal-image {

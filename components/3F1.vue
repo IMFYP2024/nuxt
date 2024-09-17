@@ -48,7 +48,7 @@
       left: 70, 
       width: 25, 
       height: 25, 
-      icon: 'bi:1-circle', 
+      icon: 'mdi:number-1-circle', 
       name: '電腦教室', 
       description: '學生上課的地方',
       image:"/Images/iCloud/3F1.JPEG",
@@ -60,7 +60,7 @@
       left: 335, 
       width: 25, 
       height: 25, 
-      icon: 'bi:2-circle', 
+      icon: 'mdi:number-2-circle', 
       name: '教學資訊組', 
       description: '負責電腦教室教室管理與使用，數位學習平臺',
       image:"/Images/iCloud/3F2.JPEG",
@@ -72,7 +72,7 @@
       left: 335, 
       width: 25, 
       height: 25, 
-      icon: 'bi:3-circle', 
+      icon: 'mdi:number-3-circle', 
       name: '電腦教室', 
       description: '學生上課的地方',
       image:"/Images/iCloud/3F3.JPEG",
@@ -155,6 +155,8 @@
   
   .icon {
     font-size: 24px;
+    color: red;
+
   }
   
   .modal-image {

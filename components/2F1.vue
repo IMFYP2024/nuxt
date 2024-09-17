@@ -48,7 +48,7 @@
       left: 90, 
       width: 20, 
       height: 20,
-      icon: 'bi:1-circle', 
+      icon: 'mdi:number-1-circle', 
       name: '校務資訊組', 
       description: '',
       image:"/Images/iCloud/2F4.JPEG",
@@ -158,6 +158,8 @@
   
   .icon {
     font-size: 24px;
+    color: red;
+
   }
   
   .modal-image {

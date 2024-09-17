@@ -48,7 +48,7 @@ const areas = [
     left: 80, 
     width: 25, 
     height: 25, 
-    icon: 'bi:1-circle', 
+    icon: 'mdi:number-1-circle', 
     name: '成績單以及冷氣儲值機', 
     description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
     image:"/Images/1.1.1.png",
@@ -111,6 +111,7 @@ const handleOutsideClick = (event) => {
 
 .icon {
   font-size: 24px;
+  color: red;
 }
 
 .modal-image {

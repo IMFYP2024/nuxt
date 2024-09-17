@@ -49,7 +49,7 @@
       left: 70, 
       width: 30, 
       height: 30, 
-      icon: 'bi:1-circle', 
+      icon: 'mdi:number-1-circle', 
       name: '第三韻律教室', 
       description: '好像會有上有氧運動體育課的人會來',
       image:"/Images/iCloud/9F3.JPEG",
@@ -61,7 +61,7 @@
       left: 320, 
       width: 30, 
       height: 30, 
-      icon: 'bi:2-circle', 
+      icon: 'mdi:number-2-circle', 
       name: '第一和第二韻律教室', 
       description: '好像會有上有氧運動體育課的人會來',
       image:"/Images/iCloud/9F2.JPEG",
@@ -133,6 +133,8 @@
   
   .icon {
     font-size: 24px;
+    color: red;
+
   }
   
   .modal-image {

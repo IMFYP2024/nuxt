@@ -146,7 +146,8 @@
   
   .icon {
     font-size: 24px;
-    color: black;
+    color: red;
+
   }
   
   .modal-image {
