@@ -40,9 +40,7 @@ export default {
 </script>
 
 <style>
-.background{
-  
-}
+
 
 @media (max-height: 670px) {
   .college-selector-page h2 {

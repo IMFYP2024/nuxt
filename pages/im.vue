@@ -67,15 +67,49 @@
         </div>
 
         <div v-if="currentDetail === '課程'">
-          <h2>課程介紹</h2>
-          <h3>大一</h3>
-          <p>微積分、計算機概論、會計學、經濟學、企業管理、程式設計、實用日語會話(一)、溝通與簡報、資訊網路</p>
-          <h3>大二</h3>
-          <p>統計學、行銷/生產管理、財務/人力資源管理、資料結構、JAVA程式設計、資料庫管理系統、資訊網路、線性代數、英語會話、實用英文、作業系統、演算法、.NET程式設計、電腦繪圖、Linux系統實務</p>
-          <h3>大三</h3>
-          <p>科技英文、物聯網概論、物件導向系統分析、管理資訊系統、企業資源規劃、多媒體系統、人機介面設計、資訊倫理、軟體工程、資料庫專題、跨平台程式設計、巨量資料分析、知識管理、顧客關係管理、網路規劃與管理、伺服器建置與管理、行動程式設計、資訊安全、網際系統設計</p>
-          <h3>大四</h3>
-          <p>電子商務、資訊管理實務專題、供應鏈管理、社群媒體經營、決策支援系統、專案管理、行動服務、人工智慧、雲端服務技術、數位學習、互動展示科技應用</p>
+          <h2>課程</h2>
+          <div class="outer-container">
+    <!-- Custom dropdown for selecting academic year -->
+    <div class="year-selector">
+      <div class="custom-select" @click="toggleDropdown">
+        <div class="selected-option">
+          {{ selectedYear }}
+          <i class="fi fi-rr-caret-down"></i> <!-- Added icon here -->
+        </div>
+        <div class="options" v-if="isDropdownOpen">
+          <div
+            v-for="year in years"
+            :key="year"
+            @click.stop="selectYear(year)"
+            class="option"
+          >
+            {{ year }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course list -->
+    <div class="course-list">
+      <div v-for="(course, index) in currentCourses" :key="index" class="course-item">
+        <div class="course-required">
+          <img :src="course.type === '必修' ? requiredIcon : electiveIcon" alt="course type icon" class="course-type-icon">
+        </div>
+        <div class="course-name">{{ course.name }}</div>
+        <div class="course-credits">{{ course.credits }}</div>
+      </div>
+    </div>
+
+    <!-- Total credits summary -->
+    <div class="credits-summary">
+      <div>
+        <img :src="requiredIcon" alt="required icon" class="course-type-icon">
+        {{ totalRequiredCredits }} 學分
+        <img :src="electiveIcon" alt="elective icon" class="course-type-icon">
+        {{ totalElectiveCredits }} 學分
+      </div>
+    </div>
+  </div>
         </div>
 
         <div v-if="currentDetail === '專題成果'">
@@ -152,8 +186,90 @@ export default {
           { name: '林佩璇', image: '/Images/jwi.jpg', expertise: '新興科技應用、資訊管理、虛實整合、問題導向學習應用、STEAM跨領域教學策略' },
           { name: '陳美鐘', image: '/Images/zon.png', expertise: '資訊安全、程式設計、資訊系統管理、網路管理、資料庫管理' }
         ]
-      }
+      },
+      selectedYear: '大一', // Default selected year
+      isDropdownOpen: false, // Control the dropdown state
+      years: ['大一', '大二', '大三', '大四'], // Dropdown options
+      currentCourses: [], // List of courses for the selected year
+      courses: {
+        大一: [
+          { type: '必修', name: '微積分', credits: 3 },
+          { type: '必修', name: '計算機概論', credits: 3 },
+          { type: '必修', name: '會計學', credits: 2 },
+          { type: '必修', name: '經濟學', credits: 2 },
+          { type: '必修', name: '企業管理', credits: 2 },
+          { type: '必修', name: '程式設計', credits: 2 },
+          { type: '選修', name: '實用日語會話(一)', credits: 2 },
+          { type: '選修', name: '溝通與簡報', credits: 3 },
+          { type: '選修', name: '資訊網路', credits: 3 },
+        ],
+        大二: [
+          { type: '必修', name: '統計學', credits: 3 },
+          { type: '必修', name: '行銷/生產管理', credits: 3 },
+          { type: '必修', name: '財務/人力資源管理', credits: 3 },
+          { type: '必修', name: '資料結構', credits: 3 },
+          { type: '必修', name: 'JAVA程式設計', credits: 3 },
+          { type: '必修', name: '資料庫管理系統', credits: 3 },
+          { type: '必修', name: '資訊網路', credits: 2 },
+          { type: '選修', name: '線性代數', credits: 3 },
+          { type: '選修', name: '英語會話', credits: 2 },
+          { type: '選修', name: '實用英文', credits: 2 },
+          { type: '選修', name: '作業系統', credits: 3 },
+          { type: '選修', name: '演算法', credits: 3 },
+          { type: '選修', name: '.NET程式設計', credits: 3 },
+          { type: '選修', name: '電腦繪圖', credits: 3 },
+          { type: '選修', name: 'Linux系統實務', credits: 3 },
+        ],
+        大三: [
+          { type: '必修', name: '科技英文', credits: 3 },
+          { type: '必修', name: '物聯網概論', credits: 3 },
+          { type: '必修', name: '物件導向系統分析', credits: 3 },
+          { type: '必修', name: '管理資訊系統', credits: 3 },
+          { type: '必修', name: '企業資源規劃', credits: 3 },
+          { type: '必修', name: '多媒體系統', credits: 3 },
+          { type: '必修', name: '人機介面設計', credits: 3 },
+          { type: '選修', name: '資訊倫理', credits: 3 },
+          { type: '選修', name: '軟體工程', credits: 3 },
+          { type: '選修', name: '資料庫專題', credits: 2 },
+          { type: '選修', name: '跨平台程式設計', credits: 3 },
+          { type: '選修', name: '巨量資料分析', credits: 2 },
+          { type: '選修', name: '知識管理', credits: 2 },
+          { type: '選修', name: '顧客關係管理', credits: 3 },
+          { type: '選修', name: '網路規劃與管理', credits: 3 },
+          { type: '選修', name: '伺服器建置與管理', credits: 3 },
+          { type: '選修', name: '行動程式設計', credits: 3 },
+          { type: '選修', name: '資訊安全', credits: 3 },
+          { type: '選修', name: '網際系統設計', credits: 3 },
+        ],
+        大四: [
+          { type: '必修', name: '電子商務', credits: 3 },
+          { type: '選修', name: '資訊管理實務專題', credits: 3 },
+          { type: '選修', name: '供應鏈管理', credits: 3 },
+          { type: '選修', name: '社群媒體經營', credits: 3 },
+          { type: '選修', name: '決策支援系統', credits: 3 },
+          { type: '選修', name: '專案管理', credits: 3 },
+          { type: '選修', name: '行動服務', credits: 3 },
+          { type: '選修', name: '人工智慧', credits: 3 },
+          { type: '選修', name: '雲端服務技術', credits: 3 },
+          { type: '選修', name: '數位學習', credits: 3 },
+          { type: '選修', name: '互動展示科技應用', credits: 3 },
+        ],
+      },
+      requiredIcon: '/Images/IMG_0047.png', // Replace with the path to the required icon
+      electiveIcon: '/Images/IMG_0046.png',
     };
+  },
+  computed: {
+    totalRequiredCredits() {
+      return this.currentCourses
+        .filter(course => course.type === '必修')
+        .reduce((total, course) => total + course.credits, 0);
+    },
+    totalElectiveCredits() {
+      return this.currentCourses
+        .filter(course => course.type === '選修')
+        .reduce((total, course) => total + course.credits, 0);
+    },
   },
   methods: {
     toggle() {
@@ -247,7 +363,18 @@ export default {
     },
     closeModal() {
       this.isModalVisible = false;
-    }
+    },
+    toggleDropdown() {
+      this.isDropdownOpen = !this.isDropdownOpen;
+    },
+    selectYear(year) {
+      this.selectedYear = year;
+      this.updateCourseList();
+      this.isDropdownOpen = false; // Close the dropdown after selecting a year
+    },
+    updateCourseList() {
+      this.currentCourses = this.courses[this.selectedYear];
+    },
   },
   mounted() {
     setTimeout(() => {
@@ -408,5 +535,82 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+}
+.options {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff0;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1000;
+  width: 200px;
+  }
+.custom-select {
+   width: 200px;
+  background-color: #ff0;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.option {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+.course-type-icon {
+  width: 40px; /* Adjusted size for better alignment */
+  height: 40px;
+}
+.course-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: -10px 0;
+  border-bottom: 1px solid #ccc;
+  width: 80%;
+  max-width: 400px;
+}
+.course-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.selected-option {
+  font-weight: bold;
+}
+.year-selector {
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center the dropdown *//* Center the dropdown */
+}
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: -20%;
+}
+.course-name {
+  flex-grow: 1;
+  text-align: center; /* Center align the course name */
+}
+
+.course-credits {
+  text-align: center; /* Center align the credits */
+  font-weight: bold;
+  min-width: 30px; /* Ensure fixed space for credit numbers */
+}
+
+.credits-summary {
+  margin-top: 20px;
+  text-align: center;
 }
 </style>

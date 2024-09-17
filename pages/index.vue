@@ -56,13 +56,13 @@ export default {
         this.addObjectToScene(glb.scene, { x: 0, y: 4, z: -1 }, 1, 0, 'fontObject');
       });
       loader.load('/Images/Ar_darkblue.glb', (glb) => {
-        this.addObjectToScene(glb.scene, { x: 0, y: 1.5, z: 0 }, 0.5, Math.PI / 2, 'glbObject1');
+        this.addObjectToScene(glb.scene, {  x: 0, y: -1.5, z: 0}, 0.5, Math.PI / 2, 'glbObject1');
       });
       loader.load('/Images/introducedark1.glb', (glb) => {
         this.addObjectToScene(glb.scene, { x: 0, y: 0, z: 0 }, 0.5, Math.PI / 2, 'glbObject2');
       });
       loader.load('/Images/about.glb', (glb) => {
-        this.addObjectToScene(glb.scene, { x: 0, y: -1.5, z: 0 }, 0.5, Math.PI / 2, 'glbObject3');
+        this.addObjectToScene(glb.scene, { x: 0, y: 1.5, z: 0 }, 0.5, Math.PI / 2, 'glbObject3');
       });
       /*loader.load('/Images/pointcard_darkblue.glb', (glb) => {
         this.addObjectToScene(glb.scene, { x: 0, y: -2.3, z: 0 }, 0.5, Math.PI / 2, 'glbObject4');
