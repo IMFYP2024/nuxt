@@ -8,7 +8,7 @@
       <template #itemText>
         <div>
           <img src="public/Images/puzzle.png" alt="Sample Photo" class="modal-image"/>
-          <p>點擊下方的照片與上方的照片即可交換照片，完成拼圖後會有神秘力量</p>
+          <p>這個是拼圖完成後的模樣，在關閉視窗後，請點擊下方的照片與上方的照片即可交換照片，可隨時點擊圖標來反復觀看範例圖</p>
         </div>
       </template>
     </Modal>
@@ -50,6 +50,9 @@
         <p>我們學校是1919年6月所創立的至今已經有一百零五年的歷史了，我們學校的全校學生總數: {{ totalStudentCount }} 人，教師總數: {{ totalTeacherCount }} 人，
           由此可見我們學校的師資以及學生是很龐大的。學校有幾個校區，其中三民校區是最為人所熟知的校區之一，該校區有多棟建築物，如行政大樓、資訊館、中正大樓、活動中心、昌明樓等，為學生提供優質的學習環境。</p>
       </div>
+      <router-link to="/" class="nav-link">
+          <Icon name="streamline:return-2-solid" class="large-icon" />
+        </router-link>
     </div>
   </div>
 </template>
@@ -66,7 +69,7 @@ const otherTile = ref(null);
 const boardTiles = ref([]);
 const pieces = ref([]);
 const turns = ref(0);
-const isComplete = ref(false);
+const isComplete = ref(true);
 const modalTitle = ref('範例圖');
 const showModal = ref(true);
 
