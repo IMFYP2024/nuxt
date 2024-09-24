@@ -187,7 +187,7 @@ export default {
           { name: '陳美鐘', image: '/Images/zon.png', expertise: '資訊安全、程式設計、資訊系統管理、網路管理、資料庫管理' }
         ]
       },
-      selectedYear: '大一', // Default selected year
+      selectedYear: '請選擇年級', // Default selected year
       isDropdownOpen: false, // Control the dropdown state
       years: ['大一', '大二', '大三', '大四'], // Dropdown options
       currentCourses: [], // List of courses for the selected year
