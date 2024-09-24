@@ -155,36 +155,36 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜琇森', image: '/Images/sen.jpg', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃秀美', image: '/Images/mei.jpg', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          { name: '陳大仁', image: '/Images/len.jpg', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭國倫', image: '/Images/lun.jpg', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '柯志坤', image: '/Images/kun.jpg', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
-          { name: '黃天麒', image: '/Images/chi.jpg', expertise: '數位學習、創造力培育、知識工程、教育科技、創客教育' },
-          { name: '連俊瑋', image: '/Images/mei.jpg', expertise: '資訊管理、電子商務、電子化企業、服務科學與設計思考、醫療資訊管理' },
-          { name: '林真伊', image: '/Images/ye.png', expertise: '料探勘、推薦系統、社會網絡分析' },
-          { name: '王健亞', image: '/Images/ya.jpg', expertise: '工作排程、影像處理、電腦視覺、演算法、資料庫系統、專利檢索' }
+          { name: '姜老師', image: '/Images/teacher.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
+          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
+          { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
+          { name: '蕭老師', image: '/Images/teacher.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
+          { name: '柯老師', image: '/Images/teacher.png', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
+          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、創造力培育、知識工程、教育科技、創客教育' },
+          { name: '連老師', image: '/Images/teacher.png', expertise: '資訊管理、電子商務、電子化企業、服務科學與設計思考、醫療資訊管理' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '料探勘、推薦系統、社會網絡分析' },
+          { name: '王老師', image: '/Images/teacher.png', expertise: '工作排程、影像處理、電腦視覺、演算法、資料庫系統、專利檢索' }
         ],
         副教授: [
-          { name: '王淑玲', image: '/Images/lin.jpg', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖士寬', image: '/Images/kuan.jpg', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱榮問', image: '/Images/wen.jpg', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張玲娥', image: '/Images/oi.jpg', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '何瑞枝', image: '/Images/zi.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
-          { name: '林文彥', image: '/Images/yan.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
-          { name: '侯幸雨', image: '/Images/yu.jpg', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
-          { name: '林冠妤', image: '/Images/guanyu.jpg', expertise: '電子商務、數位行銷、社群媒體、消費者行為、數量方法分析' }
+          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
+          { name: '廖老師', image: '/Images/teacher.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
+          { name: '駱老師', image: '/Images/teacher.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
+          { name: '何老師', image: '/Images/teacher.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
+          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '電子商務、數位行銷、社群媒體、消費者行為、數量方法分析' }
         ],
         助理教授: [
-          { name: '羅張瓊誼', image: '/Images/yee.jpg', expertise: '科技教育、資訊管理' },
-          { name: '邱淑芬', image: '/Images/fen.jpg', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '許雯絞', image: '/Images/j.jpg', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
-          { name: '戴偉勝', image: '/Images/weisen.jpg', expertise: '多媒體領域(含3D、VR/AR)、資訊系統' },
-          { name: '周殷菀', image: '/Images/wan.jpg', expertise: '科技教育、擴增實境、人機互動設計' },
-          { name: '曾建維', image: '/Images/kun.jpg', expertise: '教育大數據、測驗統計與評量、數位學習' },
-          { name: '李銘峰', image: '/Images/chi.jpg', expertise: '人工智慧、創新顯示互動設計、眼動偵測分析、情感運算、生理資訊感測、行動運算、異質系統整合與開發' },
-          { name: '林佩璇', image: '/Images/jwi.jpg', expertise: '新興科技應用、資訊管理、虛實整合、問題導向學習應用、STEAM跨領域教學策略' },
-          { name: '陳美鐘', image: '/Images/zon.png', expertise: '資訊安全、程式設計、資訊系統管理、網路管理、資料庫管理' }
+          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
+          { name: '邱老師', image: '/Images/teacher.png', expertise: '資訊安全、網路安全、影像處理' },
+          { name: '許老師', image: '/Images/teacher.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
+          { name: '戴老師', image: '/Images/teacher.png', expertise: '多媒體領域(含3D、VR/AR)、資訊系統' },
+          { name: '周老師', image: '/Images/teacher.png', expertise: '科技教育、擴增實境、人機互動設計' },
+          { name: '曾老師', image: '/Images/teacher.png', expertise: '教育大數據、測驗統計與評量、數位學習' },
+          { name: '李老師', image: '/Images/teacher.png', expertise: '人工智慧、創新顯示互動設計、眼動偵測分析、情感運算、生理資訊感測、行動運算、異質系統整合與開發' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '新興科技應用、資訊管理、虛實整合、問題導向學習應用、STEAM跨領域教學策略' },
+          { name: '陳老師', image: '/Images/teacher.png', expertise: '資訊安全、程式設計、資訊系統管理、網路管理、資料庫管理' }
         ]
       },
       selectedYear: '請選擇年級', // Default selected year
