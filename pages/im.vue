@@ -310,16 +310,16 @@ export default {
       electiveIcon: '/Images/IMG_0046.png',
         activeSection: '專題',  // 默認顯示 "專題" 部分
       topics: [
-        { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/images/test.png' },
-        { rank: '第二名', title: '環控偵測防爆IoT', teacher: '陳老師', student: '小雯', image: '/images/test.png' },
-        { rank: '第三名', title: '詐騙護手', teacher: '王老師', student: '阿呆', image: '/images/test.png' },
-        { rank: '第四名', title: '蘋狗', teacher: '王老師', student: '嘿嘿', image: '/images/test.png' },
-        { rank: '第五名', title: 'boombom', teacher: '王老師', student: '哇哇', image: '/images/test.png' },
+        { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/Images/test.png' },
+        { rank: '第二名', title: '環控偵測防爆IoT', teacher: '陳老師', student: '小雯', image: '/Images/test.png' },
+        { rank: '第三名', title: '詐騙護手', teacher: '王老師', student: '阿呆', image: '/Images/test.png' },
+        { rank: '第四名', title: '蘋狗', teacher: '王老師', student: '嘿嘿', image: '/Images/test.png' },
+        { rank: '第五名', title: 'boombom', teacher: '王老師', student: '哇哇', image: '/Images/test.png' },
       ],
       competitions: [
-        { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/images/test.jpg' },
-        { rank: '第二名', title: '環控偵測防爆IoT', teacher: '陳老師', student: '小雯', image: '/images/test.jpg' },
-        { rank: '第三名', title: '詐騙護手', teacher: '王老師', student: '阿呆', image: '/images/test.jpg' },
+        { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/Images/test.jpg' },
+        { rank: '第二名', title: '環控偵測防爆IoT', teacher: '陳老師', student: '小雯', image: '/Images/test.jpg' },
+        { rank: '第三名', title: '詐騙護手', teacher: '王老師', student: '阿呆', image: '/Images/test.jpg' },
       ],
     };
   },
