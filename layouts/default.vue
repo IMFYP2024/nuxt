@@ -15,8 +15,8 @@
         <span>首頁</span>
       </router-link>
       <router-link to="/point" class="nav-link" :class="{ 'active': currentPage === 'point' }">
-        <i class="fas fa-star"></i>
-        <span>集點</span>
+        <i class="fas fa-building"></i>
+        <span>大樓</span>
       </router-link>
       <router-link to="/deintroduce" class="nav-link" :class="{ 'active': currentPage === 'deintroduce' }">
         <i class="fas fa-book"></i>
