@@ -55,7 +55,7 @@ export default {
       loader.load('/Images/fly_c.glb', (glb) => {
         this.addObjectToScene(glb.scene, { x: 0, y: 4, z: -1 }, 1, 0, 'fontObject');
       });
-      loader.load('/Images/Ar_darkblue.glb', (glb) => {
+      loader.load('/Images/ARR.glb', (glb) => {
         this.addObjectToScene(glb.scene, {  x: 0, y: -1.5, z: 0}, 0.5, Math.PI / 2, 'glbObject1');
       });
       loader.load('/Images/introducedark1.glb', (glb) => {

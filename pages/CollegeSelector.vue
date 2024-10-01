@@ -73,8 +73,12 @@ export default {
   flex-direction: column;
   align-items: center;
   background-image: url('/Images/bg.jpg');
-  height: 100vh;
-    width: 100vw;
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 100vh; /* 設置高度為視窗高度 */
+  width: 100vw;
+  overflow: hidden;
 }
 
 .college-grid {

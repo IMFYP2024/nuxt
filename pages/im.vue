@@ -92,14 +92,22 @@
     <!-- Course list -->
     <div class="course-list">
       <div v-for="(course, index) in currentCourses" :key="index" class="course-item">
-        <div class="course-required">
-          <img :src="course.type === '必修' ? requiredIcon : electiveIcon" alt="course type icon" class="course-type-icon">
-        </div>
-        <div class="course-name">{{ course.name }}</div>
-        <div class="course-credits">{{ course.credits }}</div>
+    <div class="course-required">
+      <img :src="course.type === '必修' ? requiredIcon : electiveIcon" alt="course type icon" class="course-type-icon">
+    </div>
+    <div class="course-name">
+      {{ course.name }}
+        <i class="fi fi-br-info" @click="showCreditModal('一、二年級一學期不能小於16學分，三、四年級一學期不可以小於9學分，全年級一學期不可以多餘25')"></i>
+      </div>
+      <div class="course-credits">{{ course.credits }}</div>
       </div>
     </div>
-
+  <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
+    <div class="modal-content" @click.stop>
+      <p>{{ creditMessage }}</p>
+      <button @click="closeCreditModal">關閉</button>
+    </div>
+  </div>
     <!-- Total credits summary -->
     <div class="credits-summary">
       <div>
@@ -193,7 +201,8 @@ export default {
   },
   data() {
     return {
-      
+      isCreditModalVisible: false, // 控制彈出視窗的顯示
+      creditMessage: '',
       isActive: false,
       isMoved: false,
       showDetail: false,
@@ -336,6 +345,13 @@ export default {
     },
   },
   methods: {
+     showCreditModal(message) {
+    this.creditMessage = message;
+    this.isCreditModalVisible = true;
+    },
+    closeCreditModal() {
+      this.isCreditModalVisible = false;
+    },
     toggle() {
       this.isActive = !this.isActive;
     },
@@ -461,6 +477,7 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all/all.css');
 .outer-container {
   align-items: center;
   position: relative;
@@ -770,5 +787,26 @@ button {
 .button-toggle button.active {
   background-color: #007bff;
   color: white;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
 }
 </style>
