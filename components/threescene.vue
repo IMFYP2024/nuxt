@@ -28,7 +28,7 @@ onMounted(() => {
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setClearColor(0x000000);
+  renderer.setClearColor(0xffffff);
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -113,6 +113,38 @@ onMounted(() => {
     mesh2.rotation.y = Math.PI / 4;
 
     scene.add(mesh2);
+  });
+
+  loader.load('jsdl.glb', (gltf) => {
+    const mesh3 = gltf.scene;
+    mesh3.name = 'glbObject2';  // 设置名称
+    mesh3.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh3.scale.set(0.5, 0.5, 0.5);
+    mesh3.position.set(0, 2.55, 3);
+    mesh3.rotation.y = Math.PI / 4;
+
+    scene.add(mesh3);
+  });
+
+  loader.load('js.glb', (gltf) => {
+    const mesh4 = gltf.scene;
+    mesh4.name = 'glbObject2';  // 设置名称
+    mesh4.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh4.scale.set(0.5, 0.5, 0.5);
+    mesh4.position.set(1.3, 2.55, 1);
+    mesh4.rotation.y = Math.PI / 4;
+
+    scene.add(mesh4);
   });
 
   // 添加事件监听器
