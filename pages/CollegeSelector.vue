@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       tabs: [
-        { name: '資訊與流通學院', type: 'info', icon: 'fi fi-bs-computer', color: '#83C3DA' },
+        { name: '資訊學院', type: 'info', icon: 'fi fi-bs-computer', color: '#83C3DA' },
         { name: '商學院', type: 'business', icon: 'fi fi-bs-corporate', color: '#8A95CA' },
         { name: '設計學院', type: 'design', icon: 'fi fi-br-paintbrush-pencil', color: '#B69DD5' },
         { name: '智慧產業學院', type: 'smart', icon: 'fi fi-rs-microchip-ai', color: '#9FB6C6' },
@@ -73,8 +73,12 @@ export default {
   flex-direction: column;
   align-items: center;
   background-image: url('/Images/bg.jpg');
-  height: 100vh;
-    width: 100vw;
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 100vh; /* 設置高度為視窗高度 */
+  width: 100vw;
+  overflow: hidden;
 }
 
 .college-grid {

@@ -68,7 +68,7 @@
 
         <div v-if="currentDetail === '課程'">
           <h2>課程</h2>
-          <div class="outer-container">
+          <div class="">
     <!-- Custom dropdown for selecting academic year -->
     <div class="year-selector">
       <div class="custom-select" @click="toggleDropdown">
@@ -92,14 +92,22 @@
     <!-- Course list -->
     <div class="course-list">
       <div v-for="(course, index) in currentCourses" :key="index" class="course-item">
-        <div class="course-required">
-          <img :src="course.type === '必修' ? requiredIcon : electiveIcon" alt="course type icon" class="course-type-icon">
-        </div>
-        <div class="course-name">{{ course.name }}</div>
-        <div class="course-credits">{{ course.credits }}</div>
+    <div class="course-required">
+      <img :src="course.type === '必修' ? requiredIcon : electiveIcon" alt="course type icon" class="course-type-icon">
+    </div>
+    <div class="course-name">
+      {{ course.name }}
+        <i class="fi fi-br-info" @click="showCreditModal('一、二年級一學期不能小於16學分，三、四年級一學期不可以小於9學分，全年級一學期不可以多餘25')"></i>
+      </div>
+      <div class="course-credits">{{ course.credits }}</div>
       </div>
     </div>
-
+  <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
+    <div class="modal-content" @click.stop>
+      <p>{{ creditMessage }}</p>
+      <button @click="closeCreditModal">關閉</button>
+    </div>
+  </div>
     <!-- Total credits summary -->
     <div class="credits-summary">
       <div>
@@ -112,22 +120,66 @@
   </div>
         </div>
 
-        <div v-if="currentDetail === '專題成果'">
-          <h2>專題成果</h2>
-          <h3>專題是什麼?</h3>
-          <p>在升上大三時，有一個特別重要的課程-專題，這不止關乎著你能不能畢業，在製作專題時會獲得巨大的成長，甚至比前兩年所學習到的知識還要更有用更實用，而專題會是可以提早找老師以及組員的，非常建議大家在大一時就好好物色喜歡的組員以及老師，在大二升大三的暑假直接帶著組員跟老師面談，這樣老師也會有充足的時間去訓練你們，或是額外參加比賽等等，而專題製作會結束在大四那一年的12月，有科系舉辦的專題展，也很建議學弟妹可以去看看，看看那一年流行什麼、尋找靈感，去實際的體驗學長姐的作品，對於之後的專題構想也會有幫助!</p>
-          <h3>第一名:食在好孕</h3>
-          <p></p>
-          <h3>第一名:環控偵測防爆IoT系統</h3>
-          <p></p>
-          <h3>第二名:以數位轉型改善偏鄉學生程式與資訊科技素養</h3>
-          <p></p>
-          <h3>第二名:詐騙護手</h3>
-          <p></p>
-          <h3>第三名:蘋狗</h3>
-          <p></p>
-          <h3>第三名:智能垃圾自動分類機</h3>
-          <p></p>
+        <div v-if="currentDetail === '專題競賽'">
+          <div class="button-toggle">
+      <button :class="{ active: activeSection === '專題' }" @click="toggleSection('專題')">專題</button>
+      <button :class="{ active: activeSection === '競賽' }" @click="toggleSection('競賽')">競賽</button>
+    </div>
+
+    <!-- Swiper 輪播圖部分 -->
+    <div class="swiper-container">
+      <client-only>
+        <swiper
+          
+          :slides-per-view="1.3"
+          :space-between="20"
+          centeredSlides="true"
+          :navigation="false"
+          loop="true"
+          grab-cursor="true"
+          v-if="activeSection === '專題'"
+        >
+          <!-- 專題卡片樣式 -->
+          <swiper-slide v-for="(item, index) in topics" :key="index" class="carousel-item">
+            <div class="card">
+              <img :src="item.image" alt="Project Image" class="carousel-image" />
+              <div class="card-content">
+                <h3>{{ item.title }}</h3>
+                <p>名次: {{ item.rank }}</p>
+                <p>老師: {{ item.teacher }}</p>
+                <p>專題成員: {{ item.student }}</p>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper>
+      </client-only>
+
+      <client-only>
+        <swiper
+          
+          :slides-per-view="1.3"
+          :space-between="20"
+          centeredSlides="true"
+          :navigation="false"
+          loop="true"
+          grab-cursor="true"
+          v-if="activeSection === '競賽'"
+        >
+          <!-- 競賽卡片樣式 -->
+          <swiper-slide v-for="(item, index) in competitions" :key="index" class="carousel-item">
+            <div class="card">
+              <img :src="item.image" alt="Competition Image" class="carousel-image" />
+              <div class="card-content">
+                <h3>{{ item.title }}</h3>
+                <p>名次: {{ item.rank }}</p>
+                <p>老師: {{ item.teacher }}</p>
+                <p>競賽成員: {{ item.student }}</p>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper>
+      </client-only>
+    </div>
         </div>
 
       </div>
@@ -139,52 +191,60 @@
 import { Chart, registerables } from 'chart.js';
 import { nextTick } from 'vue';
 Chart.register(...registerables);
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/swiper-bundle.min.css'; 
 
 export default {
+  components: {
+    Swiper,
+    SwiperSlide
+  },
   data() {
     return {
+      isCreditModalVisible: false, // 控制彈出視窗的顯示
+      creditMessage: '',
       isActive: false,
       isMoved: false,
       showDetail: false,
       isModalVisible: false, // 控制彈出視窗的顯示
       selectedProfessor: null, // 保存點擊的老師詳細信息
-      items: ['科系特色', '師資', '課程', '專題成果'],
+      items: ['科系特色', '師資', '課程', '專題競賽'],
       currentDetail: '',
       activeIndex: null, // 保存被點擊的長條索引
       selectedTitle: '', // 保存被點擊的類別名稱
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜琇森', image: '/Images/sen.jpg', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃秀美', image: '/Images/mei.jpg', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          { name: '陳大仁', image: '/Images/len.jpg', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭國倫', image: '/Images/lun.jpg', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '柯志坤', image: '/Images/kun.jpg', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
-          { name: '黃天麒', image: '/Images/chi.jpg', expertise: '數位學習、創造力培育、知識工程、教育科技、創客教育' },
-          { name: '連俊瑋', image: '/Images/mei.jpg', expertise: '資訊管理、電子商務、電子化企業、服務科學與設計思考、醫療資訊管理' },
-          { name: '林真伊', image: '/Images/ye.png', expertise: '料探勘、推薦系統、社會網絡分析' },
-          { name: '王健亞', image: '/Images/ya.jpg', expertise: '工作排程、影像處理、電腦視覺、演算法、資料庫系統、專利檢索' }
+          { name: '姜老師', image: '/Images/teacher.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
+          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
+          { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
+          { name: '蕭老師', image: '/Images/teacher.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
+          { name: '柯老師', image: '/Images/teacher.png', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
+          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、創造力培育、知識工程、教育科技、創客教育' },
+          { name: '連老師', image: '/Images/teacher.png', expertise: '資訊管理、電子商務、電子化企業、服務科學與設計思考、醫療資訊管理' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '料探勘、推薦系統、社會網絡分析' },
+          { name: '王老師', image: '/Images/teacher.png', expertise: '工作排程、影像處理、電腦視覺、演算法、資料庫系統、專利檢索' }
         ],
         副教授: [
-          { name: '王淑玲', image: '/Images/lin.jpg', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖士寬', image: '/Images/kuan.jpg', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱榮問', image: '/Images/wen.jpg', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張玲娥', image: '/Images/oi.jpg', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '何瑞枝', image: '/Images/zi.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
-          { name: '林文彥', image: '/Images/yan.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
-          { name: '侯幸雨', image: '/Images/yu.jpg', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
-          { name: '林冠妤', image: '/Images/guanyu.jpg', expertise: '電子商務、數位行銷、社群媒體、消費者行為、數量方法分析' }
+          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
+          { name: '廖老師', image: '/Images/teacher.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
+          { name: '駱老師', image: '/Images/teacher.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
+          { name: '何老師', image: '/Images/teacher.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
+          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '電子商務、數位行銷、社群媒體、消費者行為、數量方法分析' }
         ],
         助理教授: [
-          { name: '羅張瓊誼', image: '/Images/yee.jpg', expertise: '科技教育、資訊管理' },
-          { name: '邱淑芬', image: '/Images/fen.jpg', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '許雯絞', image: '/Images/j.jpg', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
-          { name: '戴偉勝', image: '/Images/weisen.jpg', expertise: '多媒體領域(含3D、VR/AR)、資訊系統' },
-          { name: '周殷菀', image: '/Images/wan.jpg', expertise: '科技教育、擴增實境、人機互動設計' },
-          { name: '曾建維', image: '/Images/kun.jpg', expertise: '教育大數據、測驗統計與評量、數位學習' },
-          { name: '李銘峰', image: '/Images/chi.jpg', expertise: '人工智慧、創新顯示互動設計、眼動偵測分析、情感運算、生理資訊感測、行動運算、異質系統整合與開發' },
-          { name: '林佩璇', image: '/Images/jwi.jpg', expertise: '新興科技應用、資訊管理、虛實整合、問題導向學習應用、STEAM跨領域教學策略' },
-          { name: '陳美鐘', image: '/Images/zon.png', expertise: '資訊安全、程式設計、資訊系統管理、網路管理、資料庫管理' }
+          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
+          { name: '邱老師', image: '/Images/teacher.png', expertise: '資訊安全、網路安全、影像處理' },
+          { name: '許老師', image: '/Images/teacher.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
+          { name: '戴老師', image: '/Images/teacher.png', expertise: '多媒體領域(含3D、VR/AR)、資訊系統' },
+          { name: '周老師', image: '/Images/teacher.png', expertise: '科技教育、擴增實境、人機互動設計' },
+          { name: '曾老師', image: '/Images/teacher.png', expertise: '教育大數據、測驗統計與評量、數位學習' },
+          { name: '李老師', image: '/Images/teacher.png', expertise: '人工智慧、創新顯示互動設計、眼動偵測分析、情感運算、生理資訊感測、行動運算、異質系統整合與開發' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '新興科技應用、資訊管理、虛實整合、問題導向學習應用、STEAM跨領域教學策略' },
+          { name: '陳老師', image: '/Images/teacher.png', expertise: '資訊安全、程式設計、資訊系統管理、網路管理、資料庫管理' }
         ]
       },
       selectedYear: '請選擇年級', // Default selected year
@@ -257,6 +317,19 @@ export default {
       },
       requiredIcon: '/Images/IMG_0047.png', // Replace with the path to the required icon
       electiveIcon: '/Images/IMG_0046.png',
+        activeSection: '專題',  // 默認顯示 "專題" 部分
+      topics: [
+        { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/Images/test.png' },
+        { rank: '第二名', title: '環控偵測防爆IoT', teacher: '陳老師', student: '小雯', image: '/Images/test.png' },
+        { rank: '第三名', title: '詐騙護手', teacher: '王老師', student: '阿呆', image: '/Images/test.png' },
+        { rank: '第四名', title: '蘋狗', teacher: '王老師', student: '嘿嘿', image: '/Images/test.png' },
+        { rank: '第五名', title: 'boombom', teacher: '王老師', student: '哇哇', image: '/Images/test.png' },
+      ],
+      competitions: [
+        { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/Images/test.jpg' },
+        { rank: '第二名', title: '環控偵測防爆IoT', teacher: '陳老師', student: '小雯', image: '/Images/test.jpg' },
+        { rank: '第三名', title: '詐騙護手', teacher: '王老師', student: '阿呆', image: '/Images/test.jpg' },
+      ],
     };
   },
   computed: {
@@ -272,9 +345,22 @@ export default {
     },
   },
   methods: {
+     showCreditModal(message) {
+    this.creditMessage = message;
+    this.isCreditModalVisible = true;
+    },
+    closeCreditModal() {
+      this.isCreditModalVisible = false;
+    },
     toggle() {
       this.isActive = !this.isActive;
     },
+    toggleSection(section) {
+    this.activeSection = section;
+    this.$nextTick(() => {
+      //this.$refs.mySwiper.update(); // 更新 Swiper 佈局
+    });
+  },
     moveAndShowIntroduction(item) {
       this.currentDetail = item;
       this.showDetail = true;
@@ -391,7 +477,9 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all/all.css');
 .outer-container {
+  align-items: center;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -582,6 +670,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 .selected-option {
   font-weight: bold;
@@ -596,7 +685,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: -20%;
+  padding: -50%;
 }
 .course-name {
   flex-grow: 1;
@@ -612,5 +701,112 @@ button {
 .credits-summary {
   margin-top: 20px;
   text-align: center;
+}
+
+
+.button-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button-toggle button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 10px;
+}
+
+.button-toggle button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+}
+.swiper-slide {
+  width: auto; /* 自動適應內容 */
+  display: flex;
+  justify-content: center;
+}
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  }
+
+
+.card {
+   background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 250px; /* 根據需要調整卡片寬度 */
+  text-align: center;
+  margin: 0 auto;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+.button-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button-toggle button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button-toggle button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
 }
 </style>

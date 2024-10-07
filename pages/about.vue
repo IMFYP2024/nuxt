@@ -72,7 +72,7 @@ const boardTiles = ref([]);
 const pieces = ref([]);
 const turns = ref(0);
 const isComplete = ref(false);
-const modalTitle = ref('範例圖');
+const modalTitle = ref('校園配置圖');
 const showModal = ref(true);
 
 const totalStudentCount = ref(0);
