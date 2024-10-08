@@ -47,24 +47,71 @@
           </div>
         </div>
 
-        <div v-if="currentDetail === '科系特色'">
-          <h2>科系特色</h2>
-          <p>學生數:249,教師數:27,上學年度畢業生數:44<br>全系24位專任(案)教師，22位具博士學位，其中教授8位，副教授7位，助理教授9位</p>
-          <p>長久以來的教育目標為培育優秀的資訊與管理人才<br>
-            四大核心領域「商業智慧」、「智慧物聯」、「巨量資料」及「互動媒體」<br>
-            四大課程模組「商業管理」、「資訊系統」、「雲端網路」、「多媒體」
-          </p>
-          <h3>發展計畫及未來展望</h3>
-          <p>•	培養資訊科技與應用之全能專業Plus人才，因應國家資訊建設之需要。<br>
-            •	爭取與國內外產官學界之學術交流與建教合作，以增廣學生之視野及實務經驗。<br>
-            •	延攬各專業應用領域之師資，推動學術研究與資訊專題實作。<br>
-            •	積極參與及舉辦各型國內外學術活動。<br>
-            •	籌設小型研討會場所，促進學術交流。<br>
-            •	增設專題研究教室。
-          </p>
-          <h3>畢業</h3>
-          <p>本系畢業生可報考資訊管理、資訊工程、數位內容、多媒 本系畢業生可報考資訊管理、資訊工程、數位內容、多媒 體及商管等相關研究所。就業工作可擔任程式設計師、網管工 程師、資料庫管理師、數位內容開發設計工程師、網頁多媒體 設計師、網站設計及管理、多媒體商務整合計畫、電子商務系 統開發、行動應用開發等工作。</p>
+      <div v-if="currentDetail === '科系特色'"> 
+         <i class="fi fi-br-menu-burger menu-icon" @click="toggleSidebar"></i>
+
+        <!-- 側邊欄 -->
+        <div class="sidebar" :class="{ 'is-open': isSidebarOpen }">
+          <div class="close-btn" @click="toggleSidebar"></div>
+          <ul>
+            <li @click="scrollToSection('科系特色')">科系特色</li>
+            <li @click="scrollToSection('發展計畫及未來展望')">發展計畫及未來展望</li>
+            <li @click="scrollToSection('畢業')">畢業</li>
+          </ul>
         </div>
+      <!-- 科系特色區塊 -->
+      
+        
+        <div id="科系特色" class="card1">
+          <h3>科系特色</h3>
+          <div class="stats-container">
+            <div class="stat-item">
+              <p>科系/全校學生數</p><br>
+              <h2>{{ studentCount }}</h2><p> / 5,528</p>
+            </div>
+            <div class="stat-item">
+              <p>科系/全校老師數</p><br>
+              <h2>{{ teacherCount }}</h2><p> / ?</p>
+            </div>
+            <div class="stat-item">
+              <p>上學年度畢業生數</p><br>
+              <h2>{{ graduateCount }}</h2>
+            </div>
+            <div class="stat-item">
+              <p>具博士學位教師</p><br>
+              <h2>{{ phdCount }}</h2>
+            </div>
+          </div>
+          <p class="description">長久以來的教育目標為培育優秀的資訊與管理人才</p>
+          <img src="/Images/imin.png" class="imin" alt="Education Objective">
+
+        </div>
+      
+
+
+      <!-- 發展計畫及未來展望區塊 -->
+       <div id="發展計畫及未來展望" class="card2">
+        <h3>發展計畫及未來展望</h3>
+        <ul>
+          <li>培養資訊科技與應用之全能專業Plus人才，因應國家資訊建設之需要。</li>
+          <li>爭取與國內外產官學界之學術交流與建教合作，以增廣學生之視野及實務經驗。</li>
+          <li>延攬各專業應用領域之師資，推動學術研究與資訊專題實作。</li>
+          <li>積極參與及舉辦各型國內外學術活動。</li>
+          <li>籌設小型研討會場所，促進學術交流。</li>
+          <li>增設專題研究教室。</li>
+        </ul>
+      </div>
+
+      <!-- 畢業區塊 -->
+        <div id="畢業" class="card3">
+          <h3>畢業</h3>
+          <p>
+            本系畢業生可報考資訊管理、資訊工程、數位內容、多媒體及商管等相關研究所。就業工作可擔任程式設計師、網管工程師、資料庫管理師、數位內容開發設計工程師、網頁多媒體設計師、網站設計及管理、多媒體商務整合計畫、電子商務系統開發、行動應用開發等工作。
+          </p>
+        </div>
+      </div>
+    </div>
+
 
         <div v-if="currentDetail === '課程'">
           <h2>課程</h2>
@@ -184,7 +231,7 @@
 
       </div>
     </div>
-  </div>
+  
 </template>
 
 <script>
@@ -199,6 +246,18 @@ export default {
     Swiper,
     SwiperSlide
   },
+   watch: {
+    // 監聽 currentDetail 的變化
+    currentDetail(newValue) {
+      if (newValue === '科系特色') {
+        this.animateCount('studentCount', 249, 2000); // 動畫持續 2 秒
+        this.animateCount('teacherCount', 27, 2000);
+        this.animateCount('graduateCount', 44, 2000);
+        this.animateCount('phdCount', 22, 2000);
+      }
+    },
+  },
+  el: '#app',
   data() {
     return {
       isCreditModalVisible: false, // 控制彈出視窗的顯示
@@ -330,6 +389,11 @@ export default {
         { rank: '第二名', title: '環控偵測防爆IoT', teacher: '陳老師', student: '小雯', image: '/Images/test.jpg' },
         { rank: '第三名', title: '詐騙護手', teacher: '王老師', student: '阿呆', image: '/Images/test.jpg' },
       ],
+      studentCount: 0,
+      teacherCount: 0,
+      graduateCount: 0,
+      phdCount: 0,
+      isSidebarOpen: false,
     };
   },
   computed: {
@@ -461,18 +525,51 @@ export default {
     updateCourseList() {
       this.currentCourses = this.courses[this.selectedYear];
     },
+    animateCount(target, endValue, duration) {
+      let startValue = 0;
+      let startTime = null;
+      const step = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = timestamp - startTime;
+        const currentValue = Math.min(
+          Math.ceil((progress / duration) * endValue),
+          endValue
+        );
+        this[target] = currentValue;
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        }
+      };
+      requestAnimationFrame(step);
+    },
+     toggleSidebar() {
+      this.isSidebarOpen = !this.isSidebarOpen;
+    },
+    // 滾動到指定的區塊
+    scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        this.toggleSidebar(); // 滾動後關閉側邊欄
+      }
+    },
   },
   mounted() {
     setTimeout(() => {
       this.isActive = true;
     });
     this.moveAndShowIntroduction(this.items[0]);
+    this.animateCount('studentCount', 249, 2000); // 動畫持續 2 秒
+    this.animateCount('teacherCount', 27, 2000);
+    this.animateCount('graduateCount', 44, 2000);
+    this.animateCount('phdCount', 22, 2000);
   },
   beforeUnmount() {
     if (this.chart) {
       this.chart.destroy();
     }
-  }
+  },
+  
 };
 </script>
 
@@ -588,7 +685,10 @@ export default {
   height: auto;
   border-radius: 50%;
 }
-
+.imin {
+  width: 100%;
+  height: auto;
+}
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -727,10 +827,13 @@ button {
   width: 100%;
   overflow: hidden;
 }
+
 .swiper-slide {
   width: auto; /* 自動適應內容 */
   display: flex;
   justify-content: center;
+  align-items: center;
+ 
 }
 .carousel-item {
   display: flex;
@@ -747,6 +850,112 @@ button {
   width: 250px; /* 根據需要調整卡片寬度 */
   text-align: center;
   margin: 0 auto;
+}
+  .card3 {
+  padding: 20px;
+  background-color: #e0f4ff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 20px;
+}
+.card2 {
+  padding: 30px;
+  background-color: #f0faff;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.card2 h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.card2 ul {
+  list-style: none; /* 移除預設的列表符號 */
+  padding: 0;
+}
+
+.card2 ul li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.card2 ul li::before {
+  content: '• '; /* 添加自定義圓點符號 */
+  color: #527ba7;
+  font-size: 30px;
+  position: absolute;
+  left: 0;  
+  top: -13px;
+}
+
+.card1 {
+  background-color: #e0f4ff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+h3 {
+  color: #333;
+  font-size: 24px;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 兩列 */
+  gap: 10px; /* 間距 */
+}
+
+.stat-item {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.stat-item h2,
+.stat-item p {
+  display: inline-block; /* 讓 h2 和 p 顯示在同一行 */
+  margin: 0; /* 去除預設的 margin */
+}
+.stat-item p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.stat-item h2 {
+  color: red;
+  margin: 5px 0;
+  font-size: 24px;
+}
+
+.description {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.imin {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
 }
 
 .carousel-image {
@@ -809,4 +1018,69 @@ button {
   text-align: center;
   position: relative;
 }
+.menu-icon {
+  position: fixed;
+  top: 110px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* 初始位置在屏幕外 */
+  width: 220px;
+  height: 38%;
+  background-color: #cadbeaef;
+  color: rgb(121, 143, 230);
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+  margin-top: 100px;
+  border-top-left-radius: 20px; /* 左上角圓角 */
+  border-bottom-left-radius: 20px; 
+}
+
+.sidebar.is-open {
+  right: 0; /* 當側邊欄打開時，移動到右邊 */
+}
+
+.sidebar .close-btn {
+  text-align: right;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.sidebar ul li {
+  position: relative;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sidebar ul li::after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%; /* 控制左右邊距，讓線條變短 */
+  bottom: 0;
+  height: 2px;
+  background-color: #b4b4b4; /* 分隔線顏色 */
+}
+
+
+
+/* 保證側邊欄和內容隨著滾動保持固定 */
+.sidebar, .menu-icon {
+  position: fixed;
+}
+
 </style>
