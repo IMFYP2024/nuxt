@@ -92,6 +92,7 @@ onMounted(() => {
         child.receiveShadow = true;
       }
     });
+    mesh1.scale.set(1.5, 1.5, 1.5);
     mesh1.position.set(0, 1.05, 3);
     mesh1.rotation.y = Math.PI / 1.5;
 
@@ -125,8 +126,8 @@ onMounted(() => {
       }
     });
     mesh3.scale.set(0.5, 0.5, 0.5);
-    mesh3.position.set(0, 2.55, 3);
-    mesh3.rotation.y = Math.PI / 4;
+    mesh3.position.set(0, 3.05, 3);
+    mesh3.rotation.y = Math.PI / 100;
 
     scene.add(mesh3);
   });
