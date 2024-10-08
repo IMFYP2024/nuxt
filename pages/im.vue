@@ -70,8 +70,8 @@
               <h2>{{ studentCount }}</h2><p> / 5,528</p>
             </div>
             <div class="stat-item">
-              <p>科系/全校老師數</p><br>
-              <h2>{{ teacherCount }}</h2><p> / ?</p>
+              <p>科系老師數</p><br>
+              <h2>{{ teacherCount }}</h2>
             </div>
             <div class="stat-item">
               <p>上學年度畢業生數</p><br>
@@ -901,13 +901,13 @@ button {
 }
 
 .card1 {
+  padding: 30px;
   background-color: #e0f4ff;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  max-width: 600px;
   margin: 0 auto;
   text-align: center;
-  padding: 20px;
 }
 
 h3 {
