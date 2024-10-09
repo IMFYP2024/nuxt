@@ -74,27 +74,28 @@ export default {
 </script>
 
 <style scoped>
-body {
-  margin: 0;
-}
 
-.body{
+.background1 {
+  height: 100vh; /* 覆蓋整個視窗高度 */
+  width: 100vw;  /* 覆蓋整個視窗寬度 */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* 中心對齊 */
-  box-sizing: border-box;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  justify-content: center; /* 垂直與水平居中 */
   background-image: url('/Images/bg.jpg');
+  background-size: cover;  /* 確保背景圖像覆蓋整個背景，保持比例 */
+  background-position: center; /* 確保背景圖像位於中央 */
+  background-repeat: no-repeat; /* 防止背景圖像重複 */
+  box-sizing: border-box; /* 確保 padding 和 border 不會影響寬高 */
 }
+
 
 .background1 h1 {
   margin-bottom: 10px;
   font-size: 24px;
   color: white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  
 }
 
 /* 選擇器包裹容器，垂直置中 */
@@ -118,6 +119,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 60vh;
+  margin-bottom: 50%;
 }
 
 .outer-square {
