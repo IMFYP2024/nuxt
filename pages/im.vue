@@ -52,7 +52,7 @@
 
         <!-- 側邊欄 -->
         <div class="sidebar" :class="{ 'is-open': isSidebarOpen }">
-          <div class="close-btn" @click="toggleSidebar">X</div>
+          <div class="close-btn" @click="toggleSidebar"></div>
           <ul>
             <li @click="scrollToSection('科系特色')">科系特色</li>
             <li @click="scrollToSection('發展計畫及未來展望')">發展計畫及未來展望</li>
@@ -70,8 +70,8 @@
               <h2>{{ studentCount }}</h2><p> / 5,528</p>
             </div>
             <div class="stat-item">
-              <p>科系/全校老師數</p><br>
-              <h2>{{ teacherCount }}</h2><p> / 5,528</p>
+              <p>科系老師數</p><br>
+              <h2>{{ teacherCount }}</h2>
             </div>
             <div class="stat-item">
               <p>上學年度畢業生數</p><br>
@@ -82,9 +82,9 @@
               <h2>{{ phdCount }}</h2>
             </div>
           </div>
-
           <p class="description">長久以來的教育目標為培育優秀的資訊與管理人才</p>
           <img src="/Images/imin.png" class="imin" alt="Education Objective">
+
         </div>
       
 
@@ -901,13 +901,13 @@ button {
 }
 
 .card1 {
+  padding: 30px;
   background-color: #e0f4ff;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  max-width: 600px;
   margin: 0 auto;
   text-align: center;
-  padding: 20px;
 }
 
 h3 {
@@ -1031,13 +1031,15 @@ h3 {
   position: fixed;
   top: 0;
   right: -250px; /* 初始位置在屏幕外 */
-  width: 250px;
-  height: 50%;
-  background-color: #333;
-  color: white;
+  width: 220px;
+  height: 38%;
+  background-color: #cadbeaef;
+  color: rgb(121, 143, 230);
   transition: right 0.3s ease-in-out;
   z-index: 999;
   margin-top: 100px;
+  border-top-left-radius: 20px; /* 左上角圓角 */
+  border-bottom-left-radius: 20px; 
 }
 
 .sidebar.is-open {
@@ -1053,14 +1055,25 @@ h3 {
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 .sidebar ul li {
+  position: relative;
   padding: 15px 20px;
   cursor: pointer;
   font-size: 18px;
-  border-bottom: 1px solid #444;
+  font-weight: bold;
+}
+
+.sidebar ul li::after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%; /* 控制左右邊距，讓線條變短 */
+  bottom: 0;
+  height: 2px;
+  background-color: #b4b4b4; /* 分隔線顏色 */
 }
 
 

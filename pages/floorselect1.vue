@@ -2,6 +2,9 @@
   <div class="building-container">
     <!-- 建築物和柱子容器 -->
     <div class="building-and-pillar">
+      <div class="pillar" @click="showModal = true">
+        <div class="pillar-text">中商</div>
+      </div>
       <div class="building">
         <div v-for="floor in floors" :key="floor" class="floor" @click="navigateToBuilding(floor)">
           <span>{{ floor }}</span>
@@ -9,7 +12,7 @@
       </div>
 
       <div class="pillar" @click="showModal = true">
-        <div class="pillar-text">資訊舘</div>
+        <div class="pillar-text">大樓</div>
       </div>
     </div>
 
@@ -30,12 +33,12 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 const floors = ['1F', '2F', '3F', '4F', '5F', '6F', '7F', '8F', '9F'];
-const modalTitle = ref('資訊舘的建成故事');
+const modalTitle = ref('中商大樓的建成故事');
 const showModal = ref(false);
 const router = useRouter();
 
 const navigateToBuilding = (floor) => {
-  router.push({ path: 'zixun', query: { floor } });
+  router.push({ path: 'zhongshang', query: { floor } });
 };
 
 const closeModal = () => {
@@ -87,7 +90,7 @@ const closeModal = () => {
   width: 50px; /* 增加柱子的寬度，便於點擊 */
   height: 550px;
   margin-left: 0;
-  background-color: #f9efd0;
+  background-color: #a5a39e;
   border: 2px solid black;
   cursor: pointer; /* 增加點擊效果 */
 }

@@ -110,6 +110,7 @@ onMounted(() => {
         child.receiveShadow = true;
       }
     });
+    mesh2.scale.set(1.5, 1.5, 1.5);
     mesh2.position.set(1.3, 1.05, 1);
     mesh2.rotation.y = Math.PI / 4;
 
@@ -188,11 +189,11 @@ function handleIntersections(object) {
   switch (object.name) {
     case '最最最最最後了拉qaq_1':
       console.log('Navigating to floorselect');
-      router.push({ name: 'floorselect' });
+      router.push({ name: 'floorselect1' });
       break;
-    case 'glbObject2':  // Ensure this name matches the actual name in your model
-      console.log('Navigating to deintroduce');
-      router.push({ name: 'deintroduce' });
+    case '資訊樓_1':  // Ensure this name matches the actual name in your model
+      console.log('Navigating to floorselect');
+      router.push({ name: 'floorselect' });
       break;
     default:
       console.log('Intersects with an unknown object');
