@@ -105,24 +105,54 @@
       <!-- 畢業區塊 -->
         <div id="畢業" class="card3">
           <h3>畢業</h3>
-          <p>
-            本系畢業生可報考資訊管理、資訊工程、數位內容、多媒體及商管等相關研究所。就業工作可擔任程式設計師、網管工程師、資料庫管理師、數位內容開發設計工程師、網頁多媒體設計師、網站設計及管理、多媒體商務整合計畫、電子商務系統開發、行動應用開發等工作。
-          </p>
+          
+          <!-- 研究所一欄 -->
+          <div class="graduate-section">
+            <h4>研究所</h4>
+            <ul>
+              <li>資訊管理</li>
+              <li>資訊工程</li>
+              <li>數位內容</li>
+              <li>多媒體</li>
+              <li>商管相關研究所</li>
+            </ul>
+          </div>
+
+          <!-- 就業工作一欄 -->
+          <div class="job-section">
+            <h4>就業工作</h4>
+            <ul>
+              <li>程式設計師</li>
+              <li>網管工程師</li>
+              <li>資料庫管理師</li>
+              <li>數位內容開發設計工程師</li>
+              <li>網頁多媒體設計師</li>
+              <li>網站設計及管理</li>
+              <li>多媒體商務整合計畫</li>
+              <li>電子商務系統開發</li>
+              <li>行動應用開發</li>
+            </ul>
+          </div>
         </div>
+
       </div>
     </div>
 
 
         <div v-if="currentDetail === '課程'">
           <h2>課程</h2>
+          <i class="fi fi-br-info custom-icon" @click="showCreditModal('一、二年級一學期不能小於16學分，三、四年級一學期不可以小於9學分，全年級一學期不可以多餘25')"></i>
           <div class="">
     <!-- Custom dropdown for selecting academic year -->
     <div class="year-selector">
       <div class="custom-select" @click="toggleDropdown">
         <div class="selected-option">
           {{ selectedYear }}
-          <i class="fi fi-rr-caret-down"></i> <!-- Added icon here -->
+          <i class="fi fi-rr-caret-down">
+            
+            </i> <!-- Added icon here -->
         </div>
+        
         <div class="options" v-if="isDropdownOpen">
           <div
             v-for="year in years"
@@ -144,7 +174,7 @@
     </div>
     <div class="course-name">
       {{ course.name }}
-        <i class="fi fi-br-info" @click="showCreditModal('一、二年級一學期不能小於16學分，三、四年級一學期不可以小於9學分，全年級一學期不可以多餘25')"></i>
+        
       </div>
       <div class="course-credits">{{ course.credits }}</div>
       </div>
@@ -776,6 +806,7 @@ button {
   font-weight: bold;
 }
 .year-selector {
+  margin-top: -11%;
   margin-bottom: 20px;
   position: relative;
   display: flex;
@@ -851,17 +882,62 @@ button {
   text-align: center;
   margin: 0 auto;
 }
-  .card3 {
-  padding: 20px;
+ .card3 {
+  padding: 30px;
   background-color: #e0f4ff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  max-width: 600px;
   margin-top: 20px;
 }
+
+.card3 h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* 研究所和就業工作欄 */
+.graduate-section, .job-section {
+  margin-bottom: 20px;
+}
+
+.graduate-section h4, .job-section h4 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.graduate-section ul, .job-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.graduate-section ul li, .job-section ul li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.graduate-section ul li::before, .job-section ul li::before {
+  content: '• '; /* 添加自定義圓點符號 */
+  color: #527ba7;
+  font-size: 30px;
+  position: absolute;
+  left: 0;  
+  top: -13px;
+}
+
 .card2 {
   padding: 30px;
-  background-color: #f0faff;
+  background-color: #e0f4ff;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -1076,7 +1152,11 @@ h3 {
   background-color: #b4b4b4; /* 分隔線顏色 */
 }
 
-
+.custom-icon {
+  font-size: 24px;
+  margin-left: 80%; /* 與左邊文字的距離 */
+  
+}
 
 /* 保證側邊欄和內容隨著滾動保持固定 */
 .sidebar, .menu-icon {
