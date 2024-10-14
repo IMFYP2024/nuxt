@@ -16,7 +16,9 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const threeContainer = ref(null);
 const loading = ref(true);
-const router = useRouter(); // Initialize the router
+const router = useRouter(); // Initialize the router// 使用 TextureLoader 加載背景紋理
+
+
 
 // 定义 mouse 和 raycaster
 let mouse = new THREE.Vector2();
@@ -25,11 +27,11 @@ let scene, camera, renderer, controls;
 
 onMounted(() => {
   // 初始化 Three.js 渲染器
-  renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer = new THREE.WebGLRenderer({ antialias: false });
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0xffffff);
-  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
@@ -54,22 +56,32 @@ onMounted(() => {
   controls.target = new THREE.Vector3(0, 1, 0);
   controls.update();
 
-  // 添加地板
-  const groundGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
-  groundGeometry.rotateX(-Math.PI / 2);
-  const groundMaterial = new THREE.MeshStandardMaterial({
-    color: 0x555555,
-    side: THREE.DoubleSide
-  });
-  const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
-  groundMesh.castShadow = false;
-  groundMesh.receiveShadow = true;
-  scene.add(groundMesh);
+// 使用 TextureLoader 加载地板纹理
+const textureLoader = new THREE.TextureLoader();
+const groundTexture = textureLoader.load('Images/nutc.jpg'); // 替换为你的纹理路径
+groundTexture.wrapS = THREE.RepeatWrapping;
+groundTexture.wrapT = THREE.RepeatWrapping;
+groundTexture.repeat.set(1, 1); // 设置重复次数，调整以匹配地板大小
+
+// 创建地板材质并应用纹理
+const groundMaterial = new THREE.MeshStandardMaterial({
+  map: groundTexture, // 使用加载的纹理
+  side: THREE.DoubleSide,
+});
+
+// 添加地板
+const groundGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
+groundGeometry.rotateX(-Math.PI / 2);
+const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
+groundMesh.castShadow = false;
+groundMesh.receiveShadow = true;
+scene.add(groundMesh);
+
 
   // 添加聚光灯
   const spotLight = new THREE.SpotLight(0xffffff, 3000, 100, Math.PI / 3, 1);
-  spotLight.position.set(0, 25, 20); // 调整位置
-  spotLight.angle = Math.PI / 3; // 增加角度范围
+  spotLight.position.set(1, 25, 20); // 调整位置
+  spotLight.angle = Math.PI / 4; // 增加角度范围
   spotLight.distance = 100; // 确保足够距离覆盖两个模型
   spotLight.castShadow = true;
   spotLight.shadow.bias = -0.0001;
@@ -80,9 +92,23 @@ onMounted(() => {
   spotLight.target = lightTarget;
   scene.add(spotLight);
 
+  // 添加聚光灯2
+  const spotLight1 = new THREE.SpotLight(0xffffff, 3000, 100, Math.PI / 4, 1);
+spotLight1.position.set(10, 25, 20);
+spotLight1.angle = Math.PI / 4; 
+spotLight1.distance = 100; 
+spotLight1.castShadow = true;
+spotLight1.shadow.bias = -0.0001;
+
+const lightTarget1 = new THREE.Object3D();
+lightTarget1.position.set(1, 1.05, 1.5);
+scene.add(lightTarget1);
+spotLight1.target = lightTarget1;
+scene.add(spotLight1);
+
   // 加载模型
   const loader = new GLTFLoader().setPath('/Images/');
-  // 第一个模型
+  // 第一个模型(中商大樓)
   loader.load('zhongshang.glb', (gltf) => {
     const mesh1 = gltf.scene;
     mesh1.name = 'glbObject1';  // 设置名称
@@ -92,15 +118,15 @@ onMounted(() => {
         child.receiveShadow = true;
       }
     });
-    mesh1.scale.set(1.5, 1.5, 1.5);
-    mesh1.position.set(0, 1.05, 3);
-    mesh1.rotation.y = Math.PI / 1.5;
+    mesh1.scale.set(2, 2, 2);
+    mesh1.position.set(1.5, 0, -5.5);
+    mesh1.rotation.y = Math.PI / 2;
 
     scene.add(mesh1);
     loading.value = false;
   });
 
-  // 第二个模型
+  // 第二个模型（資訊樓）
   loader.load('zixun.glb', (gltf) => {
     const mesh2 = gltf.scene;
     mesh2.name = 'glbObject2';  // 设置名称
@@ -116,7 +142,7 @@ onMounted(() => {
 
     scene.add(mesh2);
   });
-
+    // 中商大樓標題
   loader.load('jsdl.glb', (gltf) => {
     const mesh3 = gltf.scene;
     mesh3.name = 'glbObject2';  // 设置名称
@@ -126,8 +152,8 @@ onMounted(() => {
         child.receiveShadow = true;
       }
     });
-    mesh3.scale.set(0.5, 0.5, 0.5);
-    mesh3.position.set(0, 3.05, 3);
+    mesh3.scale.set(1, 1, 1);
+    mesh3.position.set(1.5, 3, -5.5);
     mesh3.rotation.y = Math.PI / 100;
 
     scene.add(mesh3);
@@ -147,6 +173,72 @@ onMounted(() => {
     mesh4.rotation.y = Math.PI / 4;
 
     scene.add(mesh4);
+  });
+  // 第一个模型
+  loader.load('zhongshang.glb', (gltf) => {
+    const mesh5 = gltf.scene;
+    mesh5.name = 'glbObject1';  // 设置名称
+    mesh5.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh5.scale.set(1.5, 1.5, 1.5);
+    mesh5.position.set(-1.8, 1.05, 3);
+    mesh5.rotation.y = Math.PI / 4;
+
+    scene.add(mesh5);
+    loading.value = false;
+  });
+
+  // 第二个模型
+  loader.load('zixun.glb', (gltf) => {
+    const mesh6 = gltf.scene;
+    mesh6.name = 'glbObject2';  // 设置名称
+    mesh6.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh6.scale.set(1.5, 1.5, 1.5);
+    mesh6.position.set(1.2, 1.05, -1.4);
+    mesh6.rotation.y = Math.PI / 2;
+
+    scene.add(mesh6);
+  });
+
+  loader.load('jsdl.glb', (gltf) => {
+    const mesh7 = gltf.scene;
+    mesh7.name = 'glbObject2';  // 设置名称
+    mesh7.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh7.scale.set(0.5, 0.5, 0.5);
+    mesh7.position.set(0, 3.05, 3);
+    mesh7.rotation.y = Math.PI / 100;
+
+    scene.add(mesh7);
+  });
+
+  loader.load('js.glb', (gltf) => {
+    const mesh8= gltf.scene;
+    mesh8.name = 'glbObject2';  // 设置名称
+    mesh8.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh8.scale.set(0.5, 0.5, 0.5);
+    mesh8.position.set(1.2, 2.55, -1.4);
+    mesh8.rotation.y = Math.PI / 2;
+
+    scene.add(mesh8);
   });
 
   // 添加事件监听器

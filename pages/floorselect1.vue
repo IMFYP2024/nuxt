@@ -3,7 +3,6 @@
     <!-- 建築物和柱子容器 -->
     <div class="building-and-pillar">
       <div class="pillar" @click="showModal = true">
-        <div class="pillar-text">中商</div>
       </div>
       <div class="building">
         <div v-for="floor in floors" :key="floor" class="floor" @click="navigateToBuilding(floor)">
@@ -12,7 +11,7 @@
       </div>
 
       <div class="pillar" @click="showModal = true">
-        <div class="pillar-text">大樓</div>
+        <div class="pillar-text">中商大樓</div>
       </div>
     </div>
 
@@ -90,7 +89,7 @@ const closeModal = () => {
   width: 50px; /* 增加柱子的寬度，便於點擊 */
   height: 550px;
   margin-left: 0;
-  background-color: #a5a39e;
+  background-color: #d8e4e9;
   border: 2px solid black;
   cursor: pointer; /* 增加點擊效果 */
 }
