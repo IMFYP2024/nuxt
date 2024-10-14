@@ -44,7 +44,7 @@ export default {
 
 @media (max-height: 670px) {
   .college-selector-page h2 {
-    margin-top: 15%; /* 調整標題位置 */
+    margin-top: 13%; /* 調整標題位置 */
     margin-bottom: 100px;
     z-index: 10;
   }
@@ -52,7 +52,7 @@ export default {
 
 @media (min-height: 671px) and (max-height: 883px) {
   .college-selector-page h2 {
-    margin-top: 35%; /* 調整標題位置 */
+    margin-top: 20%; /* 調整標題位置 */
     margin-bottom: 100px;
     z-index: 10;
   }
@@ -60,7 +60,7 @@ export default {
 
 @media (min-height: 884px) {
   .college-selector-page h2 {
-    margin-top: 55%; /* 調整標題位置 */
+    margin-top: 20%; /* 調整標題位置 */
     margin-bottom: 100px;
     z-index: 10;
   }
@@ -102,13 +102,13 @@ export default {
 
 .item-1 {
   background-color: #83C3DA;
-  top: 15%;
-  left: 25%;
+  top: 17%;
+  left: 24%;
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .item-1 .college-icon {
-  margin-left: -28%; 
-  margin-TOP: 13%; 
+ margin-left: -20%; 
+  margin-TOP: 10%; 
   margin-bottom: 35%; 
 }
 
@@ -125,8 +125,8 @@ export default {
 }
 .item-3 {
   background-color: #B69DD5;
-  top: 75%;
-  left: 50%;
+  top: 77%;
+  left: 49%;
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .item-3 .college-icon {
