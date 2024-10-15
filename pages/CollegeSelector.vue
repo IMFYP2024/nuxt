@@ -65,20 +65,26 @@ export default {
     z-index: 10;
   }
 }
-
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* 確保父元素高度為 100% */
+}
 
 
 .college-selector-page {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('/Images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('/Images/bg.jpg');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  height: 100vh; /* 設置高度為視窗高度 */
-  width: 100vw;
-  overflow: hidden;
 }
 
 .college-grid {

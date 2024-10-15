@@ -44,10 +44,10 @@
               <p>擅長領域: {{ selectedProfessor.expertise }}</p>
               <button @click="closeModal">關閉</button>
             </div>
-          </div>
+          </div><div class="air"></div>
         </div>
 
-      <div v-if="currentDetail === '科系特色'"> 
+        <div v-if="currentDetail === '科系特色'"> 
          <i class="fi fi-rr-dot-pending menu-icon" @click="toggleSidebar"></i>
 
         <!-- 側邊欄 -->
@@ -125,9 +125,9 @@
             </ul>
           </div>
         </div>
-
+        <div class="air"></div>
       </div>
-    </div>
+      </div>
 
 
         <div v-if="currentDetail === '課程'">
@@ -157,8 +157,9 @@
                   @click.stop="selectYear(year)"
                   class="option"
                 >
-                  {{ year }}
+                  {{ year }}  
                 </div>
+                
               </div>
             </div>
           </div>
@@ -190,15 +191,16 @@
         <img :src="electiveIcon" alt="elective icon" class="course-type-icon">
         {{ totalElectiveCredits }} 學分
       </div>
+      <div class="air"></div>
     </div>
   </div>
         </div>
 
         <div v-if="currentDetail === '專題競賽'">
           <div class="button-toggle">
-      <button :class="{ active: activeSection === '專題' }" @click="toggleSection('專題')">專題</button>
-      <button :class="{ active: activeSection === '競賽' }" @click="toggleSection('競賽')">競賽</button>
-    </div>
+            <button :class="{ active: activeSection === '專題' }" @click="toggleSection('專題')">專題</button>
+            <button :class="{ active: activeSection === '競賽' }" @click="toggleSection('競賽')">競賽</button>
+          </div>
 
     <!-- Swiper 輪播圖部分 -->
     <div class="swiper-container">
@@ -253,7 +255,7 @@
           </swiper-slide>
         </swiper>
       </client-only>
-    </div>
+    </div><div class="air"></div>
         </div>
 
       </div>
@@ -672,6 +674,11 @@ export default {
   font-size: 16px;
   font-weight: bold;
 }
+.air{
+  width: 100%;
+  height: 80px;
+  margin-top: 20%;
+}
 
 .is-active .item:nth-child(1) {
   transform: translate(-105px, -45px);
@@ -695,7 +702,7 @@ export default {
   opacity: 1;
   transition: opacity 0.5s ease;
   box-sizing: border-box;
-  height: calc(95vh - 100px);
+  height: 100%;
   overflow: auto;
 }
 
@@ -703,11 +710,13 @@ export default {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  text-align: center;
 }
 
 .professor-card {
-  width: 150px;
-  text-align: center;
+  width: 45%;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -840,6 +849,7 @@ button {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  
 }
 
 .button-toggle button {
@@ -848,6 +858,7 @@ button {
   background-color: lightgray;
   border: none;
   border-radius: 10px;
+  font-size: 15px;
 }
 
 .button-toggle button.active {
@@ -896,6 +907,7 @@ button {
 .card3 h3 {
   text-align: center;
   font-size: 24px;
+  margin-top: 0px;
   margin-bottom: 20px;
 }
 
@@ -952,6 +964,7 @@ button {
   margin-bottom: 20px;
   text-align: center;
   font-weight: 700;
+  margin-top: 0px;
 }
 
 .card2 ul {
@@ -977,6 +990,11 @@ button {
   top: -13px;
 }
 
+
+h3 {
+  color: #333;
+  font-size: 24px;
+}
 .card1 {
   padding: 30px;
   background-color: #e0f4ff;
@@ -986,12 +1004,9 @@ button {
   margin: 0 auto;
   text-align: center;
 }
-
-h3 {
-  color: #333;
-  font-size: 24px;
+.card1 h3{
+  margin-top: 0px;
 }
-
 .stats-container {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 兩列 */
@@ -1097,13 +1112,28 @@ h3 {
 }
 .menu-icon {
   position: fixed;
-  top: 97px;
   right: 26px;
   font-size: 30px;
   cursor: pointer;
   z-index: 1000;
 }
+@media (max-height: 668px) {
+    .menu-icon {
+    top: 14.5%;
+  }
+}
 
+@media (min-height: 669px) and (max-height: 843px) {
+  .menu-icon {
+    top: 11.5%;
+  }
+}
+
+@media (min-height: 844px) {
+  .menu-icon {
+    top: 11.5%;
+  }
+}
 .sidebar {
   position: fixed;
   top: 0;
