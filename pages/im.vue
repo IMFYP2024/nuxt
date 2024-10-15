@@ -18,10 +18,11 @@
         <h1>資訊管理系</h1>
         <div v-if="currentDetail === '師資'">
           <!-- 圖表部分 -->
-          <div class="chart-container">
+          <div class="chart-container card">
             <h2>師資</h2>
             <canvas id="teacherChart"></canvas>
           </div>
+          <div class="card" style="margin-top:20px">
           <h3>{{ selectedTitle }}名單:</h3>
           <!-- 教授列表 -->
           <div class="professor-list">
@@ -35,7 +36,7 @@
               <p>{{ professor.name }}</p>
             </div>
           </div>
-
+          </div>
           <!-- 彈出視窗 -->
           <div v-if="isModalVisible" class="modal-overlay" @click="closeModal">
             <div class="modal-content" @click.stop>
@@ -131,14 +132,15 @@
 
 
         <div v-if="currentDetail === '課程'">
+          <div class="card">
           <h2>課程</h2>
           <i class="fi fi-br-info custom-icon" @click="showCreditModal('一、二年級一學期不能小於16學分，三、四年級一學期不可以小於9學分，全年級一學期不可以多餘25')"></i>
           <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
-            <div class="modal-content" @click.stop>
-              <p>一、二年級一學期不能小於16學分，三、四年級一學期不可以小於9學分，全年級一學期不可以多餘25</p>
-              <button @click="closeCreditModal">關閉</button>
-            </div>
+          <div class="modal-content" @click.stop>
+            <p>{{ creditMessage }}</p> <!-- 顯示訊息 -->
+            <button @click="closeCreditModal">關閉</button>
           </div>
+        </div>
           <div class="">
     <!-- Custom dropdown for selecting academic year -->
           <div class="year-selector">
@@ -177,12 +179,7 @@
       <div class="course-credits">{{ course.credits }}</div>
       </div>
     </div>
-  <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
-    <div class="modal-content" @click.stop>
-      <p>{{ creditMessage }}</p>
-      <button @click="closeCreditModal">關閉</button>
-    </div>
-  </div>
+  
     <!-- Total credits summary -->
     <div class="credits-summary">
       <div>
@@ -191,9 +188,10 @@
         <img :src="electiveIcon" alt="elective icon" class="course-type-icon">
         {{ totalElectiveCredits }} 學分
       </div>
-      <div class="air"></div>
+      </div>
     </div>
-  </div>
+  </div><div class="air"></div>
+        
         </div>
 
         <div v-if="currentDetail === '專題競賽'">
@@ -217,7 +215,7 @@
         >
           <!-- 專題卡片樣式 -->
           <swiper-slide v-for="(item, index) in topics" :key="index" class="carousel-item">
-            <div class="card">
+            <div class="card4">
               <img :src="item.image" alt="Project Image" class="carousel-image" />
               <div class="card-content">
                 <h3>{{ item.title }}</h3>
@@ -439,8 +437,9 @@ export default {
   },
   methods: {
      showCreditModal(message) {
-    this.creditMessage = message;
-    this.isCreditModalVisible = true;
+      console.log('showCreditModal called');
+      this.creditMessage = message;
+      this.isCreditModalVisible = true;
     },
     closeCreditModal() {
       this.isCreditModalVisible = false;
@@ -584,6 +583,8 @@ export default {
     },
   },
   mounted() {
+    this.currentDetail = '課程';
+    console.log('Current detail is:', this.currentDetail); 
     setTimeout(() => {
       this.isActive = true;
     });
@@ -604,6 +605,26 @@ export default {
 
 <style scoped>
 @import url('https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons/css/all/all.css');
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100vh;
+  background-color: rgba(90, 90, 90, 0.326);
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  z-index: 9999; /* 確保彈窗位於最前面 */
+}
+
+.modal-content {
+  width: 80%;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 10000; /* 確保內容顯示在前 */
+}
 .outer-container {
   align-items: center;
   position: relative;
@@ -748,7 +769,15 @@ export default {
   text-align: center;
   position: relative;
 }
-
+.card4{
+   background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 250px; /* 根據需要調整卡片寬度 */
+  text-align: center;
+  margin: 0 auto;
+}
 .modal-image {
   width: 100px;
   height: 100px;
@@ -793,8 +822,10 @@ button {
   cursor: pointer;
 }
 .course-type-icon {
+  margin-bottom: 5px;
   width: 40px; /* Adjusted size for better alignment */
   height: 40px;
+  margin-right: 10px; 
 }
 .course-item {
   display: flex;
@@ -839,11 +870,15 @@ button {
   min-width: 30px; /* Ensure fixed space for credit numbers */
 }
 
-.credits-summary {
-  margin-top: 20px;
+.credits-summary {  
+  margin-top: 0px;
   text-align: center;
 }
-
+.credits-summary div {
+  margin-top: 5px;
+  display: inline-flex; /* 保證圖標與文字在同一行排列 */
+  align-items: center; /* 垂直居中對齊圖標與文字 */
+}
 
 .button-toggle {
   display: flex;
@@ -886,11 +921,11 @@ button {
 
 
 .card {
-   background-color: #fff;
+  background-color: #e0f4ff;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 250px; /* 根據需要調整卡片寬度 */
+  width: 100%; /* 根據需要調整卡片寬度 */
   text-align: center;
   margin: 0 auto;
 }
@@ -1184,9 +1219,15 @@ h3 {
 }
 
 .custom-icon {
+  cursor: pointer;
+  z-index: 1000; /* 確保圖標位於頂層 */
+  position: relative;/* 與左邊文字的距離 */
+  display: inline-block;
+  width: 24px; /* 確保有足夠的點擊區域 */
+  height: 24px;
+  cursor: pointer;
   font-size: 24px;
-  margin-left: 80%; /* 與左邊文字的距離 */
-  
+  margin-left: 80%;
 }
 
 /* 保證側邊欄和內容隨著滾動保持固定 */
