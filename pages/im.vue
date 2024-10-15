@@ -48,7 +48,7 @@
         </div>
 
       <div v-if="currentDetail === '科系特色'"> 
-         <i class="fi fi-br-menu-burger menu-icon" @click="toggleSidebar"></i>
+         <i class="fi fi-rr-dot-pending menu-icon" @click="toggleSidebar"></i>
 
         <!-- 側邊欄 -->
         <div class="sidebar" :class="{ 'is-open': isSidebarOpen }">
@@ -93,34 +93,25 @@
        <div id="發展計畫及未來展望" class="card2">
         <h3>發展計畫及未來展望</h3>
         <ul>
-          <li>培養資訊科技與應用之全能專業Plus人才，因應國家資訊建設之需要。</li>
-          <li>爭取與國內外產官學界之學術交流與建教合作，以增廣學生之視野及實務經驗。</li>
-          <li>延攬各專業應用領域之師資，推動學術研究與資訊專題實作。</li>
-          <li>積極參與及舉辦各型國內外學術活動。</li>
-          <li>籌設小型研討會場所，促進學術交流。</li>
-          <li>增設專題研究教室。</li>
+          <li>培養資訊科技與應用之<span class="highlight">全能</span>專業Plus人才，因應<span class="highlight">國家資訊建設</span>之需要。</li>
+          <li>爭取與國內外產官學界之<span class="highlight">學術交流與建教合作</span>，以增廣學生之視野及實務經驗。</li>
+          <li>延攬各<span class="highlight">專業應用領域之師資</span>，推動<span class="highlight">學術研究</span>與<span class="highlight">資訊專題實作</span>。</li>
+          <li>積極參與及舉辦各型<span class="highlight">國內外學術活動</span>。</li>
+          <li>籌設小型<span class="highlight">研討會場所</span>，促進學術交流。</li>
+          <li>增設<span class="highlight">專題研究教室</span>。</li>
         </ul>
       </div>
 
       <!-- 畢業區塊 -->
         <div id="畢業" class="card3">
-          <h3>畢業</h3>
+          <h3>發展方向</h3>
           
           <!-- 研究所一欄 -->
-          <div class="graduate-section">
-            <h4>研究所</h4>
-            <ul>
-              <li>資訊管理</li>
-              <li>資訊工程</li>
-              <li>數位內容</li>
-              <li>多媒體</li>
-              <li>商管相關研究所</li>
-            </ul>
-          </div>
+        
 
           <!-- 就業工作一欄 -->
           <div class="job-section">
-            <h4>就業工作</h4>
+            
             <ul>
               <li>程式設計師</li>
               <li>網管工程師</li>
@@ -142,29 +133,35 @@
         <div v-if="currentDetail === '課程'">
           <h2>課程</h2>
           <i class="fi fi-br-info custom-icon" @click="showCreditModal('一、二年級一學期不能小於16學分，三、四年級一學期不可以小於9學分，全年級一學期不可以多餘25')"></i>
+          <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
+            <div class="modal-content" @click.stop>
+              <p>一、二年級一學期不能小於16學分，三、四年級一學期不可以小於9學分，全年級一學期不可以多餘25</p>
+              <button @click="closeCreditModal">關閉</button>
+            </div>
+          </div>
           <div class="">
     <!-- Custom dropdown for selecting academic year -->
-    <div class="year-selector">
-      <div class="custom-select" @click="toggleDropdown">
-        <div class="selected-option">
-          {{ selectedYear }}
-          <i class="fi fi-rr-caret-down">
-            
-            </i> <!-- Added icon here -->
-        </div>
-        
-        <div class="options" v-if="isDropdownOpen">
-          <div
-            v-for="year in years"
-            :key="year"
-            @click.stop="selectYear(year)"
-            class="option"
-          >
-            {{ year }}
+          <div class="year-selector">
+            <div class="custom-select" @click="toggleDropdown">
+              <div class="selected-option">
+                {{ selectedYear }}
+                <i class="fi fi-rr-caret-down">
+                  
+                  </i> <!-- Added icon here -->
+              </div>
+              
+              <div class="options" v-if="isDropdownOpen">
+                <div
+                  v-for="year in years"
+                  :key="year"
+                  @click.stop="selectYear(year)"
+                  class="option"
+                >
+                  {{ year }}
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
 
     <!-- Course list -->
     <div class="course-list">
@@ -664,7 +661,11 @@ export default {
   z-index: -1;
   transition: 0.5s ease;
 }
-
+.highlight {
+  background-color: yellow; /* 設置螢光筆顏色 */
+  padding: 2px 4px; /* 增加內間距來模擬螢光筆的塗抹效果 */
+  border-radius: 3px; /* 圓角處理，讓效果更自然 */
+}
 .item p {
   margin: 0;
   color: white;
@@ -1096,8 +1097,8 @@ h3 {
 }
 .menu-icon {
   position: fixed;
-  top: 110px;
-  right: 20px;
+  top: 97px;
+  right: 26px;
   font-size: 30px;
   cursor: pointer;
   z-index: 1000;

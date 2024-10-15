@@ -299,7 +299,7 @@ export default {
 }
 @media (max-height: 668px) {
   .back-button {
-    top: 15% !important;
+    top: 13.3% !important;
     left: 4%; 
     position: fixed; 
     background: none;
@@ -309,6 +309,9 @@ export default {
     z-index: 1000;
     font-size: 48px;
     color: #000; 
+  }
+  .about-section{
+    margin-top: -4%
   }
 }
 
@@ -329,7 +332,7 @@ export default {
 
 @media (min-height: 844px) {
   .back-button {
-    top: 12%!important; 
+    top: 10.5%!important; 
     left: 4%; 
     position: fixed; 
     background: none;
@@ -339,6 +342,9 @@ export default {
     z-index: 1000;
     font-size: 48px;
     color: #000; 
+  }
+  .about-section{
+    margin-top: -4%
   }
 }
 
