@@ -132,7 +132,7 @@
 
 
         <div v-if="currentDetail === '課程'">
-          <div class="card" style="hiegh:auto margin-top:10px">
+          <div class="card" style="height:auto; margin-top:10px">
 
           <h2><br>課程</h2>
           <i class="fi fi-br-info custom-icon" @click="showCreditModal"></i>
