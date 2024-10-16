@@ -19,11 +19,11 @@
         <div v-if="currentDetail === '師資'">
           <!-- 圖表部分 -->
           <div class="chart-container card">
-            <h2>師資</h2>
+            <h2><br>師資</h2>
             <canvas id="teacherChart"></canvas>
           </div>
           <div class="card" style="margin-top:20px">
-          <h3>{{ selectedTitle }}名單:</h3>
+          <h3><br>{{ selectedTitle }}名單:</h3>
           <!-- 教授列表 -->
           <div class="professor-list">
             <div
@@ -132,8 +132,9 @@
 
 
         <div v-if="currentDetail === '課程'">
-          <div class="card">
-          <h2>課程</h2>
+          <div class="card" style="hiegh:auto margin-top:10px">
+
+          <h2><br>課程</h2>
           <i class="fi fi-br-info custom-icon" @click="showCreditModal"></i>
           <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
           <div class="modal-content" @click.stop>
@@ -933,10 +934,10 @@ button {
   background-color: #e0f4ff;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  margin-top: 20px;
   width: 100%; /* 根據需要調整卡片寬度 */
   text-align: center;
-  margin: 0 auto;
+  
 }
  .card3 {
   padding: 30px;
