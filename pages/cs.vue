@@ -15,7 +15,7 @@
     <!-- 介紹頁面部分 -->
     <div class="detail-container" v-if="showDetail">
       <div class="detail">
-        <h1>資訊管理系</h1>
+        <h1>資訊工程系</h1>
         <div v-if="currentDetail === '師資'">
           <!-- 圖表部分 -->
           <div class="chart-container card">
@@ -134,10 +134,10 @@
         <div v-if="currentDetail === '課程'">
           <div class="card">
           <h2>課程</h2>
-          <i class="fi fi-br-info custom-icon" @click="showCreditModal"></i>
+          <i class="fi fi-br-info custom-icon" @click="showCreditModal('一、二年級一學期不能小於16學分，三、四年級一學期不可以小於9學分，全年級一學期不可以多餘25')"></i>
           <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
           <div class="modal-content" @click.stop>
-            <p style=" text-align: left" v-html="creditMessage"></p><!-- 顯示訊息 -->
+            <p>{{ creditMessage }}</p> <!-- 顯示訊息 -->
             <button @click="closeCreditModal">關閉</button>
           </div>
         </div>
@@ -145,7 +145,7 @@
     <!-- Custom dropdown for selecting academic year -->
           <div class="year-selector">
             <div class="custom-select" @click="toggleDropdown">
-              <div class="selected-option" style="z-index: 10">
+              <div class="selected-option">
                 {{ selectedYear }}
                 <i class="fi fi-rr-caret-down">
                   
@@ -438,14 +438,8 @@ export default {
   methods: {
      showCreditModal(message) {
       console.log('showCreditModal called');
-  this.creditMessage = `一、二年級一學期不能小於16學分，<br>三、四年級一學期不可以小於9學分，<br>全年級一學期不可以多餘25。<br><br>
-  畢業門檻<br>
-  必修學分：96<br>
-  選修總學分 (含本系/跨系選修)：26<br>
-  博雅通識：4領域8學分<br>
-  校定語言門檻：中級複試<br>
-  系定門檻：證照點數10點`;
-  this.isCreditModalVisible = true;
+      this.creditMessage = message;
+      this.isCreditModalVisible = true;
     },
     closeCreditModal() {
       this.isCreditModalVisible = false;
@@ -811,8 +805,6 @@ button {
   width: 200px;
   }
 .custom-select {
-   position: relative;
-  z-index: 1;
    width: 200px;
   background-color: #ff0;
   padding: 10px;
@@ -824,7 +816,6 @@ button {
   align-items: center;
   justify-content: center;
 }
-
 .option {
   padding: 10px;
   text-align: center;
@@ -1243,7 +1234,5 @@ h3 {
 .sidebar, .menu-icon {
   position: fixed;
 }
-.parent-container {
-  overflow: visible; /* 確保子元素不會被裁剪 */
-}
+
 </style>

@@ -299,7 +299,7 @@ export default {
 }
 @media (max-height: 668px) {
   .back-button {
-    top: 13.3% !important;
+    top: 13.5% !important;
     left: 4%; 
     position: fixed; 
     background: none;
