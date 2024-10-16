@@ -13,7 +13,12 @@
       </template>
     </Modal>
     <div v-if="!isComplete" class="container">
+      <div class="container1">
       <h1>關於學校</h1>
+      <div class="icon-trigger" @click="showModal = true">
+          <Icon name="icon-park-solid:tips-one" class="large-icon" />
+      </div>
+    </div>
       <div id="board">
         <img
           v-for="tile in boardTiles"
@@ -25,9 +30,9 @@
       </div>
       <div class="turns-container">
         <h2>Turns: <span>{{ turns }}</span></h2>
-        <div class="icon-trigger" @click="showModal = true">
-          <Icon name="icon-park-solid:tips-one" class="large-icon" />
-        </div>
+        <v-button class="skip" @click="isComplete = true">
+          <p>跳過</p>
+        </v-button>
       </div>
       
       <div id="pieces">
@@ -186,11 +191,15 @@ onMounted(() => {
 
 <style scoped>
 /* Your existing styles */
+.icon-trigger {
+margin-top: 10%;
+align-items: right;}
 .large-icon {
   width: 36px;
   height: 36px;
   color: black;
 }
+
 .turns-container{
     display: flex;
     height: 15vh;
@@ -256,7 +265,14 @@ onMounted(() => {
   z-index: 999;
   overflow: visible;
 }
-
+.container1 {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .center-content {
   text-align: center;
   margin-top: 20px;

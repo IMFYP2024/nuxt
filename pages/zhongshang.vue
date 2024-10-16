@@ -1,200 +1,166 @@
 <template>
   <div class="background1">
-    <!-- Title -->
-    <h1>樓層介紹</h1>
+    <h1>大樓介紹</h1>
 
-    <!-- Floor Selection Dropdown -->
     <div class="select-wrapper">
+      <!-- <div v-if="selectedFloor === '4F'" >
+        <a href="/deintroduce?college=info&dept=im" class="link-to-other-page">前往資管系介紹</a>
+      </div>
+      <div v-if="selectedFloor === '5F'" >
+        <a href="/deintroduce?college=info&dept=im" class="link-to-other-page">前往資工系介紹</a>
+      </div> -->
       <select v-model="selectedFloor" class="floor-select">
         <option v-for="floor in floors" :key="floor" :value="floor">
           {{ floor }}
         </option>
       </select>
-    </div>
-
-    <div class="container">
-      <!-- Outer Square -->
-      <div class="outer-square">
-        <!-- Grid Layout Area -->
-        <div class="grid-container">
-          <div v-for="(image, index) in images" :key="index" :class="'item' + (index + 1)">
-            <img :src="image" alt="Grid Image" />
-          </div>
-        </div>
-        <!-- Inner Square -->
-        <div class="inner-square">
-          <p>會議廳<br>7212<br>2樓</p>
-        </div>
+      <div class="icon-trigger" @click="showModal = true">
+        <Icon name="icon-park-solid:tips-one" />
       </div>
     </div>
+
+    <div class="components-container">
+      <div class="main-component" v-if="currentMainComponent">
+        <component :is="currentMainComponent" />
+      </div>
+    </div>
+
+    <Modal
+      :title="modalTitle"
+      :showModal="showModal"
+      @closing="closeModal"
+    >
+      <template #itemText>
+        <p>你可以試著點擊<b>數字</b>來查看一些樓層的區域信息</p>
+      </template>
+    </Modal>
   </div>
 </template>
 
-<script>
-import { ref, onMounted } from 'vue';
+<script setup>
+import { ref, computed, defineAsyncComponent, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import Modal from '~/components/Modal.vue';
 
-export default {
-  setup() {
-    const floors = ['1F', '2F', '3F', '4F', '5F', '6F', '7F', '8F', '9F'];
-    const selectedFloor = ref('1F');
-    const route = useRoute();
+const floors = ['1F', '2F', '3F', '4F', '5F', '6F', '7F', '8F', '9F'];
+const selectedFloor = ref('2F'); // 默認樓層為 '5F'
+const modalTitle = ref('如何查看樓層的信息');
+const showModal = ref(true);
+const route = useRoute();
 
-    // Update selectedFloor based on route query
-    onMounted(() => {
-      if (route.query.floor && floors.includes(route.query.floor)) {
-        selectedFloor.value = route.query.floor;
-      }
-    });
-
-    const images = [
-      "/Images/zhongshang/toilet.JPEG",
-      "/Images/zhongshang/2f.JPEG",
-      "/Images/zhongshang/2f1.JPEG",
-      "/Images/zhongshang/2f2.JPEG",
-      "/Images/zhongshang/female.jpg",
-      "/Images/zhongshang/2f.4.JPEG",
-      "/Images/zhongshang/2f_2.JPEG",
-      "/Images/zhongshang/2f.4.1.JPEG",
-      "/Images/zhongshang/2f.4.2.JPEG",
-      "/Images/zhongshang/lift.1.jpg",
-      "/Images/zhongshang/2f.3.1.JPEG",
-      "/Images/zhongshang/2f.3.2.JPEG",
-      "/Images/zhongshang/2f.3.3.JPEG",
-      "/Images/zhongshang/lift.2.jpg",
-    ];
-
-    return {
-      selectedFloor,
-      floors,
-      images
-    };
-  }
+const closeModal = () => {
+  showModal.value = false;
 };
+
+// 根據路由查詢參數初始化 selectedFloor
+onMounted(() => {
+  if (route.query.floor && floors.includes(route.query.floor)) {
+    selectedFloor.value = route.query.floor;
+  }
+});
+
+
+
+// 根據選擇的樓層動態加載主組件
+const currentMainComponent = computed(() => {
+  console.log('Loading main component for:', selectedFloor.value);
+  return defineAsyncComponent(() => import(`~/components/zhongshang/${selectedFloor.value}.vue`));
+});
+
 </script>
 
-<style scoped>
-
-.background1 {
-  height: 100vh; /* 覆蓋整個視窗高度 */
-  width: 100vw;  /* 覆蓋整個視窗寬度 */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* 垂直與水平居中 */
-  background-image: url('/Images/bg.jpg');
-  background-size: cover;  /* 確保背景圖像覆蓋整個背景，保持比例 */
-  background-position: center; /* 確保背景圖像位於中央 */
-  background-repeat: no-repeat; /* 防止背景圖像重複 */
-  box-sizing: border-box; /* 確保 padding 和 border 不會影響寬高 */
-}
-
-
-.background1 h1 {
-  margin-bottom: 10px;
-  font-size: 24px;
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   
-}
-
-/* 選擇器包裹容器，垂直置中 */
-.select-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.floor-select {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  background-color: white;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-  margin-bottom: 50%;
-}
-
-.outer-square {
-  position: relative;
-  width: 400px;  /* 外層正方形大小 */
-  height: 400px;
-  background-color: #f0f0f0;
-}
-
-.inner-square {
-  position: absolute;
-  width: 180px;  /* 內層正方形大小 */
-  height: 50%;
-  background-color: #ffffff;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* 內層正方形居中 */
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  font-size: 36px;
-}
-
-.grid-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* 固定寬度 */
-  height: 100%; /* 固定高度 */
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5列，等分 */
-  grid-template-rows: repeat(5, 1fr); /* 5行，等高 */
-  gap: 2px;
-  z-index: 0;
-}
-
-.grid-container > div {
-  width: 100%;
-  height: 100%;
-}
-
-.grid-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 確保圖片填充單元格，保持比例 */
-}
-
-
-/* 可選：為每個網格項定義不同的樣式 */
-
-.item7 {
-  background-color: #4dd2ff;
-  grid-column: 5;
-  grid-row: 2 / 5;
-}
-.item8 { background-color: #33ccff; grid-row: 3; }
-.item9 { background-color: #1ac6ff; grid-row: 4; }
-.item10 { background-color: #00bfff; grid-row: 5; }
-.item11 { background-color: #00b3e6; grid-row: 5; }
-.item12 { background-color: #0099cc; grid-row: 5; }
-.item13 { background-color: #0086b3; grid-row: 5; }
-.item14 { background-color: #007399; grid-row: 5; }
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 20px;
+  <style >
+  body{
+    margin: 0;
   }
-
   .background1 {
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/Images/bg.jpg');
+
+  }
+  
+  .background1 h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   }
 
-  .floor-select {
-    font-size: 14px;
-    padding: 8px;
-  }
+  .link-to-other-page {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: green; /* 更換為柔和的藍色 */
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
-</style>
+
+  .select-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .floor-select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+  }
+  
+  .icon-trigger {
+    font-size: 32px;
+    cursor: pointer;
+    color: black;
+    margin-left: 10px;
+  }
+  
+  
+  
+  .components-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-component,
+  .sub-component {
+    flex: 0.4;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .main-component {
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 20px;
+    }
+  
+    .background {
+      padding: 10px;
+    }
+  
+    .floor-select {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  </style>
+  

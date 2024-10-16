@@ -67,13 +67,13 @@ onMounted(() => {
 // 根據選擇的樓層動態加載主組件
 const currentMainComponent = computed(() => {
   console.log('Loading main component for:', selectedFloor.value);
-  return defineAsyncComponent(() => import(`~/components/${selectedFloor.value}.vue`));
+  return defineAsyncComponent(() => import(`~/components/zixun/${selectedFloor.value}.vue`));
 });
 
 // 根據選擇的樓層動態加載副組件
 const currentSubComponent = computed(() => {
   console.log('Loading main component for:', selectedFloor.value);
-  return defineAsyncComponent(() => import(`~/components/${selectedFloor.value}1.vue`));
+  return defineAsyncComponent(() => import(`~/components/zixun/${selectedFloor.value}1.vue`));
 });
 </script>
 

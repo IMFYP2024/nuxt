@@ -42,7 +42,7 @@ onMounted(() => {
 
   // 创建相机
   camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-  camera.position.set(0, 2, 9);
+  camera.position.set(0, 10, 15);
 
   // 初始化 OrbitControls
   controls = new OrbitControls(camera, renderer.domElement);
@@ -136,9 +136,9 @@ scene.add(spotLight1);
         child.receiveShadow = true;
       }
     });
-    mesh2.scale.set(1.5, 1.5, 1.5);
-    mesh2.position.set(1.3, 1.05, 1);
-    mesh2.rotation.y = Math.PI / 4;
+    mesh2.scale.set(2, 2, 2);
+    mesh2.position.set(-4, 0, 5);
+    mesh2.rotation.y = Math.PI / 2;
 
     scene.add(mesh2);
   });
@@ -158,7 +158,7 @@ scene.add(spotLight1);
 
     scene.add(mesh3);
   });
-
+// 資訊大樓標題
   loader.load('js.glb', (gltf) => {
     const mesh4 = gltf.scene;
     mesh4.name = 'glbObject2';  // 设置名称
@@ -168,78 +168,13 @@ scene.add(spotLight1);
         child.receiveShadow = true;
       }
     });
-    mesh4.scale.set(0.5, 0.5, 0.5);
-    mesh4.position.set(1.3, 2.55, 1);
-    mesh4.rotation.y = Math.PI / 4;
+    mesh4.scale.set(1, 1, 1);
+    mesh4.position.set(-4, 3, 5);
+    mesh4.rotation.y = Math.PI / 2;
 
     scene.add(mesh4);
   });
-  // 第一个模型
-  loader.load('zhongshang.glb', (gltf) => {
-    const mesh5 = gltf.scene;
-    mesh5.name = 'glbObject1';  // 设置名称
-    mesh5.traverse((child) => {
-      if (child.isMesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-      }
-    });
-    mesh5.scale.set(1.5, 1.5, 1.5);
-    mesh5.position.set(-1.8, 1.05, 3);
-    mesh5.rotation.y = Math.PI / 4;
-
-    scene.add(mesh5);
-    loading.value = false;
-  });
-
-  // 第二个模型
-  loader.load('zixun.glb', (gltf) => {
-    const mesh6 = gltf.scene;
-    mesh6.name = 'glbObject2';  // 设置名称
-    mesh6.traverse((child) => {
-      if (child.isMesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-      }
-    });
-    mesh6.scale.set(1.5, 1.5, 1.5);
-    mesh6.position.set(1.2, 1.05, -1.4);
-    mesh6.rotation.y = Math.PI / 2;
-
-    scene.add(mesh6);
-  });
-
-  loader.load('jsdl.glb', (gltf) => {
-    const mesh7 = gltf.scene;
-    mesh7.name = 'glbObject2';  // 设置名称
-    mesh7.traverse((child) => {
-      if (child.isMesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-      }
-    });
-    mesh7.scale.set(0.5, 0.5, 0.5);
-    mesh7.position.set(0, 3.05, 3);
-    mesh7.rotation.y = Math.PI / 100;
-
-    scene.add(mesh7);
-  });
-
-  loader.load('js.glb', (gltf) => {
-    const mesh8= gltf.scene;
-    mesh8.name = 'glbObject2';  // 设置名称
-    mesh8.traverse((child) => {
-      if (child.isMesh) {
-        child.castShadow = true;
-        child.receiveShadow = true;
-      }
-    });
-    mesh8.scale.set(0.5, 0.5, 0.5);
-    mesh8.position.set(1.2, 2.55, -1.4);
-    mesh8.rotation.y = Math.PI / 2;
-
-    scene.add(mesh8);
-  });
+  
 
   // 添加事件监听器
   window.addEventListener('resize', onWindowResize);
