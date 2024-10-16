@@ -49,9 +49,9 @@
         </div>
 
         <div v-if="currentDetail === '科系特色'"> 
-         <i class="fi fi-rr-dot-pending menu-icon" @click="toggleSidebar"></i>
+       <!--  <i class="fi fi-rr-dot-pending menu-icon" @click="toggleSidebar"></i>
 
-        <!-- 側邊欄 -->
+         側邊欄 
         <div class="sidebar" :class="{ 'is-open': isSidebarOpen }">
           <div class="close-btn" @click="toggleSidebar"></div>
           <ul>
@@ -60,7 +60,7 @@
             <li @click="scrollToSection('畢業')">畢業</li>
           </ul>
         </div>
-      <!-- 科系特色區塊 -->
+       科系特色區塊 -->
       
         
         <div id="科系特色" class="card1">
