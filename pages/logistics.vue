@@ -19,11 +19,11 @@
         <div v-if="currentDetail === '師資'">
           <!-- 圖表部分 -->
           <div class="chart-container card">
-            <h2>師資</h2>
+            <h2><br>師資</h2>
             <canvas id="teacherChart"></canvas>
           </div>
           <div class="card" style="margin-top:20px">
-          <h3>{{ selectedTitle }}名單:</h3>
+          <h3><br>{{ selectedTitle }}名單:</h3>
           <!-- 教授列表 -->
           <div class="professor-list">
             <div
@@ -49,9 +49,9 @@
         </div>
 
         <div v-if="currentDetail === '科系特色'"> 
-         <i class="fi fi-rr-dot-pending menu-icon" @click="toggleSidebar"></i>
+       <!--  <i class="fi fi-rr-dot-pending menu-icon" @click="toggleSidebar"></i>
 
-        <!-- 側邊欄 -->
+         側邊欄 
         <div class="sidebar" :class="{ 'is-open': isSidebarOpen }">
           <div class="close-btn" @click="toggleSidebar"></div>
           <ul>
@@ -60,7 +60,7 @@
             <li @click="scrollToSection('畢業')">畢業</li>
           </ul>
         </div>
-      <!-- 科系特色區塊 -->
+       科系特色區塊 -->
       
         
         <div id="科系特色" class="card1">
@@ -83,8 +83,8 @@
               <h2>{{ phdCount }}</h2>
             </div>
           </div>
-          <p class="description">長久以來的教育目標為培育優秀的資訊與管理人才</p>
-          <img src="/Images/imin.png" class="imin" alt="Education Objective">
+          <p class="description">賦予學生專業能力、人文道德涵養及獨立自主人格，提供質優企業立即可用之優秀人才，配合國家經濟發展之需要</p>
+          <img src="/Images/loclass.jpg" class="imin" alt="Education Objective">
 
         </div>
       
@@ -94,12 +94,14 @@
        <div id="發展計畫及未來展望" class="card2">
         <h3>發展計畫及未來展望</h3>
         <ul>
-          <li>培養資訊科技與應用之<span class="highlight">全能</span>專業Plus人才，因應<span class="highlight">國家資訊建設</span>之需要。</li>
-          <li>爭取與國內外產官學界之<span class="highlight">學術交流與建教合作</span>，以增廣學生之視野及實務經驗。</li>
-          <li>延攬各<span class="highlight">專業應用領域之師資</span>，推動<span class="highlight">學術研究</span>與<span class="highlight">資訊專題實作</span>。</li>
-          <li>積極參與及舉辦各型<span class="highlight">國內外學術活動</span>。</li>
-          <li>籌設小型<span class="highlight">研討會場所</span>，促進學術交流。</li>
-          <li>增設<span class="highlight">專題研究教室</span>。</li>
+          <li>強化專業教育，培育具流通管理之專業人才</li>
+          <li>重視通識教育，培育具跨領域知能與創新整合能力之人才</li>
+          <li>加強語文教育，培育具國際觀與外語能力之人才</li>
+          <li>落實服務教育，培育具人文與道德素養之人才</li>
+          <li>滾動改善教學與實務的落差: <span class="highlight">跨域課程</span>之再造設計、強化實務業師的合作模式與深度、結合產業問題的<span class="highlight">實務專題與研究</span>。</li>
+          <li>持續發展系所之學術與實務特色: 延攬及招募優質師生、鼓勵師生參與<span class="highlight">問題解決導向</span>之學習與競賽活動、深化<span class="highlight">產學合作</span>的教學與實務貢獻、推動<span class="highlight">實驗室研究團隊</span>的發展模式。</li>
+          <li>強化師生之國際學習與合作: <span class="highlight">海外</span>短期之<span class="highlight">異地教學</span>、<span class="highlight">交換學生</span>的融入學習、國際學者的<span class="highlight">邀訪交流</span>與<span class="highlight">研究合作</span>。</li>
+          <li>整合外部資源與提升行政效能: 持續提升系務之<span class="highlight">E化</span>效能、整合<span class="highlight">產官學</span>與系友會的外部資源、推展<span class="highlight">國際品保</span>認證的實施。</li>
         </ul>
       </div>
 
@@ -114,15 +116,16 @@
           <div class="job-section">
             
             <ul>
-              <li>程式設計師</li>
-              <li>網管工程師</li>
-              <li>資料庫管理師</li>
-              <li>數位內容開發設計工程師</li>
-              <li>網頁多媒體設計師</li>
-              <li>網站設計及管理</li>
-              <li>多媒體商務整合計畫</li>
-              <li>電子商務系統開發</li>
-              <li>行動應用開發</li>
+              <li>物流規劃與管理</li>
+              <li>運輸規劃管理</li>
+              <li>倉儲</li>
+              <li>物管工程師</li>
+              <li>行銷管理</li>
+              <li>零售與通路管理</li>
+              <li>市場分析研究</li>
+              <li>數據分析</li>
+              <li>公職人員(交通行政、民航、運輸營業等)</li>
+              <li>法人機構</li>
             </ul>
           </div>
         </div>
@@ -132,12 +135,13 @@
 
 
         <div v-if="currentDetail === '課程'">
-          <div class="card">
-          <h2>課程</h2>
-          <i class="fi fi-br-info custom-icon" @click="showCreditModal('一、二年級一學期不能小於16學分，三、四年級一學期不可以小於9學分，全年級一學期不可以多餘25')"></i>
+          <div class="card" style="hieght:auto; margin-top:10px">
+
+          <h2><br>課程</h2>
+          <i class="fi fi-br-info custom-icon" @click="showCreditModal"></i>
           <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
           <div class="modal-content" @click.stop>
-            <p>{{ creditMessage }}</p> <!-- 顯示訊息 -->
+            <p style=" text-align: left" v-html="creditMessage"></p><!-- 顯示訊息 -->
             <button @click="closeCreditModal">關閉</button>
           </div>
         </div>
@@ -145,7 +149,7 @@
     <!-- Custom dropdown for selecting academic year -->
           <div class="year-selector">
             <div class="custom-select" @click="toggleDropdown">
-              <div class="selected-option">
+              <div class="selected-option" style="z-index: 10">
                 {{ selectedYear }}
                 <i class="fi fi-rr-caret-down">
                   
@@ -277,10 +281,10 @@ export default {
     // 監聽 currentDetail 的變化
     currentDetail(newValue) {
       if (newValue === '科系特色') {
-        this.animateCount('studentCount', 249, 2000); // 動畫持續 2 秒
-        this.animateCount('teacherCount', 27, 2000);
+        this.animateCount('studentCount', 190, 2000); // 動畫持續 2 秒
+        this.animateCount('teacherCount', 12, 2000);
         this.animateCount('graduateCount', 44, 2000);
-        this.animateCount('phdCount', 22, 2000);
+        this.animateCount('phdCount', 8, 2000);
       }
     },
   },
@@ -301,37 +305,24 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
+          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
           { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
           { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭老師', image: '/Images/teacher.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '柯老師', image: '/Images/teacher.png', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
+          { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
+          { name: '柯老師', image: '/Images/teacher2.png', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
           { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、創造力培育、知識工程、教育科技、創客教育' },
           { name: '連老師', image: '/Images/teacher.png', expertise: '資訊管理、電子商務、電子化企業、服務科學與設計思考、醫療資訊管理' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '料探勘、推薦系統、社會網絡分析' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '工作排程、影像處理、電腦視覺、演算法、資料庫系統、專利檢索' }
-        ],
+          ],
         副教授: [
           { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '何老師', image: '/Images/teacher.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
-          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '電子商務、數位行銷、社群媒體、消費者行為、數量方法分析' }
-        ],
+          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
+          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          ],
         助理教授: [
           { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '許老師', image: '/Images/teacher.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
-          { name: '戴老師', image: '/Images/teacher.png', expertise: '多媒體領域(含3D、VR/AR)、資訊系統' },
-          { name: '周老師', image: '/Images/teacher.png', expertise: '科技教育、擴增實境、人機互動設計' },
-          { name: '曾老師', image: '/Images/teacher.png', expertise: '教育大數據、測驗統計與評量、數位學習' },
-          { name: '李老師', image: '/Images/teacher.png', expertise: '人工智慧、創新顯示互動設計、眼動偵測分析、情感運算、生理資訊感測、行動運算、異質系統整合與開發' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '新興科技應用、資訊管理、虛實整合、問題導向學習應用、STEAM跨領域教學策略' },
-          { name: '陳老師', image: '/Images/teacher.png', expertise: '資訊安全、程式設計、資訊系統管理、網路管理、資料庫管理' }
-        ]
+          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
+          { name: '許老師', image: '/Images/teacher2.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
+          ]
       },
       selectedYear: '請選擇年級', // Default selected year
       isDropdownOpen: false, // Control the dropdown state
@@ -340,66 +331,46 @@ export default {
       courses: {
         大一: [
           { type: '必修', name: '微積分', credits: 3 },
+          { type: '必修', name: '英文', credits: 3 },
           { type: '必修', name: '計算機概論', credits: 3 },
-          { type: '必修', name: '會計學', credits: 2 },
+          { type: '必修', name: '國文', credits: 2 },
           { type: '必修', name: '經濟學', credits: 2 },
-          { type: '必修', name: '企業管理', credits: 2 },
-          { type: '必修', name: '程式設計', credits: 2 },
-          { type: '選修', name: '實用日語會話(一)', credits: 2 },
-          { type: '選修', name: '溝通與簡報', credits: 3 },
-          { type: '選修', name: '資訊網路', credits: 3 },
+          { type: '必修', name: '會計學', credits: 2 },
+          { type: '必修', name: '體育', credits: 0 },
+          { type: '必修', name: '企業管理', credits: 3 },
+          { type: '必修', name: '學涯規劃', credits: 1 },
+          { type: '選修', name: '資料處理', credits: 2 },
+          
         ],
         大二: [
           { type: '必修', name: '統計學', credits: 3 },
-          { type: '必修', name: '行銷/生產管理', credits: 3 },
-          { type: '必修', name: '財務/人力資源管理', credits: 3 },
-          { type: '必修', name: '資料結構', credits: 3 },
-          { type: '必修', name: 'JAVA程式設計', credits: 3 },
-          { type: '必修', name: '資料庫管理系統', credits: 3 },
-          { type: '必修', name: '資訊網路', credits: 2 },
-          { type: '選修', name: '線性代數', credits: 3 },
-          { type: '選修', name: '英語會話', credits: 2 },
-          { type: '選修', name: '實用英文', credits: 2 },
-          { type: '選修', name: '作業系統', credits: 3 },
-          { type: '選修', name: '演算法', credits: 3 },
-          { type: '選修', name: '.NET程式設計', credits: 3 },
-          { type: '選修', name: '電腦繪圖', credits: 3 },
-          { type: '選修', name: 'Linux系統實務', credits: 3 },
+          { type: '必修', name: '生產與作業管理', credits: 2 },
+          { type: '必修', name: '生涯運動', credits: 0 },
+          { type: '必修', name: '行銷與商品管理', credits: 3 },
+          { type: '必修', name: '物聯網概論', credits: 3 },
+          { type: '必修', name: '電子商務', credits: 3 },
+          { type: '必修', name: '民主憲政與法治', credits: 2 },
+          { type: '選修', name: '財務管理', credits: 3 },
+          { type: '選修', name: '資料庫應用', credits: 3 },
+          
         ],
         大三: [
-          { type: '必修', name: '科技英文', credits: 3 },
-          { type: '必修', name: '物聯網概論', credits: 3 },
-          { type: '必修', name: '物件導向系統分析', credits: 3 },
-          { type: '必修', name: '管理資訊系統', credits: 3 },
-          { type: '必修', name: '企業資源規劃', credits: 3 },
-          { type: '必修', name: '多媒體系統', credits: 3 },
-          { type: '必修', name: '人機介面設計', credits: 3 },
-          { type: '選修', name: '資訊倫理', credits: 3 },
-          { type: '選修', name: '軟體工程', credits: 3 },
-          { type: '選修', name: '資料庫專題', credits: 2 },
-          { type: '選修', name: '跨平台程式設計', credits: 3 },
-          { type: '選修', name: '巨量資料分析', credits: 2 },
-          { type: '選修', name: '知識管理', credits: 2 },
-          { type: '選修', name: '顧客關係管理', credits: 3 },
-          { type: '選修', name: '網路規劃與管理', credits: 3 },
-          { type: '選修', name: '伺服器建置與管理', credits: 3 },
-          { type: '選修', name: '行動程式設計', credits: 3 },
-          { type: '選修', name: '資訊安全', credits: 3 },
-          { type: '選修', name: '網際系統設計', credits: 3 },
-        ],
+          { type: '必修', name: '作業研究', credits: 2 },
+          { type: '必修', name: '供應鏈管理', credits: 3 },
+          { type: '必修', name: '資訊分析與應用', credits: 3 },
+          { type: '必修', name: '應用文與習作', credits: 2 },
+          { type: '選修', name: '物流管理', credits: 3 },
+          { type: '選修', name: '品牌管理', credits: 3 },
+          { type: '選修', name: '消費者行為', credits: 2 },
+          ],
         大四: [
-          { type: '必修', name: '電子商務', credits: 3 },
-          { type: '選修', name: '資訊管理實務專題', credits: 3 },
-          { type: '選修', name: '供應鏈管理', credits: 3 },
-          { type: '選修', name: '社群媒體經營', credits: 3 },
-          { type: '選修', name: '決策支援系統', credits: 3 },
-          { type: '選修', name: '專案管理', credits: 3 },
-          { type: '選修', name: '行動服務', credits: 3 },
-          { type: '選修', name: '人工智慧', credits: 3 },
-          { type: '選修', name: '雲端服務技術', credits: 3 },
-          { type: '選修', name: '數位學習', credits: 3 },
-          { type: '選修', name: '互動展示科技應用', credits: 3 },
-        ],
+          { type: '必修', name: '實務專題', credits: 3 },
+          { type: '選修', name: '企業實習', credits: 4 },
+          { type: '選修', name: '通路管理', credits: 3 },
+          { type: '選修', name: '智慧商務服務設計', credits: 3 },
+          { type: '選修', name: '智慧運輸系統與應用', credits: 3 },
+          { type: '選修', name: '校外實習', credits: 4 },
+          ],
       },
       requiredIcon: '/Images/IMG_0047.png', // Replace with the path to the required icon
       electiveIcon: '/Images/IMG_0046.png',
@@ -438,8 +409,13 @@ export default {
   methods: {
      showCreditModal(message) {
       console.log('showCreditModal called');
-      this.creditMessage = message;
-      this.isCreditModalVisible = true;
+  this.creditMessage = `一、二年級一學期不能小於16學分，<br>三、四年級一學期不可以小於9學分，<br>全年級一學期不可以多餘25。<br><br>
+  畢業門檻<br>
+  必修學分：96<br>
+  選修總學分 (含本系/跨系選修)：26<br>
+  博雅通識：4領域8學分<br>
+  校定語言門檻：中級複試`;
+  this.isCreditModalVisible = true;
     },
     closeCreditModal() {
       this.isCreditModalVisible = false;
@@ -469,7 +445,7 @@ export default {
         labels: ['教授', '副教授', '助理教授'],
         datasets: [{
           label: '人數',
-          data: [9, 8, 9],
+          data: [7, 3, 3],
           backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(104, 0, 145, 0.2)'],
           borderColor: ['rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(104, 0, 145, 0.1)'],
           borderWidth: 0
@@ -805,6 +781,8 @@ button {
   width: 200px;
   }
 .custom-select {
+   position: relative;
+  z-index: 1;
    width: 200px;
   background-color: #ff0;
   padding: 10px;
@@ -816,6 +794,7 @@ button {
   align-items: center;
   justify-content: center;
 }
+
 .option {
   padding: 10px;
   text-align: center;
@@ -924,10 +903,10 @@ button {
   background-color: #e0f4ff;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  margin-top: 20px;
   width: 100%; /* 根據需要調整卡片寬度 */
   text-align: center;
-  margin: 0 auto;
+  
 }
  .card3 {
   padding: 30px;
@@ -1234,5 +1213,7 @@ h3 {
 .sidebar, .menu-icon {
   position: fixed;
 }
-
+.parent-container {
+  overflow: visible; /* 確保子元素不會被裁剪 */
+}
 </style>
