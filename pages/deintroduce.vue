@@ -76,7 +76,9 @@
 
           <!-- 其他內容 -->
           <div v-else>
+            <cs v-if="currentTab === 'cs'" :course="currentTab" @back="changeTab('info')" />
             <im v-if="currentTab === 'im'" :course="currentTab" @back="changeTab('info')" />
+            <logistics v-if="currentTab === 'logistics'" :course="currentTab" @back="changeTab('info')" />
           </div>
         </div>
       </transition>
@@ -86,14 +88,18 @@
 
 <script>
 import CollegeSelector from './CollegeSelector.vue';
+import cs from './cs.vue';
 import im from './im.vue';
+import logistics from './logistics.vue';
 import SectionContent from './SectionContent.vue'; 
 
 export default {
   name: 'Introduce',
   components: {
     CollegeSelector,
+    cs,
     im,
+    logistics,
     SectionContent
   },
   data() {
