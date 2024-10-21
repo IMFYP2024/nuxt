@@ -49,7 +49,7 @@
   
   export default {
     setup() {
-      const videoSource = ref('/Images/zhongshang/zhongshang_2f.mp4'); // 預設樓層影片
+      const videoSource = ref('/Images/zhongshang/2f.mp4'); // 預設樓層影片
       const selectedArea = ref(null);
       const showed = ref(false);
   

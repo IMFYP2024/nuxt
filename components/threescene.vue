@@ -78,33 +78,51 @@ groundMesh.receiveShadow = true;
 scene.add(groundMesh);
 
 
-  // 添加聚光灯
-  const spotLight = new THREE.SpotLight(0xffffff, 3000, 100, Math.PI / 3, 1);
-  spotLight.position.set(1, 25, 20); // 调整位置
-  spotLight.angle = Math.PI / 4; // 增加角度范围
-  spotLight.distance = 100; // 确保足够距离覆盖两个模型
-  spotLight.castShadow = true;
-  spotLight.shadow.bias = -0.0001;
+  // 创建一个目标点，用于所有聚光灯照射
+const lightTarget = new THREE.Object3D();
+lightTarget.position.set(1, 1.05, 1.5); // 模型之间的目标点
+scene.add(lightTarget);
 
-  const lightTarget = new THREE.Object3D();
-  lightTarget.position.set(1, 1.05, 1.5); // 两个模型之间的点
-  scene.add(lightTarget);
-  spotLight.target = lightTarget;
-  scene.add(spotLight);
+// 上方燈光
+const northLight = new THREE.SpotLight(0xffffff, 1000, 100, Math.PI / 4, 1);
+northLight.position.set(0, 25, 20); // 从上方照射
+northLight.angle = Math.PI / 4;
+northLight.distance = 100;
+northLight.castShadow = true;
+northLight.shadow.bias = -0.0001;
+northLight.target = lightTarget;
+scene.add(northLight);
 
-  // 添加聚光灯2
-  const spotLight1 = new THREE.SpotLight(0xffffff, 3000, 100, Math.PI / 4, 1);
-spotLight1.position.set(10, 25, 20);
-spotLight1.angle = Math.PI / 4; 
-spotLight1.distance = 100; 
-spotLight1.castShadow = true;
-spotLight1.shadow.bias = -0.0001;
+// 下方灯光
+const southLight = new THREE.SpotLight(0xffffff, 1000, 100, Math.PI / 4, 1);
+southLight.position.set(0, 25, -20); // 从下方照射
+southLight.angle = Math.PI / 4;
+southLight.distance = 100;
+southLight.castShadow = true;
+southLight.shadow.bias = -0.0001;
+southLight.target = lightTarget;
+scene.add(southLight);
 
-const lightTarget1 = new THREE.Object3D();
-lightTarget1.position.set(1, 1.05, 1.5);
-scene.add(lightTarget1);
-spotLight1.target = lightTarget1;
-scene.add(spotLight1);
+// 右方灯光
+const eastLight = new THREE.SpotLight(0xffffff, 1000, 100, Math.PI / 4, 1);
+eastLight.position.set(20, 25, 0); // 从右方照射
+eastLight.angle = Math.PI / 4;
+eastLight.distance = 100;
+eastLight.castShadow = true;
+eastLight.shadow.bias = -0.0001;
+eastLight.target = lightTarget;
+scene.add(eastLight);
+
+// 左方灯光
+const westLight = new THREE.SpotLight(0xffffff, 1000, 100, Math.PI / 4, 1);
+westLight.position.set(-20, 25, 0); // 从左方照射
+westLight.angle = Math.PI / 4;
+westLight.distance = 100;
+westLight.castShadow = true;
+westLight.shadow.bias = -0.0001;
+westLight.target = lightTarget;
+scene.add(westLight);
+
 
   // 加载模型
   const loader = new GLTFLoader().setPath('/Images/');
@@ -141,6 +159,22 @@ scene.add(spotLight1);
     mesh2.rotation.y = Math.PI / 2;
 
     scene.add(mesh2);
+  });
+  // 第三个模型（弘業樓）
+  loader.load('hongye.glb', (gltf) => {
+    const mesh5 = gltf.scene;
+    mesh5.name = 'glbObject2';  // 设置名称
+    mesh5.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh5.scale.set(2, 2, 2);
+    mesh5.position.set(0.3, 0, 5);
+    mesh5.rotation.y = Math.PI / -2;
+
+    scene.add(mesh5);
   });
     // 中商大樓標題
   loader.load('jsdl.glb', (gltf) => {
