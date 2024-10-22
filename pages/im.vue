@@ -342,24 +342,34 @@ export default {
         大一: [
           { type: '必修', name: '微積分', credits: 3 },
           { type: '必修', name: '英文', credits: 3 },
+          { type: '必修', name: '國文', credits: 2 },
+          { type: '必修', name: '體育', credits: 0 },
           { type: '必修', name: '計算機概論', credits: 3 },
           { type: '必修', name: '會計學', credits: 2 },
           { type: '必修', name: '經濟學', credits: 2 },
           { type: '必修', name: '企業管理', credits: 2 },
+          { type: '必修', name: '學涯規劃', credits: 1 },
           { type: '必修', name: '程式設計', credits: 2 },
+          { type: '選修', name: '網頁設計', credits: 3 },
           { type: '選修', name: '實用日語會話(一)', credits: 2 },
-          { type: '選修', name: '溝通與簡報', credits: 3 },
-          { type: '選修', name: '資訊網路', credits: 3 },
+          { type: '選修', name: '實用日語會話(二)', credits: 2 },
+          { type: '選修', name: '溝通與簡報', credits: 3 },        
         ],
         大二: [
+          { type: '必修', name: '生涯運動', credits: 0 },
           { type: '必修', name: '統計學', credits: 3 },
           { type: '必修', name: '行銷/生產管理', credits: 3 },
           { type: '必修', name: '財務/人力資源管理', credits: 3 },
+          { type: '必修', name: '民主憲政與法治', credits: 2 },
+          { type: '必修', name: '台灣開發史', credits: 2 },
           { type: '必修', name: '資料結構', credits: 3 },
+          { type: '選修', name: '資訊網路', credits: 3 },
           { type: '必修', name: 'JAVA程式設計', credits: 3 },
           { type: '必修', name: '資料庫管理系統', credits: 3 },
           { type: '必修', name: '資訊網路', credits: 2 },
           { type: '選修', name: '線性代數', credits: 3 },
+          { type: '選修', name: '自主學習專業(一)', credits: 1 },
+          { type: '選修', name: '自主學習專業(二)', credits: 1 },
           { type: '選修', name: '英語會話', credits: 2 },
           { type: '選修', name: '實用英文', credits: 2 },
           { type: '選修', name: '作業系統', credits: 3 },
@@ -442,8 +452,8 @@ export default {
       console.log('showCreditModal called');
   this.creditMessage = `一、二年級一學期不能小於16學分，<br>三、四年級一學期不可以小於9學分，<br>全年級一學期不可以多餘25。<br><br>
   <span style="color: red;">畢業門檻</span><br>
-  必修學分：96<br>
-  選修總學分 (含本系/跨系選修)：26<br>
+  必修學分：97<br>
+  選修總學分 (含本系/跨系選修)：25<br>
   博雅通識：4領域8學分<br>
   校定語言門檻：中級複試、多益550，或同等級數之英文能力檢定標準<br>
    <span style="color: red;">系定門檻：</span>證照點數10點`;
