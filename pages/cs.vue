@@ -467,8 +467,8 @@ export default {
       console.log('showCreditModal called');
   this.creditMessage = `一、二年級一學期不能小於16學分，<br>三、四年級一學期不可以小於9學分，<br>全年級一學期不可以多餘25。<br><br>
   <span style="color: red;">畢業門檻</span><br>
-  必修學分：96<br>
-  選修總學分 (含本系/跨系選修)：26<br>
+  必修學分：98<br>
+  選修總學分 (含本系/跨系選修)：25<br>
   博雅通識：4領域8學分<br>
   校定語言門檻：中級複試、多益550，或同等級數之英文能力檢定標準<br>
   <span style="color: red;">系定門檻：</span><br>項目1:通過CPE程式能力檢測<br>項目2:取得國內外專業資訊相關證照乙張<br>
