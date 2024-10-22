@@ -63,7 +63,7 @@
         icon: 'bi:1-circle', 
         name: '商學院辦公室', 
         description: 'XXXX',
-        image:"/Images/zhongshang/2f (3).JPEG",
+        image:"/Images/zhongshang/2f(3).JPEG",
         extraInfo: ''
     },
     { 
@@ -75,7 +75,7 @@
         icon: 'bi:2-circle', 
         name: '商學院院長室', 
         description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f (4).JPEG",
+        image:"/Images/zhongshang/2f(4).JPEG",
         extraInfo: ''
     },
     { 
@@ -87,7 +87,7 @@
         icon: 'bi:3-circle', 
         name: '討論室(大)', 
         description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f (1).JPEG",
+        image:"/Images/zhongshang/2f(1).JPEG",
         extraInfo: ''
     },
     { 
@@ -99,7 +99,7 @@
         icon: 'bi:4-circle', 
         name: '休閑區', 
         description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f (6).JPEG",
+        image:"/Images/zhongshang/2f(6).JPEG",
         extraInfo: ''
     },
     
@@ -112,7 +112,7 @@
         icon: 'bi:5-circle', 
         name: '討論室(大)', 
         description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f (5).JPEG",
+        image:"/Images/zhongshang/2f(5).JPEG",
         extraInfo: ''
     },
     
