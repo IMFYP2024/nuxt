@@ -110,17 +110,41 @@
 
           <!-- 就業工作一欄 -->
           <div class="job-section">
-            
+            <h4>聯網嵌入式系統領域</h4>
             <ul>
-              <li>程式設計師</li>
-              <li>網管工程師</li>
-              <li>資料庫管理師</li>
-              <li>數位內容開發設計工程師</li>
-              <li>網頁多媒體設計師</li>
-              <li>網站設計及管理</li>
-              <li>多媒體商務整合計畫</li>
-              <li>電子商務系統開發</li>
-              <li>行動應用開發</li>
+              <li>高等行動裝置研發工程師</li>
+              <li>高等軟體工程師</li>
+              <li>高等硬體工程師</li>
+              <li>高等手機應用程式工程師</li>
+              <li>高等嵌入式系統工程師</li>
+              <li>雲端技術開發工程師</li>
+              <li>高等軟體設計工程師</li>
+            </ul>
+            <h4>資料探勘領域</h4>
+            <ul>
+              <li>高等軟體工程師</li>
+              <li>演算開發工程師</li>
+              <li>資料庫開發工程師</li>
+              <li>軟體開發主轉/專案經理</li>
+              <li>資料探勘工程師</li>
+            </ul>
+            <h4>多媒體應用領域</h4>
+            <ul>
+              <li>高等多媒體系統研發工程師</li>
+              <li>高等軟體工程師</li>
+              <li>高等系統維護工程師</li>
+              <li>高等多媒體應用工程師</li>
+              <li>高等影音系統開發工程師</li>
+              <li>遊戲程式設計師</li>
+              <li>高等多媒體系統工程師</li>
+            </ul>
+            <h4>資訊安全領域</h4>
+            <ul>
+              <li>高等資訊安全稽核師</li>
+              <li>高等網站開發工程師</li>
+              <li>高等通訊軟體工程師</li>
+              <li>高等網路工程師</li>
+              <li>資訊安全管理顧問</li>
             </ul>
           </div>
         </div>
@@ -240,7 +264,7 @@
         >
           <!-- 競賽卡片樣式 -->
           <swiper-slide v-for="(item, index) in competitions" :key="index" class="carousel-item">
-            <div class="card">
+            <div class="card4">
               <img :src="item.image" alt="Competition Image" class="carousel-image" />
               <div class="card-content">
                 <h3>{{ item.title }}</h3>
@@ -442,12 +466,12 @@ export default {
      showCreditModal(message) {
       console.log('showCreditModal called');
   this.creditMessage = `一、二年級一學期不能小於16學分，<br>三、四年級一學期不可以小於9學分，<br>全年級一學期不可以多餘25。<br><br>
-  畢業門檻<br>
+  <span style="color: red;">畢業門檻</span><br>
   必修學分：96<br>
   選修總學分 (含本系/跨系選修)：26<br>
   博雅通識：4領域8學分<br>
-  校定語言門檻：中級複試<br>
-  系定門檻：<br>項目1:通過CPE程式能力檢測<br>項目2:取得國內外專業資訊相關證照乙張<br>
+  校定語言門檻：中級複試、多益550，或同等級數之英文能力檢定標準<br>
+  <span style="color: red;">系定門檻：</span><br>項目1:通過CPE程式能力檢測<br>項目2:取得國內外專業資訊相關證照乙張<br>
   項目3(擇一):<br>參與校內外資訊競賽至少三次以上<br>
   學術研討會或期刊至少投稿一篇論文。<br>
   參與一項產學合作(包括國科會)<br>

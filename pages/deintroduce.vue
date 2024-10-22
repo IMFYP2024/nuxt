@@ -79,6 +79,8 @@
             <cs v-if="currentTab === 'cs'" :course="currentTab" @back="changeTab('info')" />
             <im v-if="currentTab === 'im'" :course="currentTab" @back="changeTab('info')" />
             <logistics v-if="currentTab === 'logistics'" :course="currentTab" @back="changeTab('info')" />
+            <international v-if="currentTab === 'international'" :course="currentTab" @back="changeTab('business')" />
+            <account v-if="currentTab === 'account'" :course="currentTab" @back="changeTab('business')" />
           </div>
         </div>
       </transition>
@@ -91,7 +93,10 @@ import CollegeSelector from './CollegeSelector.vue';
 import cs from './cs.vue';
 import im from './im.vue';
 import logistics from './logistics.vue';
+import international from './international.vue';
+import account from './account.vue';
 import SectionContent from './SectionContent.vue'; 
+
 
 export default {
   name: 'Introduce',
@@ -100,7 +105,10 @@ export default {
     cs,
     im,
     logistics,
-    SectionContent
+    international,
+    account,
+    SectionContent,
+    
   },
   data() {
     return {
@@ -122,7 +130,7 @@ export default {
       ],
       businessItems: [
         { text: '國際貿易經營系', link: 'international', color: '#355664' },
-        { text: '會計資訊系', link: 'accounting', color: '#355664' },
+        { text: '會計資訊系', link: 'account', color: '#355664' },
         { text: '保險金融管理系', link: 'insurance', color: '#355664' },
         { text: '財政稅務系', link: 'tax', color: '#355664' },
         { text: '財務金融系', link: 'finance', color: '#355664' },

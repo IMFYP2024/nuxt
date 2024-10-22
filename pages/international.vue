@@ -15,7 +15,7 @@
     <!-- 介紹頁面部分 -->
     <div class="detail-container" v-if="showDetail">
       <div class="detail">
-        <h1>流通管理系</h1>
+        <h1>國際貿易經營系</h1>
         <div v-if="currentDetail === '師資'">
           <!-- 圖表部分 -->
           <div class="chart-container card">
@@ -83,8 +83,8 @@
               <h2>{{ phdCount }}</h2>
             </div>
           </div>
-          <p class="description">賦予學生專業能力、人文道德涵養及獨立自主人格，提供質優企業立即可用之優秀人才，配合國家經濟發展之需要</p>
-          <img src="/Images/loclass.jpg" class="imin" alt="Education Objective">
+          <p class="description">培養具備國際觀、科技運用能力、國際貿易與企業經營能力之專業(基層)人才為教育目標。</p>
+          <img src="/Images/international.jpg" class="imin" alt="Education Objective">
 
         </div>
       
@@ -94,14 +94,11 @@
        <div id="發展計畫及未來展望" class="card2">
         <h3>發展計畫及未來展望</h3>
         <ul>
-          <li>強化專業教育，培育具流通管理之專業人才</li>
-          <li>重視通識教育，培育具跨領域知能與創新整合能力之人才</li>
-          <li>加強語文教育，培育具國際觀與外語能力之人才</li>
-          <li>落實服務教育，培育具人文與道德素養之人才</li>
-          <li>滾動改善教學與實務的落差: <span class="highlight">跨域課程</span>之再造設計、強化實務業師的合作模式與深度、結合產業問題的<span class="highlight">實務專題與研究</span>。</li>
-          <li>持續發展系所之學術與實務特色: 延攬及招募優質師生、鼓勵師生參與<span class="highlight">問題解決導向</span>之學習與競賽活動、深化<span class="highlight">產學合作</span>的教學與實務貢獻、推動<span class="highlight">實驗室研究團隊</span>的發展模式。</li>
-          <li>強化師生之國際學習與合作: <span class="highlight">海外</span>短期之<span class="highlight">異地教學</span>、<span class="highlight">交換學生</span>的融入學習、國際學者的<span class="highlight">邀訪交流</span>與<span class="highlight">研究合作</span>。</li>
-          <li>整合外部資源與提升行政效能: 持續提升系務之<span class="highlight">E化</span>效能、整合<span class="highlight">產官學</span>與系友會的外部資源、推展<span class="highlight">國際品保</span>認證的實施。</li>
+          <li>課程著重<span class="highlight">實務導向</span>，由本系專、兼任教師配合業界實務專家授課指導。</li>
+          <li>培育具備貿易<span class="highlight">實務操作</span>能力、<span class="highlight">市場開發行銷</span>能力與<span class="highlight">財務投資規劃管理</span>能力之整合型專業人才為目標。</li>
+          <li>所有教師<span class="highlight">皆</span>具博士學位，未來本系也會持續增聘具有實務經驗的博士級師資，以提高本系<span class="highlight">實作教學</span>的量能。</li>
+          <li>在學生競賽及學期實習，均與<span class="highlight">中部在地廠商</span>媒合，除了讓學生瞭解中部的產業結構，也可提高學生在<span class="highlight">中部就業</span>的優勢。</li>
+          <li>開設英語、日語、法語與西語等多種外國語文課程，並鼓勵學生參加<span class="highlight">國際交換學生</span>及<span class="highlight">海外實習</span>。</li>
         </ul>
       </div>
 
@@ -114,18 +111,30 @@
 
           <!-- 就業工作一欄 -->
           <div class="job-section">
-            
+            <h4>國際經貿領域</h4>
             <ul>
-              <li>物流規劃與管理</li>
-              <li>運輸規劃管理</li>
-              <li>倉儲</li>
-              <li>物管工程師</li>
-              <li>行銷管理</li>
-              <li>零售與通路管理</li>
-              <li>市場分析研究</li>
-              <li>數據分析</li>
-              <li>公職人員(交通行政、民航、運輸營業等)</li>
-              <li>法人機構</li>
+              <li>報關及貨運相關人員</li>
+              <li>國際採購人員</li>
+              <li>進出口業務人員</li>
+              <li>關務、國際商務人員</li>
+              <li>跨境電商人員</li>
+              <li>貿易相關助理人員</li>
+            </ul>
+            <h4>國際企業與行銷領域</h4>
+            <ul>
+              <li>倉儲物流人員</li>
+              <li>進出口業務人員</li>
+              <li>行銷企劃人員</li>
+              <li>會議展覽人員</li>
+            </ul>
+            <h4>國際財金領域</h4>
+            <ul>
+              <li>外匯交易人員</li>
+              <li>理財規劃人員</li>
+              <li>資料庫管理師</li>
+              <li>銀行辦事員</li>
+              <li>證券營業員</li>
+              <li>財務或會計人員</li>
             </ul>
           </div>
         </div>
@@ -135,7 +144,7 @@
 
 
         <div v-if="currentDetail === '課程'">
-          <div class="card" style="hieght:auto; margin-top:10px">
+          <div class="card" style="height:auto; margin-top:10px">
 
           <h2><br>課程</h2>
           <i class="fi fi-br-info custom-icon" @click="showCreditModal"></i>
@@ -281,10 +290,10 @@ export default {
     // 監聽 currentDetail 的變化
     currentDetail(newValue) {
       if (newValue === '科系特色') {
-        this.animateCount('studentCount', 190, 2000); // 動畫持續 2 秒
-        this.animateCount('teacherCount', 12, 2000);
-        this.animateCount('graduateCount', 44, 2000);
-        this.animateCount('phdCount', 8, 2000);
+        this.animateCount('studentCount', 369, 2000); // 動畫持續 2 秒
+        this.animateCount('teacherCount', 23, 2000);
+        this.animateCount('graduateCount', 92, 2000);
+        this.animateCount('phdCount', 23, 2000);
       }
     },
   },
@@ -309,20 +318,28 @@ export default {
           { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
           { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
           { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '柯老師', image: '/Images/teacher2.png', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、創造力培育、知識工程、教育科技、創客教育' },
-          { name: '連老師', image: '/Images/teacher.png', expertise: '資訊管理、電子商務、電子化企業、服務科學與設計思考、醫療資訊管理' },
-          ],
+        ],
         副教授: [
           { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
           { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
           { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          ],
+          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
+          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
+          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
+          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
+          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
+          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
+          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
+          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },          
+        ],
         助理教授: [
           { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
           { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
           { name: '許老師', image: '/Images/teacher2.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
-          ]
+        ]
       },
       selectedYear: '請選擇年級', // Default selected year
       isDropdownOpen: false, // Control the dropdown state
@@ -330,47 +347,50 @@ export default {
       currentCourses: [], // List of courses for the selected year
       courses: {
         大一: [
-          { type: '必修', name: '微積分', credits: 3 },
           { type: '必修', name: '英文', credits: 3 },
-          { type: '必修', name: '計算機概論', credits: 3 },
+          { type: '必修', name: '會計學', credits: 3 },
+          { type: '必修', name: '經濟學', credits: 3 },
           { type: '必修', name: '國文', credits: 2 },
-          { type: '必修', name: '經濟學', credits: 2 },
-          { type: '必修', name: '會計學', credits: 2 },
           { type: '必修', name: '體育', credits: 0 },
-          { type: '必修', name: '企業管理', credits: 3 },
+          { type: '必修', name: '民法', credits: 3 },
+          { type: '必修', name: '程式設計與應用', credits: 3 },
+          { type: '必修', name: '大學之道', credits: 2 },
+          { type: '必修', name: '服務與學習', credits: 1 },
           { type: '必修', name: '學涯規劃', credits: 1 },
-          { type: '選修', name: '資料處理', credits: 2 },
-          
+          { type: '選修', name: '微積分', credits: 2 },
+          { type: '選修', name: '商業英語聽力練習', credits: 2 },
         ],
         大二: [
+          { type: '必修', name: '國際貿易實務', credits: 3 },
           { type: '必修', name: '統計學', credits: 3 },
-          { type: '必修', name: '生產與作業管理', credits: 2 },
+          { type: '必修', name: '商業英語會話', credits: 1 },
           { type: '必修', name: '生涯運動', credits: 0 },
-          { type: '必修', name: '行銷與商品管理', credits: 3 },
-          { type: '必修', name: '物聯網概論', credits: 3 },
-          { type: '必修', name: '電子商務', credits: 3 },
-          { type: '必修', name: '民主憲政與法治', credits: 2 },
-          { type: '選修', name: '財務管理', credits: 3 },
-          { type: '選修', name: '資料庫應用', credits: 3 },
-          
+          { type: '必修', name: '財務管理', credits: 3 },
+          { type: '必修', name: '臺灣開發史', credits: 2 },
+          { type: '選修', name: '西班牙語', credits: 2 },
+          { type: '選修', name: '貨幣銀行學', credits: 3 },
+          { type: '選修', name: '廣告學', credits: 3 },
+          { type: '選修', name: '日語', credits: 2 },
         ],
         大三: [
-          { type: '必修', name: '作業研究', credits: 2 },
-          { type: '必修', name: '供應鏈管理', credits: 3 },
-          { type: '必修', name: '資訊分析與應用', credits: 3 },
-          { type: '必修', name: '應用文與習作', credits: 2 },
-          { type: '選修', name: '物流管理', credits: 3 },
-          { type: '選修', name: '品牌管理', credits: 3 },
-          { type: '選修', name: '消費者行為', credits: 2 },
-          ],
+          { type: '必修', name: '國際貿易理論與政策', credits: 2 },
+          { type: '必修', name: '貿易英文書信與習作', credits: 2 },
+          { type: '必修', name: '國際企業管理', credits: 3 },
+          { type: '必修', name: '國際行銷管理', credits: 3 },
+          { type: '必修', name: '國際商展實務', credits: 2 },
+          { type: '選修', name: '西班牙語', credits: 2 },
+          { type: '選修', name: '行銷企劃實務', credits: 3 },
+          { type: '選修', name: '企業電子化', credits: 3 },
+        ],
         大四: [
-          { type: '必修', name: '實務專題', credits: 3 },
-          { type: '選修', name: '企業實習', credits: 4 },
-          { type: '選修', name: '通路管理', credits: 3 },
-          { type: '選修', name: '智慧商務服務設計', credits: 3 },
-          { type: '選修', name: '智慧運輸系統與應用', credits: 3 },
-          { type: '選修', name: '校外實習', credits: 4 },
-          ],
+          { type: '必修', name: '國際金融與匯兌', credits: 3 },
+          { type: '選修', name: '國際財務管理', credits: 3 },
+          { type: '選修', name: '經貿英文閱讀', credits: 3 },
+          { type: '選修', name: '國貿資訊系統', credits: 2 },
+          { type: '選修', name: '專題研究', credits: 1 },
+          { type: '選修', name: '數位行銷應用與AI整合規劃', credits: 3 },
+          { type: '選修', name: '校外實習', credits: 2 },
+        ],
       },
       requiredIcon: '/Images/IMG_0047.png', // Replace with the path to the required icon
       electiveIcon: '/Images/IMG_0046.png',
@@ -414,7 +434,10 @@ export default {
   必修學分：96<br>
   選修總學分 (含本系/跨系選修)：26<br>
   博雅通識：4領域8學分<br>
-  校定語言門檻：中級複試、多益550，或同等級數之英文能力檢定標準`;
+  校定語言門檻：中級複試、多益550，或同等級數之英文能力檢定標準<br>
+  <span style="color: red;">系定門檻：</span><br>
+1.「勞委會國貿事務技術士」丙級（含）以上。<br>
+2.「國貿大會考」（含）以上。`;
   this.isCreditModalVisible = true;
     },
     closeCreditModal() {
@@ -445,7 +468,7 @@ export default {
         labels: ['教授', '副教授', '助理教授'],
         datasets: [{
           label: '人數',
-          data: [7, 3, 3],
+          data: [4, 14, 3],
           backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(104, 0, 145, 0.2)'],
           borderColor: ['rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(104, 0, 145, 0.1)'],
           borderWidth: 0
@@ -900,7 +923,7 @@ button {
 
 
 .card {
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
@@ -910,7 +933,7 @@ button {
 }
  .card3 {
   padding: 30px;
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -964,7 +987,7 @@ button {
 
 .card2 {
   padding: 30px;
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -1011,7 +1034,7 @@ h3 {
 }
 .card1 {
   padding: 30px;
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
