@@ -82,6 +82,7 @@
             <international v-if="currentTab === 'international'" :course="currentTab" @back="changeTab('business')" />
             <account v-if="currentTab === 'account'" :course="currentTab" @back="changeTab('business')" />
             <insurance v-if="currentTab === 'insurance'" :course="currentTab" @back="changeTab('business')" />
+            <tax v-if="currentTab === 'tax'" :course="currentTab" @back="changeTab('business')" />
           </div>
         </div>
       </transition>
@@ -98,6 +99,7 @@ import logistics from './logistics.vue';
 import international from './international.vue';
 import account from './account.vue';
 import insurance from './insurance.vue';
+import tax from './tax.vue';
 
 
 export default {
@@ -110,6 +112,7 @@ export default {
     international,
     account,
     insurance,
+    tax,
     SectionContent,
     
   },
