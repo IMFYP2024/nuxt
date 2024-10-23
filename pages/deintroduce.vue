@@ -81,6 +81,8 @@
             <logistics v-if="currentTab === 'logistics'" :course="currentTab" @back="changeTab('info')" />
             <international v-if="currentTab === 'international'" :course="currentTab" @back="changeTab('business')" />
             <account v-if="currentTab === 'account'" :course="currentTab" @back="changeTab('business')" />
+            <insurance v-if="currentTab === 'insurance'" :course="currentTab" @back="changeTab('business')" />
+            <tax v-if="currentTab === 'tax'" :course="currentTab" @back="changeTab('business')" />
           </div>
         </div>
       </transition>
@@ -90,12 +92,14 @@
 
 <script>
 import CollegeSelector from './CollegeSelector.vue';
+import SectionContent from './SectionContent.vue';
 import cs from './cs.vue';
 import im from './im.vue';
 import logistics from './logistics.vue';
 import international from './international.vue';
 import account from './account.vue';
-import SectionContent from './SectionContent.vue'; 
+import insurance from './insurance.vue';
+import tax from './tax.vue';
 
 
 export default {
@@ -107,6 +111,8 @@ export default {
     logistics,
     international,
     account,
+    insurance,
+    tax,
     SectionContent,
     
   },
@@ -116,6 +122,7 @@ export default {
       currentDept: '',
       isCollegeSelected: false,
        backgroundColor: '',
+       activeTab: null,
       tabs: [
         { name: '資訊與流通學院', type: 'info', icon: 'fi fi-bs-computer', color: '#83C3DA' },
         { name: '商學院', type: 'business', icon: 'fi fi-bs-corporate', color: '#8A95CA' },
@@ -165,6 +172,10 @@ export default {
     if (selectedTab) {
       this.backgroundColor = selectedTab.color;
     }
+    this.activeTab = tabType; 
+  console.log('選擇學院:', tabType);
+  console.log('設置 activeTab:', this.activeTab);  // 新增调试信息
+  console.log('設置 currentDept:', this.currentDept);
   },
   changeTab(tabType) {
   const mainTabs = ['info', 'business', 'design', 'smart', 'language'];
@@ -177,8 +188,8 @@ export default {
   this.currentTab = tabType;
   this.currentDept = this.getDefaultDept(tabType);
 
-  console.log('切換到 Tab:', tabType); 
-  console.log('當前科系:', this.currentDept);
+  console.log('設置 activeTab:', this.activeTab);  // 新增调试信息
+  console.log('設置 currentDept:', this.currentDept);
 
   const selectedTab = this.tabs.find(tab => tab.type === tabType);
   if (selectedTab) {
@@ -197,13 +208,16 @@ export default {
   },
   goBack() {
   const mainTabs = ['info', 'business', 'design', 'smart', 'language']; 
-  console.log('點擊返回按鈕'); 
-
+  console.log('點擊返回按鈕');
+  console.log('返回之前的 currentTab:', this.currentTab);
+  console.log('返回之前的 activeTab:', this.activeTab);  // 确认 activeTab 的值
+  console.log('返回之前的 currentDept:', this.currentDept);
  
   if (!mainTabs.includes(this.currentTab)) {
     console.log('科系介绍->學院科系選單'); 
     this.currentDept = '';  // 清空當前科系，返回到学院的科系選單
     this.currentTab = this.activeTab || 'info'; 
+    console.log('返回後的 currentTab:', this.currentTab);
   } else if (mainTabs.includes(this.currentTab)) {
     console.log('學院科系選單->學院選單'); // 調試信息
     this.isCollegeSelected = false;  

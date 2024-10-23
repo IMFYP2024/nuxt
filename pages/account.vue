@@ -84,7 +84,7 @@
             </div>
           </div>
           <p class="description">首重學生會計專業知識基礎之奠定，學生既具會計專業能力，又具有跨領域財金管理專業知識，可以在生涯規劃中有多元選擇的機會。</p>
-          <img src="/Images/international.jpg" class="imin" alt="Education Objective">
+          
 
         </div>
       

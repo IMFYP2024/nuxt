@@ -49,7 +49,7 @@
   
   export default {
     setup() {
-      const videoSource = ref('/Images/zhongshang/2f.mp4'); // 預設樓層影片
+      const videoSource = ref('https://pub-47f454dfd8af45a19b1d09b9dda1ef29.r2.dev/2floor.mp4'); // 預設樓層影片
       const selectedArea = ref(null);
       const showed = ref(false);
   
@@ -63,7 +63,7 @@
         icon: 'bi:1-circle', 
         name: '商學院辦公室', 
         description: 'XXXX',
-        image:"/Images/zhongshang/2f(3).JPEG",
+        image:"/Images/zhongshang/2f/2f (3).JPEG",
         extraInfo: ''
     },
     { 
@@ -75,7 +75,7 @@
         icon: 'bi:2-circle', 
         name: '商學院院長室', 
         description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f(4).JPEG",
+        image:"/Images/zhongshang/2f/2f (4).JPEG",
         extraInfo: ''
     },
     { 
@@ -87,7 +87,7 @@
         icon: 'bi:3-circle', 
         name: '討論室(大)', 
         description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f(1).JPEG",
+        image:"/Images/zhongshang/2f/2f (1).JPEG",
         extraInfo: ''
     },
     { 
@@ -99,7 +99,7 @@
         icon: 'bi:4-circle', 
         name: '休閑區', 
         description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f(6).JPEG",
+        image:"/Images/zhongshang/2f/2f (6).JPEG",
         extraInfo: ''
     },
     
@@ -112,7 +112,7 @@
         icon: 'bi:5-circle', 
         name: '討論室(大)', 
         description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f(5).JPEG",
+        image:"/Images/zhongshang/2f/2f (5).JPEG",
         extraInfo: ''
     },
     

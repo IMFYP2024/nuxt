@@ -49,9 +49,9 @@
         </div>
 
         <div v-if="currentDetail === '科系特色'"> 
-         <i class="fi fi-rr-dot-pending menu-icon" @click="toggleSidebar"></i>
+        <!-- <i class="fi fi-rr-dot-pending menu-icon" @click="toggleSidebar"></i>
 
-        <!-- 側邊欄 -->
+         
         <div class="sidebar" :class="{ 'is-open': isSidebarOpen }">
           <div class="close-btn" @click="toggleSidebar"></div>
           <ul>
@@ -60,7 +60,7 @@
             <li @click="scrollToSection('畢業')">畢業</li>
           </ul>
         </div>
-      <!-- 科系特色區塊 -->
+       -->
       
         
         <div id="科系特色" class="card1">
@@ -844,6 +844,8 @@ button {
   width: 200px;
   }
 .custom-select {
+   position: relative;
+  z-index: 1;
    width: 200px;
   background-color: #ff0;
   padding: 10px;
@@ -855,6 +857,7 @@ button {
   align-items: center;
   justify-content: center;
 }
+
 .option {
   padding: 10px;
   text-align: center;
@@ -1273,5 +1276,7 @@ h3 {
 .sidebar, .menu-icon {
   position: fixed;
 }
-
+.parent-container {
+  overflow: visible; /* 確保子元素不會被裁剪 */
+}
 </style>
