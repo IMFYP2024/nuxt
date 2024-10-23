@@ -15,7 +15,7 @@
     <!-- 介紹頁面部分 -->
     <div class="detail-container" v-if="showDetail">
       <div class="detail">
-        <h1>流通管理系</h1>
+        <h1>財政稅務系</h1>
         <div v-if="currentDetail === '師資'">
           <!-- 圖表部分 -->
           <div class="chart-container card">
@@ -83,8 +83,8 @@
               <h2>{{ phdCount }}</h2>
             </div>
           </div>
-          <p class="description">賦予學生專業能力、人文道德涵養及獨立自主人格，提供質優企業立即可用之優秀人才，配合國家經濟發展之需要</p>
-          <img src="/Images/loclass.jpg" class="imin" alt="Education Objective">
+          <p class="description">培育具有規劃、管理及專業研究能力的財政稅務人才</p>
+          <img src="/Images/tax.jpg" class="imin" alt="Education Objective">
 
         </div>
       
@@ -94,14 +94,11 @@
        <div id="發展計畫及未來展望" class="card2">
         <h3>發展計畫及未來展望</h3>
         <ul>
-          <li>強化專業教育，培育具流通管理之專業人才</li>
-          <li>重視通識教育，培育具跨領域知能與創新整合能力之人才</li>
-          <li>加強語文教育，培育具國際觀與外語能力之人才</li>
-          <li>落實服務教育，培育具人文與道德素養之人才</li>
-          <li>滾動改善教學與實務的落差: <span class="highlight">跨域課程</span>之再造設計、強化實務業師的合作模式與深度、結合產業問題的<span class="highlight">實務專題與研究</span>。</li>
-          <li>持續發展系所之學術與實務特色: 延攬及招募優質師生、鼓勵師生參與<span class="highlight">問題解決導向</span>之學習與競賽活動、深化<span class="highlight">產學合作</span>的教學與實務貢獻、推動<span class="highlight">實驗室研究團隊</span>的發展模式。</li>
-          <li>強化師生之國際學習與合作: <span class="highlight">海外</span>短期之<span class="highlight">異地教學</span>、<span class="highlight">交換學生</span>的融入學習、國際學者的<span class="highlight">邀訪交流</span>與<span class="highlight">研究合作</span>。</li>
-          <li>整合外部資源與提升行政效能: 持續提升系務之<span class="highlight">E化</span>效能、整合<span class="highlight">產官學</span>與系友會的外部資源、推展<span class="highlight">國際品保</span>認證的實施。</li>
+          <li>整合<span class="highlight">財政</span>、<span class="highlight">稅務</span>、<span class="highlight">會計</span>與<span class="highlight">經濟</span>四大部門，除專業知識與專業技能之培育，強化<span class="highlight">道德修養</span>，及培養<span class="highlight">專業精神</span>，建立<span class="highlight">熱忱服務</span>信念為指導原則。</li>
+          <li>培育具有<span class="highlight">誠正廉益</span>精神與素養的財政、稅務或會計人才，讓學生具備<span class="highlight">重誠實</span>、<span class="highlight">行正直</span>、<span class="highlight">守廉潔</span>、<span class="highlight">盡義務</span>的精神與公民素養。</li>
+          <li>推動專業課程與教學的分組，搭配跨系修課的學程，以達到<span class="highlight">勤學事成</span>的目標。</li>
+          <li>每年專業與實務學術研討會的舉辦或協辦，以達到<span class="highlight">精益求新</span>的學習效果。</li>
+          <li>透過實習教育與就業學程的落實與執行，讓學生培養<span class="highlight">實事求是</span>的學習態度與精神。</li>       
         </ul>
       </div>
 
@@ -116,17 +113,16 @@
           <div class="job-section">
             
             <ul>
-              <li>物流規劃與管理</li>
-              <li>運輸規劃管理</li>
-              <li>倉儲</li>
-              <li>物管工程師</li>
-              <li>行銷管理</li>
-              <li>零售與通路管理</li>
-              <li>市場分析研究</li>
-              <li>數據分析</li>
-              <li>公職人員(交通行政、民航、運輸營業等)</li>
-              <li>法人機構</li>
+              <li>國家或國營事業考試</li>
+              <li>銀行各種職位招考或理專</li>
+              <li>會計師事務所</li>
+              <li>公司會計/財務部門</li>
+              <li>公司會計外派</li>
+              <li>公司成本分析</li>
+              <li>學術領域</li>
+              <li>國外業務、採購、行政</li>
             </ul>
+            
           </div>
         </div>
         <div class="air"></div>
@@ -135,7 +131,7 @@
 
 
         <div v-if="currentDetail === '課程'">
-          <div class="card" style="hieght:auto; margin-top:10px">
+          <div class="card" style="height:auto; margin-top:10px">
 
           <h2><br>課程</h2>
           <i class="fi fi-br-info custom-icon" @click="showCreditModal"></i>
@@ -281,10 +277,10 @@ export default {
     // 監聽 currentDetail 的變化
     currentDetail(newValue) {
       if (newValue === '科系特色') {
-        this.animateCount('studentCount', 190, 2000); // 動畫持續 2 秒
-        this.animateCount('teacherCount', 12, 2000);
-        this.animateCount('graduateCount', 44, 2000);
-        this.animateCount('phdCount', 8, 2000);
+        this.animateCount('studentCount', 347, 2000); // 動畫持續 2 秒
+        this.animateCount('teacherCount', 25, 2000);
+        this.animateCount('graduateCount', 88, 2000);
+        this.animateCount('phdCount', 9, 2000);
       }
     },
   },
@@ -309,20 +305,19 @@ export default {
           { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
           { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
           { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '柯老師', image: '/Images/teacher2.png', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、創造力培育、知識工程、教育科技、創客教育' },
-          { name: '連老師', image: '/Images/teacher.png', expertise: '資訊管理、電子商務、電子化企業、服務科學與設計思考、醫療資訊管理' },
-          ],
+          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
+          
+        ],
         副教授: [
           { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
           { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
           { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          ],
+                  
+        ],
         助理教授: [
           { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '許老師', image: '/Images/teacher2.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
-          ]
+          
+        ]
       },
       selectedYear: '請選擇年級', // Default selected year
       isDropdownOpen: false, // Control the dropdown state
@@ -330,47 +325,91 @@ export default {
       currentCourses: [], // List of courses for the selected year
       courses: {
         大一: [
-          { type: '必修', name: '微積分', credits: 3 },
+          { type: '必修', name: '會計學（一）', credits: 4 },
+          { type: '必修', name: '經濟學', credits: 3 },
           { type: '必修', name: '英文', credits: 3 },
-          { type: '必修', name: '計算機概論', credits: 3 },
+          { type: '必修', name: '微積分', credits: 2 },
           { type: '必修', name: '國文', credits: 2 },
-          { type: '必修', name: '經濟學', credits: 2 },
-          { type: '必修', name: '會計學', credits: 2 },
           { type: '必修', name: '體育', credits: 0 },
-          { type: '必修', name: '企業管理', credits: 3 },
+          { type: '必修', name: '民法', credits: 3 },
+          { type: '必修', name: '大學之道', credits: 2 },
+          { type: '必修', name: '服務與學習', credits: 1 },
           { type: '必修', name: '學涯規劃', credits: 1 },
-          { type: '選修', name: '資料處理', credits: 2 },
-          
+          { type: '必修', name: '程式設計與應用', credits: 1 },
+          { type: '必修', name: '學涯規劃', credits: 1 },
+          { type: '選修', name: '管理概論', credits: 2 },
+          { type: '選修', name: '國際禮儀', credits: 3 },
+          { type: '選修', name: '日常與商用日文會話（一）', credits: 1 },
+          { type: '選修', name: '貨幣銀行學', credits: 3 },
+          { type: '選修', name: '商事法', credits: 2 },
+          { type: '選修', name: '日常與商用日文會話（二）', credits: 1 },
         ],
         大二: [
+          { type: '必修', name: '會計學（二）', credits: 4 },
           { type: '必修', name: '統計學', credits: 3 },
-          { type: '必修', name: '生產與作業管理', credits: 2 },
+          { type: '必修', name: '財政學', credits: 3 },
+          { type: '必修', name: '租稅法規', credits: 2 },
           { type: '必修', name: '生涯運動', credits: 0 },
-          { type: '必修', name: '行銷與商品管理', credits: 3 },
-          { type: '必修', name: '物聯網概論', credits: 3 },
-          { type: '必修', name: '電子商務', credits: 3 },
-          { type: '必修', name: '民主憲政與法治', credits: 2 },
-          { type: '選修', name: '財務管理', credits: 3 },
-          { type: '選修', name: '資料庫應用', credits: 3 },
-          
+          { type: '必修', name: '臺灣開發史', credits: 3 },
+          { type: '必修', name: '總體經濟學（一）', credits: 2 },
+          { type: '必修', name: '個體經濟學（一）', credits: 3 },
+          { type: '必修', name: '民主憲政與法治', credits: 2 },,
+          { type: '選修', name: '組織與管理', credits: 2 },
+          { type: '選修', name: '租稅申報實務（一）', credits: 2 },
+          { type: '選修', name: '證券交易法', credits: 3 },
+          { type: '選修', name: '國際文化交流', credits: 2 },
+          { type: '選修', name: '租稅申報實務（二）', credits: 2 },
         ],
         大三: [
-          { type: '必修', name: '作業研究', credits: 2 },
-          { type: '必修', name: '供應鏈管理', credits: 3 },
-          { type: '必修', name: '資訊分析與應用', credits: 3 },
+          { type: '必修', name: '所得稅法規與實務', credits: 2 },
+          { type: '必修', name: '成本與管理會計', credits: 2 },
+          { type: '必修', name: '商業英文會話', credits: 1 },
+          { type: '必修', name: '財產稅法規與實務', credits: 3 },
+          { type: '必修', name: '消費稅法規與實務', credits: 3 },
           { type: '必修', name: '應用文與習作', credits: 2 },
-          { type: '選修', name: '物流管理', credits: 3 },
-          { type: '選修', name: '品牌管理', credits: 3 },
-          { type: '選修', name: '消費者行為', credits: 2 },
-          ],
+          { type: '必修', name: '財稅實務實習', credits: 2 },
+          { type: '必修', name: '職涯規劃', credits: 1 },
+          { type: '選修', name: '數理經濟學', credits: 3 },
+          { type: '選修', name: '會計專題', credits: 3 },
+          { type: '選修', name: '稅務查核與行政救濟', credits: 3 },
+          { type: '選修', name: '個體經濟學（二）', credits: 3 },
+          { type: '選修', name: '大陸租稅', credits: 3 },
+          { type: '選修', name: '運動與健康（一）', credits: 2 },
+          { type: '選修', name: '稅務會計專題', credits: 2 },
+          { type: '選修', name: '商用英文選讀（一）', credits: 1 },
+          { type: '選修', name: '經濟分析', credits: 3 },
+          { type: '選修', name: '會計資訊系統', credits: 3 },
+          { type: '選修', name: '國際經濟', credits: 3 },
+          { type: '選修', name: '記帳相關法規', credits: 3 },
+          { type: '選修', name: '計量經濟學（一）', credits: 3 },
+          { type: '選修', name: '金融專題', credits: 3 },
+          { type: '選修', name: '公共財務管理', credits: 3 },
+          { type: '選修', name: '校內部控制與稽核實務實習', credits: 3 },
+          { type: '選修', name: '福利經濟學', credits: 2 },
+          { type: '選修', name: '運動與健康（二）', credits: 2 },
+          { type: '選修', name: '研究方法', credits: 2 },
+          { type: '選修', name: '商用英文選讀（二）', credits: 1 },
+        ],
         大四: [
-          { type: '必修', name: '實務專題', credits: 3 },
-          { type: '選修', name: '企業實習', credits: 4 },
-          { type: '選修', name: '通路管理', credits: 3 },
-          { type: '選修', name: '智慧商務服務設計', credits: 3 },
-          { type: '選修', name: '智慧運輸系統與應用', credits: 3 },
-          { type: '選修', name: '校外實習', credits: 4 },
-          ],
+          { type: '必修', name: '審計學', credits: 2 },
+          { type: '必修', name: '財稅專題研討', credits: 1 },
+          { type: '必修', name: '租稅各論', credits: 3 },
+          { type: '選修', name: '高等會計學', credits: 3 },
+          { type: '選修', name: '營業稅法規與實務', credits: 3 },
+          { type: '選修', name: '租稅規劃', credits: 3 },
+          { type: '選修', name: '計量經濟學（二）', credits: 3 },
+          { type: '選修', name: '地方財政', credits: 3 },
+          { type: '選修', name: '運動與健康（三）', credits: 2 },
+          { type: '選修', name: '財稅英文（一）', credits: 1 },
+          { type: '選修', name: '總體經濟學（二）', credits: 3 },
+          { type: '選修', name: '營利事業所得稅查核實務', credits: 3 },
+          { type: '選修', name: '稅務管理', credits: 3 },
+          { type: '選修', name: '國際租稅', credits: 3 },
+          { type: '選修', name: '商業會計實務', credits: 3 },
+          { type: '選修', name: '財政金融政策', credits: 3 },
+          { type: '選修', name: '運動與健康（四）', credits: 2 },
+          { type: '選修', name: '財稅英文（二）', credits: 1 },
+        ],
       },
       requiredIcon: '/Images/IMG_0047.png', // Replace with the path to the required icon
       electiveIcon: '/Images/IMG_0046.png',
@@ -410,11 +449,15 @@ export default {
      showCreditModal(message) {
       console.log('showCreditModal called');
   this.creditMessage = `一、二年級一學期不能小於16學分，<br>三、四年級一學期不可以小於9學分，<br>全年級一學期不可以多餘25。<br><br>
-  <span style="color: red;">畢業門檻</span><br>
-  必修學分：89<br>
+  <span style="color: red;">畢業門檻：</span><br>
+  必修學分：100<br>
   選修總學分 (含本系/跨系選修)：33<br>
   博雅通識：4領域8學分<br>
-  校定語言門檻：中級複試、多益550，或同等級數之英文能力檢定標準`;
+  校定語言門檻：中級複試、多益550，或同等級數之英文能力檢定標準<br>
+  <span style="color: red;">系定門檻：</span><br>
+  三年級必修「財稅實務實習」課程為本系校外實習課程<br>
+  考取本系規定之專業證照方得畢業<br>
+  要選一課程模組，學程課程須修四科以上。`;
   this.isCreditModalVisible = true;
     },
     closeCreditModal() {
@@ -445,7 +488,7 @@ export default {
         labels: ['教授', '副教授', '助理教授'],
         datasets: [{
           label: '人數',
-          data: [7, 3, 3],
+          data: [5, 3, 1],
           backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(104, 0, 145, 0.2)'],
           borderColor: ['rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(104, 0, 145, 0.1)'],
           borderWidth: 0
@@ -565,9 +608,9 @@ export default {
       this.isActive = true;
     });
     this.moveAndShowIntroduction(this.items[0]);
-    this.animateCount('studentCount', 249, 2000); // 動畫持續 2 秒
-    this.animateCount('teacherCount', 27, 2000);
-    this.animateCount('graduateCount', 44, 2000);
+    this.animateCount('studentCount', 365, 2000); // 動畫持續 2 秒
+    this.animateCount('teacherCount', 10, 2000);
+    this.animateCount('graduateCount', 84, 2000);
     this.animateCount('phdCount', 22, 2000);
   },
   beforeUnmount() {
@@ -900,7 +943,7 @@ button {
 
 
 .card {
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
@@ -910,7 +953,7 @@ button {
 }
  .card3 {
   padding: 30px;
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -964,7 +1007,7 @@ button {
 
 .card2 {
   padding: 30px;
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -1011,7 +1054,7 @@ h3 {
 }
 .card1 {
   padding: 30px;
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;

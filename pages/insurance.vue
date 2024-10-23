@@ -15,7 +15,7 @@
     <!-- 介紹頁面部分 -->
     <div class="detail-container" v-if="showDetail">
       <div class="detail">
-        <h1>流通管理系</h1>
+        <h1>保險金融管理系</h1>
         <div v-if="currentDetail === '師資'">
           <!-- 圖表部分 -->
           <div class="chart-container card">
@@ -83,8 +83,8 @@
               <h2>{{ phdCount }}</h2>
             </div>
           </div>
-          <p class="description">賦予學生專業能力、人文道德涵養及獨立自主人格，提供質優企業立即可用之優秀人才，配合國家經濟發展之需要</p>
-          <img src="/Images/loclass.jpg" class="imin" alt="Education Objective">
+          <p class="description">傳授紮實的保險及金融理論與知識，養成多面相學習習慣，將學生培育為「專業、敬業、樂業的保險與金融產業中高階層保險金融管理專才」。</p>
+          
 
         </div>
       
@@ -94,14 +94,12 @@
        <div id="發展計畫及未來展望" class="card2">
         <h3>發展計畫及未來展望</h3>
         <ul>
-          <li>強化專業教育，培育具流通管理之專業人才</li>
-          <li>重視通識教育，培育具跨領域知能與創新整合能力之人才</li>
-          <li>加強語文教育，培育具國際觀與外語能力之人才</li>
-          <li>落實服務教育，培育具人文與道德素養之人才</li>
-          <li>滾動改善教學與實務的落差: <span class="highlight">跨域課程</span>之再造設計、強化實務業師的合作模式與深度、結合產業問題的<span class="highlight">實務專題與研究</span>。</li>
-          <li>持續發展系所之學術與實務特色: 延攬及招募優質師生、鼓勵師生參與<span class="highlight">問題解決導向</span>之學習與競賽活動、深化<span class="highlight">產學合作</span>的教學與實務貢獻、推動<span class="highlight">實驗室研究團隊</span>的發展模式。</li>
-          <li>強化師生之國際學習與合作: <span class="highlight">海外</span>短期之<span class="highlight">異地教學</span>、<span class="highlight">交換學生</span>的融入學習、國際學者的<span class="highlight">邀訪交流</span>與<span class="highlight">研究合作</span>。</li>
-          <li>整合外部資源與提升行政效能: 持續提升系務之<span class="highlight">E化</span>效能、整合<span class="highlight">產官學</span>與系友會的外部資源、推展<span class="highlight">國際品保</span>認證的實施。</li>
+          <li>提升學生畢業後就業競爭力，課程規劃<span class="highlight">保險與金融理論</span>，著重學生<span class="highlight">實務之養成</span>，與保險公司、銀行等保險金融相關單位簽定<span class="highlight">產學合作</span>契約，提供學生<span class="highlight">實習</span>機會，落實<span class="highlight">理論與實務並重</span>。</li>
+          <li>與<span class="highlight">壽險公會</span>合辦保險相關證照考試，並與在<span class="highlight">校內舉辦</span>之金融研訓院各項金融證照，訂有<span class="highlight">「國立臺中科技大學學生取得專業技術證照獎勵要點」</span>及<span class="highlight">「商學院學生取得專業證照獎勵要點」</span>。</li>
+          <li>鼓勵教師積極參與研究、提升教學品質，訂有<span class="highlight">「國立臺中科技大學保險金融管理系教師學術研究獎勵補助要點」</span>，每年爭取<span class="highlight">科技部社會科學中心</span>到本系舉辦學術性講座與交流。</li>
+          <li>本系具悠久歷史，畢業校友在金融與保險業素有口碑，透過本系教學活動與<span class="highlight">系友會</span>之連結，以及系友回娘家活動，有益學生在畢業之際，即可獲得廣大之<span class="highlight">人脈資源</span>。</li>
+          <li>設有<span class="highlight">「保險金融服務中心」</span>，由保險金融專業經理人到校提供業界<span class="highlight">免費諮詢</span>，並舉辦多次專業證照檢定，配合諮詢心得競賽，以鼓勵各學制學生藉由課後諮詢，領略<span class="highlight">經理人實務經驗</span>、並提升學生<span class="highlight">溝通簡報</span>能力。</li>
+          <li>組成<span class="highlight">保金志工隊</span>，除了常駐於保金中心服務外，並至<span class="highlight">中小學</span>辦理理財教育活動，讓參與學子在遊戲中輕鬆學習理財與投資。</li>       
         </ul>
       </div>
 
@@ -114,18 +112,40 @@
 
           <!-- 就業工作一欄 -->
           <div class="job-section">
-            
+            <h4>共同出路</h4>
             <ul>
-              <li>物流規劃與管理</li>
-              <li>運輸規劃管理</li>
-              <li>倉儲</li>
-              <li>物管工程師</li>
-              <li>行銷管理</li>
-              <li>零售與通路管理</li>
-              <li>市場分析研究</li>
-              <li>數據分析</li>
-              <li>公職人員(交通行政、民航、運輸營業等)</li>
-              <li>法人機構</li>
+              <li>一般企業</li>
+              <li>行政人員</li>
+              <li>會計/出納人員</li>
+              <li>財務人員</li>
+              <li>客戶服務人員</li>
+              <li>總務人員</li>              
+            </ul>
+             <h4>銀行相關</h4>
+            <ul>
+              <li>理財投資/規劃人員</li>
+              <li>金融營業員</li>
+              <li>銀行辦事員</li>
+              <li>銀行外匯辦事員</li>
+              <li>基金經理人員</li>
+            </ul>
+             <h4>保險相關</h4>
+            <ul>
+              <li>保險業務員</li>
+              <li>壽險/產險核保理賠人員</li>
+              <li>人身/財產保險代理人</li>
+              <li>人身/財產保險經紀人</li>
+              <li>個人/企業/金融風險管理師</li>
+              <li>人壽保險管理人員</li>
+              <li>中華民國精算師</li>              
+            </ul>
+             <h4>證券期貨相關</h4>
+            <ul>
+              <li>期貨營業員</li>
+              <li>證券分析師/營業員</li>
+              <li>證券/期貨經紀人</li>
+              <li>CFP個人理財規劃師</li>
+              <li>CFA企業理財規劃師</li>              
             </ul>
           </div>
         </div>
@@ -135,7 +155,7 @@
 
 
         <div v-if="currentDetail === '課程'">
-          <div class="card" style="hieght:auto; margin-top:10px">
+          <div class="card" style="height:auto; margin-top:10px">
 
           <h2><br>課程</h2>
           <i class="fi fi-br-info custom-icon" @click="showCreditModal"></i>
@@ -281,10 +301,10 @@ export default {
     // 監聽 currentDetail 的變化
     currentDetail(newValue) {
       if (newValue === '科系特色') {
-        this.animateCount('studentCount', 190, 2000); // 動畫持續 2 秒
-        this.animateCount('teacherCount', 12, 2000);
-        this.animateCount('graduateCount', 44, 2000);
-        this.animateCount('phdCount', 8, 2000);
+        this.animateCount('studentCount', 346, 2000); // 動畫持續 2 秒
+        this.animateCount('teacherCount', 26, 2000);
+        this.animateCount('graduateCount', 73, 2000);
+        this.animateCount('phdCount', 22, 2000);
       }
     },
   },
@@ -309,20 +329,29 @@ export default {
           { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
           { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
           { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '柯老師', image: '/Images/teacher2.png', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、創造力培育、知識工程、教育科技、創客教育' },
-          { name: '連老師', image: '/Images/teacher.png', expertise: '資訊管理、電子商務、電子化企業、服務科學與設計思考、醫療資訊管理' },
-          ],
+          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
+          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
+          
+        ],
         副教授: [
           { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
           { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
           { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          ],
+          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
+          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
+          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
+          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
+          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
+          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
+          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
+          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
+          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
+          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },          
+        ],
         助理教授: [
           { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '許老師', image: '/Images/teacher2.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
-          ]
+        ]
       },
       selectedYear: '請選擇年級', // Default selected year
       isDropdownOpen: false, // Control the dropdown state
@@ -330,47 +359,114 @@ export default {
       currentCourses: [], // List of courses for the selected year
       courses: {
         大一: [
-          { type: '必修', name: '微積分', credits: 3 },
+          { type: '必修', name: '經濟學', credits: 3 },
+          { type: '必修', name: '會計學	', credits: 3 },
           { type: '必修', name: '英文', credits: 3 },
-          { type: '必修', name: '計算機概論', credits: 3 },
+          { type: '必修', name: '微積分', credits: 2 },
+          { type: '必修', name: '風險管理與保險	', credits: 2 },
           { type: '必修', name: '國文', credits: 2 },
-          { type: '必修', name: '經濟學', credits: 2 },
-          { type: '必修', name: '會計學', credits: 2 },
           { type: '必修', name: '體育', credits: 0 },
-          { type: '必修', name: '企業管理', credits: 3 },
-          { type: '必修', name: '學涯規劃', credits: 1 },
+          { type: '必修', name: '程式設計與應用	', credits: 2 },
+          { type: '必修', name: '大學之道', credits: 2 },
+          { type: '必修', name: '服務與學習', credits: 1 },
+          { type: '必修', name: '學涯規劃	', credits: 1 },
+          { type: '選修', name: '貨幣銀行學', credits: 2 },
+          { type: '選修', name: '英語檢定', credits: 1 },
+          { type: '選修', name: '民法', credits: 3 },
           { type: '選修', name: '資料處理', credits: 2 },
-          
+          { type: '選修', name: '工業安全與衛生', credits: 2 },
+          { type: '選修', name: '商事法', credits: 3 },
+          { type: '選修', name: '組織理論與管理', credits: 2 },
+          { type: '選修', name: '資料蒐集與計畫書寫作', credits: 1 },
+          { type: '選修', name: '商業套裝軟體', credits: 1 },
         ],
         大二: [
           { type: '必修', name: '統計學', credits: 3 },
-          { type: '必修', name: '生產與作業管理', credits: 2 },
+          { type: '必修', name: '財務管理', credits: 2 },
           { type: '必修', name: '生涯運動', credits: 0 },
-          { type: '必修', name: '行銷與商品管理', credits: 3 },
-          { type: '必修', name: '物聯網概論', credits: 3 },
-          { type: '必修', name: '電子商務', credits: 3 },
+          { type: '必修', name: '財產保險', credits: 3 },
+          { type: '必修', name: '風險管理策略', credits: 3 },
+          { type: '必修', name: '保險法規', credits: 3 },
+          { type: '必修', name: '臺灣開發史', credits: 2 },
+          { type: '必修', name: '金融法規', credits: 3 },
+          { type: '必修', name: '人身保險', credits: 3 },
           { type: '必修', name: '民主憲政與法治', credits: 2 },
-          { type: '選修', name: '財務管理', credits: 3 },
-          { type: '選修', name: '資料庫應用', credits: 3 },
-          
+          { type: '選修', name: '英語檢定（二）', credits: 1 },
+          { type: '選修', name: '個體經濟學', credits: 3 },
+          { type: '選修', name: '保險行銷', credits: 3 },
+          { type: '選修', name: '金融行銷', credits: 3 },
+          { type: '選修', name: '金融市場', credits: 3 },
+          { type: '選修', name: '中級會計學', credits: 3 },
+          { type: '選修', name: '顧客關係管理', credits: 3 },
+          { type: '選修', name: '總體經濟學', credits: 3 },
+          { type: '選修', name: '理財規劃', credits: 3 },
+          { type: '選修', name: '國際金融與匯兌', credits: 3 },
         ],
         大三: [
-          { type: '必修', name: '作業研究', credits: 2 },
-          { type: '必修', name: '供應鏈管理', credits: 3 },
-          { type: '必修', name: '資訊分析與應用', credits: 3 },
+          { type: '必修', name: '投資學', credits: 3 },
+          { type: '必修', name: '利率學', credits: 3 },
+          { type: '必修', name: '應用統計', credits: 2 },
+          { type: '必修', name: '保險金融資訊系統（一）', credits: 2 },
+          { type: '必修', name: '財務報表分析', credits: 3 },
+          { type: '必修', name: '金融機構管理', credits: 3 },
+          { type: '必修', name: '保險金融資訊系統（二）', credits: 2 },
           { type: '必修', name: '應用文與習作', credits: 2 },
-          { type: '選修', name: '物流管理', credits: 3 },
-          { type: '選修', name: '品牌管理', credits: 3 },
-          { type: '選修', name: '消費者行為', credits: 2 },
-          ],
+          { type: '必修', name: '職涯規劃', credits: 1 },
+          { type: '選修', name: '日文（一）', credits: 2 },
+          { type: '選修', name: '校外銀行實務', credits: 3 },
+          { type: '選修', name: '期貨與選擇權', credits: 3 },
+          { type: '選修', name: '財產保險核保理賠', credits: 3 },
+          { type: '選修', name: '證券法規與實務	', credits: 2 },
+          { type: '選修', name: '社會福利與保險規劃', credits: 3 },
+          { type: '選修', name: '不動產估價理論', credits: 3 },
+          { type: '選修', name: '財產風險管理', credits: 2 },
+          { type: '選修', name: '保險數學', credits: 2 },
+          { type: '選修', name: '保險會計', credits: 2 },
+          { type: '選修', name: '信用風險衡量與管理', credits: 2 },
+          { type: '選修', name: '金融科技', credits: 2 },
+          { type: '選修', name: '自主性學習（一）', credits: 1 },
+          { type: '選修', name: '授信理論與實務', credits: 3 },
+          { type: '選修', name: '風險管理數學', credits: 3 },
+          { type: '選修', name: '保險專門職業人員證照輔導（一）', credits: 3 },
+          { type: '選修', name: '金融專業證照輔導（一）', credits: 3 },
+          { type: '選修', name: '投資組合與管理', credits: 3 },
+          { type: '選修', name: '人身保險核保理賠', credits: 3 },
+          { type: '選修', name: '專題製作（一）', credits: 2 },
+          { type: '選修', name: '國際禮儀與職場倫理', credits: 2 },
+          { type: '選修', name: '再保險', credits: 2 },
+          { type: '選修', name: '市場風險衡量與管理', credits: 2 },
+          { type: '選修', name: '巨量資料概論', credits: 2 },
+          { type: '選修', name: '人身風險管理', credits: 2 },
+        ],
         大四: [
-          { type: '必修', name: '實務專題', credits: 3 },
-          { type: '選修', name: '企業實習', credits: 4 },
-          { type: '選修', name: '通路管理', credits: 3 },
-          { type: '選修', name: '智慧商務服務設計', credits: 3 },
-          { type: '選修', name: '智慧運輸系統與應用', credits: 3 },
-          { type: '選修', name: '校外實習', credits: 4 },
-          ],
+          { type: '必修', name: '財產保險實務', credits: 3 },
+          { type: '必修', name: '信託投資與實務', credits: 3 },
+          { type: '必修', name: '人身保險實務', credits: 3 },
+          { type: '選修', name: '日文（二）', credits: 2 },
+          { type: '選修', name: '電子商務', credits: 3 },
+          { type: '選修', name: '保險專門職業人員證照輔導（二）', credits: 3 },
+          { type: '選修', name: '金融專業證照輔導（二）', credits: 3 },
+          { type: '選修', name: '不動產經濟學', credits: 3 },
+          { type: '選修', name: '不動產投資與管理', credits: 3 },
+          { type: '選修', name: '專題製作（二）', credits: 2 },
+          { type: '選修', name: '商業英文雜誌選讀', credits: 2 },
+          { type: '選修', name: '財產保險經營', credits: 2 },
+          { type: '選修', name: '信託法規與實務', credits: 2 },
+          { type: '選修', name: '永續經營與綠色金融保險', credits: 2 },
+          { type: '選修', name: '校外實習（一）', credits: 2 },
+          { type: '選修', name: '問題導向', credits: 1 },
+          { type: '選修', name: '校外實習（二）', credits: 9 },
+          { type: '選修', name: '資產證券化理論與實務', credits: 3 },
+          { type: '選修', name: '債券市場理論與實務', credits: 3 },
+          { type: '選修', name: '租稅規劃與實務', credits: 3 },
+          { type: '選修', name: '經營與整合性風險管理', credits: 2 },
+          { type: '選修', name: '國際經濟現勢', credits: 2 },
+          { type: '選修', name: '國際保險市場', credits: 2 },
+          { type: '選修', name: '員工福利與退休金規劃', credits: 2 },
+          { type: '選修', name: '危機管理', credits: 2 },
+          { type: '選修', name: '人身保險經營', credits: 2 },
+
+        ],
       },
       requiredIcon: '/Images/IMG_0047.png', // Replace with the path to the required icon
       electiveIcon: '/Images/IMG_0046.png',
@@ -411,10 +507,13 @@ export default {
       console.log('showCreditModal called');
   this.creditMessage = `一、二年級一學期不能小於16學分，<br>三、四年級一學期不可以小於9學分，<br>全年級一學期不可以多餘25。<br><br>
   <span style="color: red;">畢業門檻</span><br>
-  必修學分：89<br>
-  選修總學分 (含本系/跨系選修)：33<br>
+  必修學分：95<br>
+  選修總學分 (含本系/跨系選修)：40<br>
   博雅通識：4領域8學分<br>
-  校定語言門檻：中級複試、多益550，或同等級數之英文能力檢定標準`;
+  校定語言門檻：中級複試、多益550，或同等級數之英文能力檢定標準<br>
+  <span style="color: red;">系定門檻：</span><br>
+  1.專題製作（一）與專題製作（二）或校外實習（一），須擇一作為畢業門檻<br>
+  2.專業證照累積點數達 5 點(含)以上`;
   this.isCreditModalVisible = true;
     },
     closeCreditModal() {
@@ -445,7 +544,7 @@ export default {
         labels: ['教授', '副教授', '助理教授'],
         datasets: [{
           label: '人數',
-          data: [7, 3, 3],
+          data: [6, 14, 1],
           backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(104, 0, 145, 0.2)'],
           borderColor: ['rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(104, 0, 145, 0.1)'],
           borderWidth: 0
@@ -900,7 +999,7 @@ button {
 
 
 .card {
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
@@ -910,7 +1009,7 @@ button {
 }
  .card3 {
   padding: 30px;
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -964,7 +1063,7 @@ button {
 
 .card2 {
   padding: 30px;
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -1011,7 +1110,7 @@ h3 {
 }
 .card1 {
   padding: 30px;
-  background-color: #e0f4ff;
+  background-color: #e7e0ff;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
