@@ -83,6 +83,9 @@
             <account v-if="currentTab === 'account'" :course="currentTab" @back="changeTab('business')" />
             <insurance v-if="currentTab === 'insurance'" :course="currentTab" @back="changeTab('business')" />
             <tax v-if="currentTab === 'tax'" :course="currentTab" @back="changeTab('business')" />
+            <finance v-if="currentTab === 'finance'" :course="currentTab" @back="changeTab('business')" />
+            <leisure v-if="currentTab === 'leisure'" :course="currentTab" @back="changeTab('business')" />
+            <statistics v-if="currentTab === 'statistics'" :course="currentTab" @back="changeTab('business')" />
           </div>
         </div>
       </transition>
@@ -99,7 +102,10 @@ import logistics from './logistics.vue';
 import international from './international.vue';
 import account from './account.vue';
 import insurance from './insurance.vue';
+import finance from './finance.vue';
 import tax from './tax.vue';
+import leisure from './leisure.vue';
+import statistics from './statistics.vue';
 
 
 export default {
@@ -113,6 +119,9 @@ export default {
     account,
     insurance,
     tax,
+    finance,
+    leisure,
+    statistics,
     SectionContent,
     
   },
@@ -145,7 +154,7 @@ export default {
         { text: '應用統計系', link: 'statistics', color: '#355664' }
       ],
       designItems: [
-        { text: '商業設計系', link: 'business', color: '#5A423B' },
+        { text: '商業設計系', link: 'businessde', color: '#5A423B' },
         { text: '多媒體設計系', link: 'multimedia', color: '#5A423B' },
         { text: '室內設計系', link: 'interior', color: '#5A423B' },
         { text: '創意商品服務系', link: 'creative', color: '#5A423B' }
