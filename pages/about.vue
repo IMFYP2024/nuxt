@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="backgroud">
     <Modal
       :title="modalTitle"
       :showModal="showModal"
@@ -7,7 +7,7 @@
     >
       <template #itemText>
         <div>
-          <img src="public/Images/puzzle.png" alt="Sample Photo" class="modal-image"/>
+          <img src="public/Images/nutc.jpg" alt="Sample Photo" class="modal-image"/>
           <p>這個是拼圖完成後的模樣，在關閉視窗後，請點擊下方的照片與上方的照片即可交換照片，可隨時點擊圖標來反復觀看範例圖</p>
         </div>
       </template>
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div v-if="isComplete" class="container">
-      <img src="public/Images/puzzle.png" class="card-img">
+      <img src="public/Images/nutc.jpg" class="card-img">
       <div>
         <h1>學校故事</h1>
         <!-- <p>陽光大學在一個寧靜的下午所創立的，當時候陽光透過樹葉灑下斑駁的光影，微風輕輕拂過，帶來了花香的氣息。這樣的時刻，總是讓人心情愉悅，
@@ -67,8 +67,8 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-const rows = 3;
-const columns = 4;
+const rows = 2;
+const columns = 3;
 
 const istoggleon = ref(false);
 const currTile = ref(null);
@@ -91,8 +91,8 @@ const initializeBoard = () => {
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < columns; c++) {
       const tile = { src: "/Images/blank.jpg", key: `tile-${r}-${c}`, alt: `Tile ${r * columns + c + 1}` };
-      if ((r === 0 && c === 0) || (r === 2 && c === 2)) {
-        tile.src = `/Images/${1 + r * columns + c}.png`;
+      if ( (r === 1 && c === 1)) {
+        tile.src = `/Images/about/${1 + r * columns + c}.jpg`;
       }
       boardTiles.value.push(tile);
     }
@@ -101,11 +101,11 @@ const initializeBoard = () => {
 
 const initializePieces = () => {
   const piecesArray = [];
-  for (let i = 2; i <= rows * columns; i++) {
-    if (i === 1 || i === 11) {
+  for (let i = 1; i <= 6; i++) {
+    if(i==5){
       continue;
     }
-    const piece = { src: `/Images/${i}.png`, key: `piece-${i}`, alt: `Piece ${i}` };
+    const piece = { src: `/Images/about/${i}.jpg`, key: `piece-${i}`, alt: `Piece ${i}` };
     piecesArray.push(piece);
   }
 
@@ -146,7 +146,7 @@ const swapTiles = () => {
 const checkPuzzleCompletion = () => {
   const expectedOrder = [];
   for (let i = 1; i <= rows * columns; i++) {
-    expectedOrder.push(`${i}.png`);
+    expectedOrder.push(`${i}.jpg`);
   }
 
   isComplete.value = expectedOrder.every((src, index) => {
@@ -191,6 +191,7 @@ onMounted(() => {
 
 <style scoped>
 /* Your existing styles */
+
 .icon-trigger {
 margin-top: 10%;
 align-items: right;}
@@ -228,8 +229,8 @@ align-items: right;}
 }
 
 #board img {
-  width: 85px;
-  height: 85px;
+  width: 112.67px; 
+  height: 125px; 
   border: 0.5px solid lightblue;
 }
 
@@ -252,13 +253,8 @@ align-items: right;}
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  opacity: 0;
   animation: fadeIn 1s forwards;
   perspective: 100%;
-  height: auto;
-  max-width: 100%;
-  box-sizing: border-box;
   overflow: auto; 
   padding-bottom: 80px;
   position: relative;
@@ -272,6 +268,7 @@ align-items: right;}
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .center-content {
   text-align: center;

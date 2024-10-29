@@ -53,68 +53,67 @@
       const selectedArea = ref(null);
       const showed = ref(false);
   
-    const areas = [
+      const areas = [
     { 
         id: 1, 
-        top: 110, 
-        left: 100, 
-        width: 25, 
-        height: 25, 
+        top: 105, 
+        left: 130, 
+        width: 20, 
+        height: 20, 
         icon: 'bi:1-circle', 
-        name: '商學院辦公室', 
-        description: 'XXXX',
-        image:"/Images/zhongshang/2f(3).JPEG",
-        extraInfo: ''
-    },
-    { 
-        id: 4, 
-        top: 110, 
-        left: 135, 
-        width: 25, 
-        height: 25, 
-        icon: 'bi:2-circle', 
-        name: '商學院院長室', 
-        description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f (4).JPEG",
+        name: '普通教室', 
+        description: '',
+        image:"/Images/zhongshang/4f/4f1.JPEG",
         extraInfo: ''
     },
     { 
         id: 2, 
-        top: 110, 
-        left: 205, 
-        width: 25, 
-        height: 25, 
+        top: 100, 
+        left: 305, 
+        width: 20, 
+        height: 20, 
         icon: 'bi:3-circle', 
-        name: '討論室(大)', 
-        description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f (1).JPEG",
+        name: '休閑區', 
+        description: '可以在該地方吃飯和休息的地方',
+        image:"/Images/zhongshang/4f/4f3.JPEG",
         extraInfo: ''
     },
     { 
         id: 3, 
+        top: 80, 
+        left: 205, 
+        width: 20, 
+        height: 20,
+        icon: 'bi:2-circle', 
+        name: '休閑區', 
+        description: '可以在該地方吃飯和休息的地方',
+        image:"/Images/zhongshang/4f/4f2.JPEG",
+        extraInfo: ''
+    },
+    { 
+        id: 4, 
         top: 70, 
         left: 330, 
-        width: 25, 
-        height: 25, 
+        width: 20, 
+        height: 20, 
         icon: 'bi:4-circle', 
-        name: '休閑區', 
-        description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f (6).JPEG",
+        name: '會資系系辦', 
+        description: '',
+        image:"/Images/zhongshang/4f/4f4.JPEG",
         extraInfo: ''
     },
-    
     { 
         id: 5, 
-        top: 40, 
-        left: 210, 
-        width: 25, 
-        height: 25, 
+        top: 70, 
+        left: 50, 
+        width: 20, 
+        height: 20, 
         icon: 'bi:5-circle', 
-        name: '討論室(大)', 
-        description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
-        image:"/Images/zhongshang/2f (5).JPEG",
+        name: '保金服務中心', 
+        description: '',
+        image:"/Images/zhongshang/4f/4f5.JPEG",
         extraInfo: ''
-    },
+    }
     
   
 ];
