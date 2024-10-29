@@ -155,7 +155,7 @@
           <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
           <div class="modal-content" @click.stop>
             <p style=" text-align: left " v-html="creditMessage"></p><!-- 顯示訊息 -->
-            <button @click="closeCreditModal">關閉</button>
+            
           </div>
         </div>
           <div class="">

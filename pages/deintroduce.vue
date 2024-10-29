@@ -86,6 +86,9 @@
             <finance v-if="currentTab === 'finance'" :course="currentTab" @back="changeTab('business')" />
             <leisure v-if="currentTab === 'leisure'" :course="currentTab" @back="changeTab('business')" />
             <statistics v-if="currentTab === 'statistics'" :course="currentTab" @back="changeTab('business')" />
+            <businessde v-if="currentTab === 'businessde'" :course="currentTab" @back="changeTab('design')" />
+            <multimedia v-if="currentTab === 'multimedia'" :course="currentTab" @back="changeTab('design')" />
+            <interior v-if="currentTab === 'interior'" :course="currentTab" @back="changeTab('design')" />
           </div>
         </div>
       </transition>
@@ -106,7 +109,9 @@ import finance from './finance.vue';
 import tax from './tax.vue';
 import leisure from './leisure.vue';
 import statistics from './statistics.vue';
-
+import businessde from './businessde.vue';
+import multimedia from './multimedia.vue';
+import interior from './interior.vue';
 
 export default {
   name: 'Introduce',
@@ -123,7 +128,9 @@ export default {
     leisure,
     statistics,
     SectionContent,
-    
+    businessde,
+    multimedia,
+    interior,
   },
   data() {
     return {
