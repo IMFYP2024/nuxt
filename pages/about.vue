@@ -258,6 +258,7 @@ align-items: right;}
   overflow: auto; 
   padding-bottom: 80px;
   position: relative;
+  align-items: center;
   z-index: 999;
   overflow: visible;
 }
