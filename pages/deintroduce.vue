@@ -89,6 +89,8 @@
             <businessde v-if="currentTab === 'businessde'" :course="currentTab" @back="changeTab('design')" />
             <multimedia v-if="currentTab === 'multimedia'" :course="currentTab" @back="changeTab('design')" />
             <interior v-if="currentTab === 'interior'" :course="currentTab" @back="changeTab('design')" />
+            <department v-if="currentTab === 'department'" :course="currentTab" @back="changeTab('business')" />
+            <businessmanagement v-if="currentTab === 'businessmanagement'" :course="currentTab" @back="changeTab('smart')" />
           </div>
         </div>
       </transition>
@@ -108,11 +110,12 @@ import insurance from './insurance.vue';
 import finance from './finance.vue';
 import tax from './tax.vue';
 import leisure from './leisure.vue';
-import statistics from './statistics.vue';
+import statistics from './statistics.vue'; 
 import businessde from './businessde.vue';
 import multimedia from './multimedia.vue';
 import interior from './interior.vue';
-
+import department from './department.vue';
+import businessmanagement from './businessmanagement.vue';
 export default {
   name: 'Introduce',
   components: {
@@ -131,6 +134,8 @@ export default {
     businessde,
     multimedia,
     interior,
+    department,
+    businessmanagement,
   },
   data() {
     return {
@@ -154,6 +159,7 @@ export default {
       businessItems: [
         { text: '國際貿易經營系', link: 'international', color: '#355664' },
         { text: '會計資訊系', link: 'account', color: '#355664' },
+        { text: '企業管理系', link: 'department', color: '#355664' },
         { text: '保險金融管理系', link: 'insurance', color: '#355664' },
         { text: '財政稅務系', link: 'tax', color: '#355664' },
         { text: '財務金融系', link: 'finance', color: '#355664' },
@@ -164,10 +170,10 @@ export default {
         { text: '商業設計系', link: 'businessde', color: '#5A423B' },
         { text: '多媒體設計系', link: 'multimedia', color: '#5A423B' },
         { text: '室內設計系', link: 'interior', color: '#5A423B' },
-        { text: '創意商品服務系', link: 'creative', color: '#5A423B' }
+        
       ],
       smartItems: [
-        { text: '商業經營系', link: 'business-management', color: '#3B5C5B' },
+        { text: '商業經營系', link: 'businessmanagement', color: '#3B5C5B' },
         { text: '智慧生產工程系', link: 'smart-production', color: '#3B5C5B' }
       ],
       languageItems: [
