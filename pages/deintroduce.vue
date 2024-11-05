@@ -91,6 +91,9 @@
             <interior v-if="currentTab === 'interior'" :course="currentTab" @back="changeTab('design')" />
             <department v-if="currentTab === 'department'" :course="currentTab" @back="changeTab('business')" />
             <businessmanagement v-if="currentTab === 'businessmanagement'" :course="currentTab" @back="changeTab('smart')" />
+            <english v-if="currentTab === 'english'" :course="currentTab" @back="changeTab('language')" />
+            <chinese v-if="currentTab === 'chinese'" :course="currentTab" @back="changeTab('language')" />
+            <japanese v-if="currentTab === 'japanese'" :course="currentTab" @back="changeTab('language')" />
           </div>
         </div>
       </transition>
@@ -116,6 +119,9 @@ import multimedia from './multimedia.vue';
 import interior from './interior.vue';
 import department from './department.vue';
 import businessmanagement from './businessmanagement.vue';
+import english from './english.vue';
+import chinese from './chinese.vue';
+import japanese from './japanese.vue';
 export default {
   name: 'Introduce',
   components: {
@@ -136,6 +142,9 @@ export default {
     interior,
     department,
     businessmanagement,
+    english,
+    chinese,
+    japanese
   },
   data() {
     return {
