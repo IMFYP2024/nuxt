@@ -302,8 +302,8 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
+          { name: '黃秀美', image: '/Images/im/mei.jpg', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
+          { name: '陳大仁', image: '/Images/im/len.jpg', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
           { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
           { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
           { name: '柯老師', image: '/Images/teacher2.png', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
@@ -345,11 +345,14 @@ export default {
           { type: '必修', name: '國文', credits: 2 },
           { type: '必修', name: '體育', credits: 0 },
           { type: '必修', name: '計算機概論', credits: 3 },
-          { type: '必修', name: '會計學', credits: 2 },
-          { type: '必修', name: '經濟學', credits: 2 },
-          { type: '必修', name: '企業管理', credits: 2 },
+          { type: '必修', name: '會計學', credits: 3 },
+          { type: '必修', name: '經濟學', credits: 3 },
+          { type: '必修', name: '企業管理', credits: 3 },
           { type: '必修', name: '學涯規劃', credits: 1 },
-          { type: '必修', name: '程式設計', credits: 2 },
+          { type: '必修', name: '程式設計', credits: 3 },
+          { type: '必修', name: '大學之道', credits: 2 },
+          { type: '必修', name: '服務與學習', credits: 1 },
+
           { type: '選修', name: '網頁設計', credits: 3 },
           { type: '選修', name: '實用日語會話(一)', credits: 2 },
           { type: '選修', name: '實用日語會話(二)', credits: 2 },
