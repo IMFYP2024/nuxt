@@ -305,23 +305,23 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '柯老師', image: '/Images/teacher2.png', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、創造力培育、知識工程、教育科技、創客教育' },
-          { name: '連老師', image: '/Images/teacher.png', expertise: '資訊管理、電子商務、電子化企業、服務科學與設計思考、醫療資訊管理' },
+          { name: '楊志文', image: '/Images/logistics/1.jpg', expertise: '運輸規劃、旅運需求' },
+          { name: '張宏吉', image: '/Images/logistics/2.jpg', expertise: '作業研究' },
+          { name: '陳彥匡', image: '/Images/logistics/3.jpg', expertise: '作業研究與決策科學' },
+          { name: '林心慧', image: '/Images/logistics/4.jpg', expertise: '行銷管理、網路行銷' },
+          { name: '林泓毅', image: '/Images/logistics/5.jpg', expertise: '巨量資料分析' },
+          { name: '楊淑玲', image: '/Images/logistics/6.jpg', expertise: '公司理財、營運計畫管理' },
+          { name: '陳榮昌', image: '/Images/logistics/7.jpg', expertise: '物流與供應鏈管理' },
           ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '蔡子安', image: '/Images/logistics/8.jpg', expertise: '流通管理' },
+          { name: '黃國華', image: '/Images/logistics/9.jpg', expertise: '元宇宙議題、知識管理、數位學習、系統分析與設計' },
+          { name: '蕭衛鴻', image: '/Images/logistics/10.jpg', expertise: '智慧零售' },
           ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '許老師', image: '/Images/teacher2.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
+          { name: '劉彩霈', image: '/Images/logistics/11.jpg', expertise: '物流管理' },
+          { name: '林文祥', image: '/Images/logistics/12.jpg', expertise: '程式設計' },
+          { name: '黃郁琮', image: '/Images/logistics/13.jpg', expertise: '智慧物流、流程再造' },
           ]
       },
       selectedYear: '請選擇年級', // Default selected year
