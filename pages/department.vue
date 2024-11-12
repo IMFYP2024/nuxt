@@ -301,34 +301,35 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          
+          { name: '林宜欣', image: '/Images/department/1.png', expertise: '行銷管理、消費者行為、人力資源管理、組織行為、交通運輸產業管理、觀光旅遊產業管理' },
+          { name: '李國瑋', image: '/Images/department/2.png', expertise: '創意商品化、知識管理、資訊科技接受與採用、創意行銷' },
+          { name: '王朝仕', image: '/Images/department/3.png', expertise: '公司理財' },
+          { name: '趙正敏', image: '/Images/department/4.png', expertise: '生產與作業管理、物流管理、環境永續、循環經濟' },
+          { name: '賴慧敏', image: '/Images/department/5.png', expertise: '資訊管理、數位學習、電子商務、知識管理' },
+
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
-          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },   
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },       
+          { name: '周素娥', image: '/Images/department/6.png', expertise: '全球競爭策略、國際設廠決策、策略管理、組織行為、運籌包裝、國際企業管理' },
+          { name: '張詠盛', image: '/Images/department/7.png', expertise: '資訊、數學' },
+          { name: '黃月春', image: '/Images/department/8.png', expertise: '行銷管理、消費者行為、品牌管理' },
+          { name: '龔慧珠', image: '/Images/department/9.png', expertise: '人力資源發展、訓練與發展、人力資源管理、人際關係、溝通與談判、生涯及職涯教練' },
+          { name: '林孟眉', image: '/Images/department/10.png', expertise: '行銷、一般管理' },
+          { name: '陳柏儒', image: '/Images/department/11.png', expertise: '經濟學、產業經濟分析、國際貿易與金融、計量方法' },
+          { name: '張淑婷', image: '/Images/department/12.png', expertise: '行銷管理、消費者行為、口碑行銷、行銷企劃' },
+          { name: '解燕豪', image: '/Images/department/13.png', expertise: '服務科學、服務體驗、顧客期望管理、電子商務、文字探勘、資訊管理' },
+          { name: '黃怡芬', image: '/Images/department/14.png', expertise: '科技創新、競爭策略、創業管理、企業永續策略' },   
+          { name: '何瑞鎮', image: '/Images/department/15.png', expertise: '財務金融、財務管理、國際財務管理、金融機構' },
+          { name: '呂思齊', image: '/Images/department/16.png', expertise: '領導、組織行為、人力資源管理' },       
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '許老師', image: '/Images/teacher2.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
-          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
+          { name: '李麗蘋', image: '/Images/department/17.png', expertise: '財管、會計、管理、行銷' },
+          { name: '何蕙萍', image: '/Images/department/18.png', expertise: '數位化行銷、決策科學、數位學習、電子商務、資訊管理、供應鏈管理' },
+          { name: '盧慶樺', image: '/Images/department/19.png', expertise: '決策科學、績效評估、人力資源管理、健康管理' },
+          { name: '蔣昱弘', image: '/Images/department/20.png', expertise: '大數據分析、自然語言處理、深度學習、應用科學教育' },
+          { name: '許志成', image: '/Images/department/21.png', expertise: '財務會計、公司理財、大數據分析、公司治理、企業倫理' },
+          { name: '陳建銘', image: '/Images/department/22.png', expertise: '營運管理、電子化企業、專案管理、企業資訊安全管理' },
+          { name: '劉嘉雯', image: '/Images/department/23.jpg', expertise: '人力資源管理、創新管理、電子商務' },
+          { name: '凃嘉真', image: '/Images/department/24.jpg', expertise: '組織行為、團隊研究、危機溝通管理' },
           
         ]
       },
@@ -524,7 +525,7 @@ export default {
         labels: ['教授', '副教授', '助理教授'],
         datasets: [{
           label: '人數',
-          data: [4, 11, 8],
+          data: [5, 11, 8],
           backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(104, 0, 145, 0.2)'],
           borderColor: ['rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(104, 0, 145, 0.1)'],
           borderWidth: 0
@@ -790,15 +791,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

@@ -299,29 +299,29 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '邱學瑾', image: '/Images/japanese/1.jpg', expertise: '日文導讀與討論、日文習作、研究方法、日語語法、日語聽講練習、第二語言習得、專題製作等' },
+          { name: '羅曉勤', image: '/Images/teacher.png', expertise: '学習者研究・質的研究・教育実践研究・学習者研究・案例教學法・ACTFL-OPI口語測驗官・2030SDGs Game認証引導師・公益財団法人博報堂教育財団 第13回「日本研究フェローシップ」研究員・En-Roads 氣侯大使' },
+          { name: '黃英哲', image: '/Images/japanese/3.png', expertise: '言談分析、外國人日語使用之分析、言語運用論' },
           
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },  
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },                       
+          { name: '張宜樺', image: '/Images/japanese/4.jpg', expertise: '日本文學、日本文化、翻譯、寫作' },                       
+          { name: '吳致秀', image: '/Images/teacher.png', expertise: '初級日語、中級日語、實務實習、就業專題講座' },
+          { name: '謝敏華', image: '/Images/japanese/6.jpg', expertise: '第二語言習得、語言教育、日語教育、文化比較論' },
+          { name: '黎立仁', image: '/Images/japanese/7.jpg', expertise: '日系多國籍企業、國際行銷、豐田式生產管理、台日企業合作、日本總合商社' },
+          { name: '張瓊瑜', image: '/Images/teacher.png', expertise: '日本語教育、現代日本語文法' },
+          { name: '李嗣堯', image: '/Images/japanese/9.jpg', expertise: '日本經濟、日本產業、日本企業、財務管理、國際貿易' },
+          { name: '洪國財', image: '/Images/teacher2.png', expertise: '日本社會與文化、專書選讀、日本文化研究、台日社會比較' },  
+          { name: '賴雲莊', image: '/Images/japanese/11.jpg', expertise: '日本近代文學、日本語教育、大學社會責任實踐計畫(USR)' },
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '堂坂順子', image: '/Images/japanese/12.jpg', expertise: '日語發表演練、日語會話、觀光日語、英日對譯（大學部）、英日口頭發表演練、英日對譯（研究所）' },
+          { name: '橘孝司', image: '/Images/teacher2.png', expertise: '進階日語會話、日語發表演練、日本社會現況、日語習作、語言學…等' },
+          { name: '林雅芬', image: '/Images/teacher.png', expertise: '中日口譯、中日語言對比分析、功能語法' },
+          { name: '南雄太', image: '/Images/japanese/15.jpg', expertise: '日本語会話、日文習作、日本文学、日本専書選讀、日本商業文書' },
+          { name: '葉秋蘭', image: '/Images/teacher.png', expertise: '日本政治與外交、國際關係、日語教學' },
+          { name: '張銘今', image: '/Images/japanese/17.jpg', expertise: '國際經濟、綜合經濟政策、國際貿易' },
+          { name: '葉東哲', image: '/Images/japanese/18.jpg', expertise: '國際經濟、日本經濟、台日經貿關係、國際企業' },
           
         ]
       },
@@ -818,15 +818,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

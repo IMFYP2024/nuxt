@@ -300,28 +300,29 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
+          { name: '邱順應', image: '/Images/businessde/2.jpg', expertise: '廣告文案、創意策略、設計企劃、修辭語法、敘事符號' },
+          
           
           
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
+          { name: '溫志維', image: '/Images/businessde/1.jpg', expertise: '新紀實攝影、地景攝影、影像設計研究、當代攝影風格研究、藝術文化學、視覺傳達設計' },
+          { name: '趙樹人', image: '/Images/businessde/3.jpg', expertise: '設計實務研究、設計企劃、專題設計與實習、人物攝影、文化與設計、圖文傳達研究' },
+          { name: '洪祺森', image: '/Images/businessde/4.jpg', expertise: '文創聚落經營管理、整合行銷、藝文策展、藝文活動辦理、文創商品開發、創新創業輔導、設計研究方法、影像心理學、色彩學' },
+          { name: '侯純純', image: '/Images/businessde/5.jpg', expertise: '農產品包裝設計、地方創生與文化創意設計、品牌形象策略、友善高齡設計、華文編排設計理論與方法、設計實務與設計教育、設計實踐研究' },
+          { name: '李貴連', image: '/Images/businessde/6.jpg', expertise: '五感設計、包裝設計、品牌識別、色彩研究' },
+          { name: '林承謙', image: '/Images/businessde/7.jpg', expertise: '廣告媒體研究、網路行銷傳播、數位多媒體設計' },
+          { name: '鄭建華', image: '/Images/businessde/8.jpg', expertise: '視覺傳達設計、文化創意設計、資訊視覺化設計' },
+          { name: '林家安', image: '/Images/businessde/9.jpg', expertise: '社會設計與文化研究、田野研究方法、當代電影研究、劇情片製作、紀錄電影製作、廣告行銷創意、整合行銷、數位藝術創作、數位敘述與科技傳播。' },
+          { name: '林佩如', image: '/Images/businessde/10.jpg', expertise: '專題設計、設計實務研究、文化創意商品設計、展示設計、研究方法與倫理、造型設計研究' },
+          { name: '洪瑞駿', image: '/Images/businessde/11.jpg', expertise: '品牌形象、專案管理、視覺創意、平面設計、包裝設計、插畫技法、印刷實務、網站整合' },
+          { name: '何季澄', image: '/Images/businessde/12.jpg', expertise: '包裝設計實務、設計思考、資訊圖像設計、設計行銷與企劃' },
                    
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '邱旭蓮', image: '/Images/businessde/13.jpg', expertise: '基礎攝影、影像表現、進階攝影、錄影剪輯、影片企劃與製作、分鏡腳本製作、專題設計與實習、文化創意產業、整合行銷傳播學' },
+          { name: '黃曉微', image: '/Images/businessde/14.jpg', expertise: '跨領域藝術史研究、當代視覺文化研究、應用策展學' },
+          { name: '羅光志', image: '/Images/businessde/15.jpg', expertise: '基礎造形、視覺傳達設計、品牌設計與行銷、廣告創意、設計教育' },
           
         ]
       },
@@ -498,7 +499,7 @@ export default {
         labels: ['教授', '副教授', '助理教授'],
         datasets: [{
           label: '人數',
-          data: [2, 10, 3],
+          data: [1, 11, 3],
           backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(104, 0, 145, 0.2)'],
           borderColor: ['rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(104, 0, 145, 0.1)'],
           borderWidth: 0
@@ -764,15 +765,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

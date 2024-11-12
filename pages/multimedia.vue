@@ -328,24 +328,24 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
+          { name: '蔡子瑋', image: '/Images/multimedia/1.jpg', expertise: '感性研究、設計傳達、互動藝術、文化數位加值設計' },
+          { name: '朱中華', image: '/Images/multimedia/2.jpg', expertise: '行動內容與互動設計、行動運算、技術影像處理技術及手機多媒體應用、3G及802.11無線網路安全協定、設計運算專題' },
           
           
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '黃國峰', image: '/Images/multimedia/3.jpg', expertise: '行動內容與互動設計、多媒體系統、影像處理、資訊管理、資訊安全' },
+          { name: '徐豐明', image: '/Images/multimedia/4.png', expertise: '行動內容與互動設計、計算機網路、程式設計、網站系統設計、軟體工程、多媒體通訊與網路' },
+          { name: '王雨涵', image: '/Images/multimedia/5.png', expertise: '高齡互動體驗設計、視覺傳達設計、使用者經驗設計、情感設計' },
           
                    
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '游曉貞', image: '/Images/multimedia/6.jpg', expertise: '使用者研究、互動設計、人機介面設計、產品設計' },
+          { name: '陳賢錫', image: '/Images/multimedia/7.jpg', expertise: '電腦繪圖與動畫、虛擬實境、研究方法與論文寫作' },
+          { name: '曾志峰', image: '/Images/multimedia/8.jpg', expertise: '影音製作、3D動畫、現代藝術與設計' },
+          { name: '吳彥良', image: '/Images/multimedia/9.png', expertise: '擴增實境、虛擬實境、互動媒體設計、遊戲設計' },
+          { name: '邱敏棋', image: '/Images/multimedia/10.jpg', expertise: '數位學習、stem、人工智慧、智慧型機器人、電腦繪圖與動畫、數位圖文影像設計' },
           
         ]
       },
@@ -794,15 +794,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

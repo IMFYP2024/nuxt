@@ -310,22 +310,22 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '廖芮茵', image: '/Images/chinese/1.jpg', expertise: '中國文學、中國文字學、春秋/左傳、禮記、中國文學小說' },
+          { name: '林翠鳳', image: '/Images/chinese/2.png', expertise: '中國文學、中國文學詩、現代文學、台灣史、民俗學' },
+          { name: '廖藤葉', image: '/Images/chinese/3.jpg', expertise: '中國文學、民俗學、戲劇劇場類' },
           
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '吳惠珍', image: '/Images/chinese/4.jpg', expertise: '中國文學、中國文學散文、明代文學、中國歷代文學家研究、現代文學' },
+          { name: '衛　琪', image: '/Images/chinese/5.jpg', expertise: '中國近代史、中國文化史、臺灣史、臺灣古典文學、婦女史' },
+          { name: '張致苾', image: '/Images/chinese/6.jpg', expertise: '美學通論、書法、中國文學、現代文學、漢語對外教學、華語文教材教法' },
+          { name: '何寶籃', image: '/Images/chinese/7.jpg', expertise: '視覺傳播、電影、大眾傳播學' },
+          { name: '張　群', image: '/Images/chinese/8.jpg', expertise: '華語文教學、漢語語法(華語和閩南語)、語言學、教育科技應用(AI)、SDGs' },
                          
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
+          { name: '王千宜', image: '/Images/chinese/9.jpg', expertise: '中國文學、現代文學、教材設計' },
+          { name: '鐘敻洋', image: '/Images/chinese/10.jpg', expertise: '廣告企劃、廣告、視覺傳達設計、電腦繪圖與動畫、印刷媒介' },
           
           
         ]
@@ -774,15 +774,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

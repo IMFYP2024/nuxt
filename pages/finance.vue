@@ -299,28 +299,28 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
+          { name: '邱臙珍', image: '/Images/finance/1.jpg', expertise: '風險值、風險管理、市場流動性' },
+          { name: '戴錦周', image: '/Images/finance/2.jpg', expertise: '計量經濟、財務經濟、應用經濟' },
+          { name: '謝孟芬', image: '/Images/finance/3.jpg', expertise: '國際金融、投資學' },
+          { name: '周昭宇', image: '/Images/finance/4.jpg', expertise: '應用機率與統計' },
+          { name: '陳庭萱', image: '/Images/finance/5.jpg', expertise: '金融機構、企業社會責任、大數據分析、FinTech、人工智慧' },
+          { name: '葉志權', image: '/Images/finance/6.jpg', expertise: '公司治理、財金計量、金融發展、國際化' },
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
-          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
+          { name: '李靜芠', image: '/Images/finance/7.jpg', expertise: '總體經濟學、國際金融' },
+          { name: '賴煒曾', image: '/Images/finance/8.jpg', expertise: '管理學、國際企管、統計學' },
+          { name: '魏中瑄', image: '/Images/finance/9.jpg', expertise: '員工訓練績效分析、金融保險業財務管理分析' },
+          { name: '謝富順', image: '/Images/finance/10.jpg', expertise: '財務、不動產投資、銀行存款保險' },
+          { name: '周佩儀', image: '/Images/finance/11.jpg', expertise: '財務會計、投資學、國際金融' },
+          { name: '李家豪', image: '/Images/finance/12.jpg', expertise: '財務計量方法、國際金融、投資學' },
+          { name: '黃心怡', image: '/Images/finance/13.bmp', expertise: '財務計量、行為財務、公司理財、期貨與選擇權' },
+          { name: '黃幼琳', image: '/Images/finance/14.jpg', expertise: '公司理財、企業併購' },
                     
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '許老師', image: '/Images/teacher2.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
+          { name: '陳秀桂', image: '/Images/finance/15.jpg', expertise: '證券市場微結構、行為財務、金融市場、財務計量' },
+          { name: '徐鼎欣', image: '/Images/finance/16.jpg', expertise: '市場微結構、投資學、金融市場' },
+          { name: '李振宇', image: '/Images/finance/17.jpg', expertise: '應用經濟學、藥物經濟學、效果評估' },
           
         ]
       },
@@ -764,15 +764,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

@@ -299,24 +299,23 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
+          { name: '鄭瑞昌', image: '/Images/leisure/1.jpg', expertise: '會展管理、財務管理、主題樂園管理、、博弈管理產業、休閒健康產業、休閒創業、、投資郵輪產業、休閒觀光管理、人力資源管理' },
+          { name: '張李淑容', image: '/Images/leisure/2.jpg', expertise: '會計、經濟、產業分析、觀光地理、遊程規劃' },
+          { name: '劉慧蓉', image: '/Images/leisure/3.jpg', expertise: '餐飲經營與管理、餐飲衛生安全管理、消費心理、服務業管理' },
+          { name: '顏昌華', image: '/Images/leisure/4.jpg', expertise: '觀光事業管理、旅館管理、旅行業行銷與管理' },
+          { name: '黃健哲', image: '/Images/leisure/5.jpg', expertise: '管理學、休閒產業分析、人力資源管理、雲端系統' },
           
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
+          { name: '洪淑宜', image: '/Images/leisure/6.jpg', expertise: '消費者行為(含消費文化)、整合行銷傳播(含行銷管理)、文化創意產業與觀光、公共關係管理' },
+          { name: '陳元陽', image: '/Images/leisure/7.jpg', expertise: '休閒遊憩資源調查與規劃、公園遊憩區規劃設計、戶外遊憩研、究、國家公園經營、生態觀光、森林遊樂、休閒社會學' },
+          { name: '鄧秀玉', image: '/Images/leisure/8.jpg', expertise: '旅行業資訊應用 、會議展覽管理、餐旅服務業管理' },
+          { name: '林銘昌', image: '/Images/leisure/9.png', expertise: '經濟分析、休閒產業研究、創業管理、鄉村旅遊規劃' },
                    
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
+          { name: '李安珮', image: '/Images/leisure/10.jpg', expertise: '管理學、行銷學、財務領域、國際企管、休閒應用英語、國際禮儀' },
+          { name: '楊道欣', image: '/Images/leisure/11.jpg', expertise: '飲料調製、創意調酒、餐旅服務、飲調實務、咖啡調配與拉花技術、雞尾酒調製、吧檯管理實務、選手培訓、餐飲服務技術' },
           
         ]
       },
@@ -489,7 +488,7 @@ export default {
         labels: ['教授', '副教授', '助理教授'],
         datasets: [{
           label: '人數',
-          data: [6, 4, 2],
+          data: [5, 4, 2],
           backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(104, 0, 145, 0.2)'],
           borderColor: ['rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(104, 0, 145, 0.1)'],
           borderWidth: 0
@@ -755,15 +754,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

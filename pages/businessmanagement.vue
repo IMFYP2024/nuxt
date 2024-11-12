@@ -312,24 +312,28 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
+          { name: '林昆立', image: '/Images/businessmanagement/1.jpg', expertise: '金融科技應用、數據分析與統計應用、財務報表分析' },
           
           
           
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
+          { name: '吳美玉', image: '/Images/businessmanagement/2.jpg', expertise: '資訊安全、資訊安全管理、人工智慧應用與管理、電子商務' },
+          { name: '許世芸', image: '/Images/businessmanagement/3.jpg', expertise: '行銷管理、網路行銷、消費者行為、電子商務' },
+          { name: '蔡靜宜', image: '/Images/businessmanagement/4.jpg', expertise: '智慧零售、網路行銷、關係行銷、顧客公民行為' },
+          { name: '鄭正豐', image: '/Images/businessmanagement/5.jpg', expertise: '科技教策略行銷、科技管理、消費者行為育、資訊管理' },
+          { name: '張育瑋', image: '/Images/businessmanagement/6.jpg', expertise: '企業電子化、電子商務、智慧科技、知識管理' },
+          { name: '林政憲', image: '/Images/businessmanagement/12.jpg', expertise: '消費者行為、組織領導與團體經營、網路與社群行銷、管理學、行銷管理' },
+
+
                    
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '劉嘉雯', image: '/Images/businessmanagement/7.jpg', expertise: '創新管理、組織領導與團隊經營、電子商務經營策略、研究方法' },
+          { name: '曾為國', image: '/Images/businessmanagement/8.jpg', expertise: '策略管理、策略人力資源管理、績效管理、創新管理、創業規劃、科技管理' },
+          { name: '魏安平', image: '/Images/businessmanagement/9.jpg', expertise: '行為金融、行銷與財務整合性研究、投資理論與風險管理' },
+          { name: '吳格非', image: '/Images/businessmanagement/10.jpg', expertise: '資料採礦、統計、會計、審計學、財報分析' },
+          { name: '林姿伶', image: '/Images/businessmanagement/11.jpg', expertise: '財務管理、經濟學、投資學' },
           
         ]
       },
@@ -506,7 +510,7 @@ export default {
         labels: ['教授', '副教授', '助理教授'],
         datasets: [{
           label: '人數',
-          data: [1, 4, 5],
+          data: [1, 6, 5],
           backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(104, 0, 145, 0.2)'],
           borderColor: ['rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(104, 0, 145, 0.1)'],
           borderWidth: 0
@@ -772,15 +776,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

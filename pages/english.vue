@@ -302,25 +302,25 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
+          { name: '張碧蓉', image: '/Images/english/1.jpg', expertise: '西洋文學、文學理論、文化研究、英美小說、女性主義' },
+          { name: '嚴嘉琪', image: '/Images/english/2.png', expertise: '英語教學、課程設計、跨文化教育、質性研究、服務學習' },
+          { name: '徐琍沂', image: '/Images/english/3.jpg', expertise: '英語教學、師資培育、量化研究、課程設計與評量' },
+          { name: '李右芷', image: '/Images/english/4.jpg', expertise: '英語演講與口語表達、教育科技與英語教學、戲劇運用於語言教學、電腦輔助教學、美國研究' },
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },                   
+          { name: '沈惠君', image: '/Images/teacher.png', expertise: '英美文學、英美語教育、社會統計研' },
+          { name: '梁彩玲', image: '/Images/english/5.png', expertise: '會議英文、英語演講、英文閱讀與寫作' },
+          { name: '曾琦芬', image: '/Images/english/6.jpg', expertise: '教師信念、英文寫作、跨語使用、多模態寫作、科技輔助語言學習、混和方法研究' },
+          { name: '林勤敏', image: '/Images/english/7.jpg', expertise: '英語教學課程、雙語教育、觀光旅遊' },
+          { name: '陳麗清', image: '/Images/english/8.jpg', expertise: '應用語言學、專業英語' },
+          { name: '許惠芬', image: '/Images/english/9.jpg', expertise: '英語教學、英美文學' },                   
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '陳惠玲', image: '/Images/english/10.jpg', expertise: '大眾傳播、英文閱讀、語言與傳播、英語口語表達、英語演講' },
+          { name: '王家音', image: '/Images/english/11.jpg', expertise: '英語教學、英文閱讀、課程規劃、英美文化' },
+          { name: '李華德(Howard Royston Lees)', image: '/Images/english/12.jpg', expertise: '第二語言習得、專業英語、心理語言學、企業管理主題研究' },
+          { name: '劉光昇', image: '/Images/english/13.png', expertise: '商用寫作教學與研究、校外實習指導及執行、觀光英文相關教學實務、商用暨職場英文教學' },
+          { name: '莫利斯(Maurice James Michael)', image: '/Images/english/14.jpg', expertise: '企業管理主題研究、企業家精神、行銷管理、專業英語' },
           
         ]
       },
@@ -819,15 +819,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {
