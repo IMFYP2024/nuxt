@@ -246,9 +246,9 @@
               <img :src="item.image" alt="Competition Image" class="carousel-image" />
               <div class="card-content">
                 <h3>{{ item.title }}</h3>
-                <p>名次: {{ item.rank }}</p>
+                <!--<p>名次: {{ item.rank }}</p>
                 <p>老師: {{ item.teacher }}</p>
-                <p>競賽成員: {{ item.student }}</p>
+                <p>競賽成員: {{ item.student }}</p>-->
               </div>
             </div>
           </swiper-slide>
@@ -420,16 +420,20 @@ export default {
       electiveIcon: '/Images/IMG_0046.png',
         activeSection: '專題',  // 默認顯示 "專題" 部分
       topics: [
-        { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/Images/test.png' },
-        { rank: '第二名', title: '環控偵測防爆IoT', teacher: '陳老師', student: '小雯', image: '/Images/test.png' },
-        { rank: '第三名', title: '詐騙護手', teacher: '王老師', student: '阿呆', image: '/Images/test.png' },
-        { rank: '第四名', title: '蘋狗', teacher: '王老師', student: '嘿嘿', image: '/Images/test.png' },
-        { rank: '第五名', title: 'boombom', teacher: '王老師', student: '哇哇', image: '/Images/test.png' },
+        { rank: '第一名', title: '食在好孕', teacher: '姜琇森', student: '林桓平、詹龍傑、徐欣怡、楊孟翌、湯俊璋', image: '/Images/im/101.png' },
+        { rank: '第一名', title: '環控偵測防爆IoT', teacher: '陳弘明、盧永豐', student: '張楷群、石育綸、施閔啟、王鈺富', image: '/Images/im/102.png' },
+        { rank: '第二名', title: '以數位轉型改善偏鄉學生程式與資訊科技素養', teacher: '黃祈勝', student: '謝愷彥、陳德恩、吳孟鴻', image: '/Images/im/103.png' },
+        { rank: '第二名', title: '詐騙護手', teacher: '黃天麒', student: '李岳峰、黃品澍', image: '/Images/im/104.png' },
+        { rank: '第二名', title: '與穴共生', teacher: '姜琇森', student: '陳欣妤、陳意晴、邱郁珊、張紘綸、何佶恩', image: '/Images/im/106.png' },
+        { rank: '第三名', title: '蘋狗', teacher: '陳同孝、林煒凌', student: '黃鳳鳴、邱詠聖', image: '/Images/im/105.png' },
+        { rank: '第三名', title: '智能垃圾自動分類機', teacher: '張鈞淯', student: '魏承維、崔家偉、范景翔', image: '/Images/im/107.png' },
+        { rank: '第三名', title: 'LingoGPT 英文文章閱讀系統', teacher: '黃天麒、曾建維', student: '廖英淞、徐瑋辰、郭哲瑋、劉環儀', image: '/Images/im/108.png' },
       ],
       competitions: [
-        { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/Images/test.jpg' },
-        { rank: '第二名', title: '環控偵測防爆IoT', teacher: '陳老師', student: '小雯', image: '/Images/test.jpg' },
-        { rank: '第三名', title: '詐騙護手', teacher: '王老師', student: '阿呆', image: '/Images/test.jpg' },
+        { rank: '第一名', title: '大專校院資訊應用服務創新競賽', teacher: '蔣老師', student: '王曉明', image: '/Images/im/109.png' },
+        { rank: '第二名', title: 'GiCS 尋找資安女婕思', teacher: '陳老師', student: '小雯', image: '/Images/im/110.png' },
+        { rank: '第二名', title: '全國大專暨高中職學生專題製作競賽', teacher: '陳老師', student: '小雯', image: '/Images/test.png' },
+        
       ],
       studentCount: 0,
       teacherCount: 0,
