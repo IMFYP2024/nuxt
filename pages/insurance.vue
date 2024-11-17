@@ -162,7 +162,7 @@
           <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
           <div class="modal-content" @click.stop>
             <p style=" text-align: left " v-html="creditMessage"></p><!-- 顯示訊息 -->
-            <button @click="closeCreditModal">關閉</button>
+            
           </div>
         </div>
           <div class="">
@@ -325,32 +325,33 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          
+          { name: '林淑惠', image: '/Images/insurance/3.webp', expertise: '統計分析、精算、保險數學、大數據分析、教育統計與測驗方法' },
+          { name: '簡淑華', image: '/Images/insurance/4.webp', expertise: '財務報表分析、信託與投資、不動產估價' },
+          { name: '卓翠月', image: '/Images/insurance/5.webp', expertise: '效率與生產力分析、金融機構管理、財務分析' },
+          { name: '廖采如', image: '/Images/insurance/6.webp', expertise: '公司治理、國際企業管理、統計、投資學' },
+          { name: '張巧宜', image: '/Images/insurance/7.png', expertise: '待更新' },
+          { name: '郭玟秀', image: '/Images/insurance/8.webp', expertise: '財務管理、投資管理、金融市場、市場微結構、財金計量實證研究、公司治理' },
+          { name: '吳明哲', image: '/Images/insurance/9.webp', expertise: '經濟分析、樂齡理財、不動產金融、信託金融' },
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
-          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
-          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },          
+          { name: '王財驛', image: '/Images/insurance/1.webp', expertise: '財產保險、意外保險、保險實務、國際保險市場' },
+          { name: '張瑞益', image: '/Images/insurance/2.png', expertise: '保險需求理論/需求因素分析、公司治理、保險公司經營管理、社會責任' },    
+          { name: '謝淑慧', image: '/Images/insurance/10.webp', expertise: '風險管理、保險學、社會保險、人身保險、保險實務' },
+          { name: '邱泰穎', image: '/Images/insurance/11.png', expertise: '經濟分析、貨幣與金融' },
+          { name: '陳怡諠', image: '/Images/insurance/12.png', expertise: '公司理財、投資學、金融機構管理' },
+          { name: '闕廷諭', image: '/Images/insurance/13.webp', expertise: '財務管理、投資理論、金融教育、統計分析' },
+          { name: '曾耀鋒', image: '/Images/insurance/14.png', expertise: '待更新' },
+          { name: '劉俊廷', image: '/Images/insurance/15.webp', expertise: '保險學、風險管理、保險法、財產保險' },
+          { name: '蘇眞慧', image: '/Images/insurance/16.png', expertise: '保險理論、精算數學、退休金理論與規劃、壽險商品設計' },
+          { name: '許峰睿', image: '/Images/insurance/17.webp', expertise: '企業社會責任、財務會計績效分析、投資組合管理、公司治理' },
+          { name: '劉議謙', image: '/Images/insurance/18.webp', expertise: '隨機利率模型、Quasi-Monte Carlo、多資產選擇權訂價、死亡率模型、長壽風險證券化、健康保險、附保證投資型商品' },
+          { name: '黃麗夙', image: '/Images/insurance/19.png', expertise: '保險與風險管理、策略管理、保險金融與民商法規' },
+          { name: '陳冠志', image: '/Images/insurance/20.png', expertise: '財產保險、產業分析、保險行銷、風險管理、保險財務分析、保險經營' },
+          { name: '呂書屏', image: '/Images/insurance/21.jpg', expertise: '待更新' },
+                
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
+          { name: '王美智', image: '/Images/insurance/22.jpg', expertise: '國際金融、金融市場、財務管理、投資學、期貨選擇權' },
         ]
       },
       selectedYear: '請選擇年級', // Default selected year
@@ -544,7 +545,7 @@ export default {
         labels: ['教授', '副教授', '助理教授'],
         datasets: [{
           label: '人數',
-          data: [6, 14, 1],
+          data: [7, 14, 1],
           backgroundColor: ['rgba(75, 192, 192, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(104, 0, 145, 0.2)'],
           borderColor: ['rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)', 'rgba(104, 0, 145, 0.1)'],
           borderWidth: 0
@@ -810,15 +811,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

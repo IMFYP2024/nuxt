@@ -155,7 +155,7 @@
           <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
           <div class="modal-content" @click.stop>
             <p style=" text-align: left " v-html="creditMessage"></p><!-- 顯示訊息 -->
-            <button @click="closeCreditModal">關閉</button>
+            
           </div>
         </div>
           <div class="">
@@ -318,21 +318,21 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
+          { name: '柯沛程', image: '/Images/statistics/1.jpg', expertise: '排隊理論與可靠度、決策理論、多變量分析、實驗設計、統計軟體、生態統計、排隊理論' },
+          { name: '朱蘊鑛', image: '/Images/statistics/2.jpg', expertise: '應用機率模型、可靠度理論、統計分析、隨機過程' },
+          { name: '簡郁紘', image: '/Images/statistics/3.jpg', expertise: '作業研究、可靠度理論、實驗設計、品質管理、維修策略' },
+          { name: '呂岡玶', image: '/Images/statistics/4.jpg', expertise: '統計、保險精算、模糊數學 ' },
           
           
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
+          { name: '楊佑傑', image: '/Images/statistics/5.jpg', expertise: '平滑雲線模型、混合效果模型、半參數混合模型、生物統計、廻歸分析、統計軟體' },
+          { name: '郭清章', image: '/Images/statistics/6.jpg', expertise: '統計、數值分析、排隊理論、網路通訊、程式設計' },
           
                    
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
+          { name: '蔡欣男', image: '/Images/statistics/7.jpg', expertise: '應用機率、可靠度工程、巨量資料分析、品質管制、統計軟體' },
           
           
         ]
@@ -764,15 +764,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

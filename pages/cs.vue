@@ -161,7 +161,7 @@
           <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
           <div class="modal-content" @click.stop>
             <p style=" text-align: left" v-html="creditMessage"></p><!-- 顯示訊息 -->
-            <button @click="closeCreditModal">關閉</button>
+            
           </div>
         </div>
           <div class="">
@@ -324,37 +324,37 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher2.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭老師', image: '/Images/teacher.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '柯老師', image: '/Images/teacher2.png', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
-          { name: '黃老師', image: '/Images/teacher2.png', expertise: '數位學習、創造力培育、知識工程、教育科技、創客教育' },
-          { name: '連老師', image: '/Images/teacher.png', expertise: '資訊管理、電子商務、電子化企業、服務科學與設計思考、醫療資訊管理' },
-          { name: '林老師', image: '/Images/teacher2.png', expertise: '料探勘、推薦系統、社會網絡分析' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '電子商務、數位行銷、社群媒體、消費者行為、數量方法分析' },
-          { name: '林老師', image: '/Images/teacher2.png', expertise: '電子商務、數位行銷、社群媒體、消費者行為、數量方法分析' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '工作排程、影像處理、電腦視覺、演算法、資料庫系統、專利檢索' }
+          { name: '陳同孝', image: '/Images/cs/1.jpg', expertise: '影像處理、資料探勘、資訊安全、生物資訊' },
+          { name: '鄭經偉', image: '/Images/cs/2.jpg', expertise: '固體力學、動力學、振動力學、控制、最佳化、航空工程' },
+          { name: '林春宏', image: '/Images/cs/3.jpg', expertise: 'Computer vision, image processing, machine learning and deep learning, and pattern recognition, or more specifically, automated image and video analysis through detection, tracking and segmentation methods.' },
+          { name: '黃政治', image: '/Images/cs/4.jpg', expertise: '數學、微積分' },
+          { name: '陳民枝', image: '/Images/cs/5.jpg', expertise: 'Data Hiding, Image Cryptography, Image Processing, Biomedical Imaging, Data Mining, Multimedia Design.' },
+          { name: '陳弘明', image: '/Images/cs/6.jpg', expertise: '開源雲系統技術、5G NFV技術、MLOps、巨量資料平行運算、智慧聯網、行動應用、深度學習應用、嵌入式系統、視訊編碼' },
+          { name: '黃慧鳳', image: '/Images/cs/7.jpg', expertise: '作業研究、密碼學、資訊安全、演算法' },
+          { name: '張雅芬', image: '/Images/cs/8.jpg', expertise: '網路安全、資訊網路、資訊安全' },
+          { name: '洪維恩', image: '/Images/cs/9.png', expertise: '電腦輔助設計、人工智慧、資訊安全專家系統、程式設計' },
+          { name: '洪啟舜', image: '/Images/cs/10.jpg', expertise: '社群運算(Social Computing), 情意計算(Affective Computing), 多媒體系統(Multimedia System), 人工智慧(Artificial Intelligence)' },
+          { name: '陳見生', image: '/Images/cs/11.jpg', expertise: '無線通訊工程、定位系統、數值分析、無線通訊定位系統' }
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
-          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' }
+          { name: '蔡家緯', image: '/Images/cs/12.jpg', expertise: '量子密碼、量子資訊與計算、異常診斷' },
+          { name: '陳世穎', image: '/Images/cs/13.jpg', expertise: 'XML、嵌入式資料庫、資料串流管理系統、雲端計算' },
+          { name: '張翠蘋', image: '/Images/cs/14.jpg', expertise: 'Web Data Mining, Cloud Computing, Artificial Intelligence.' },
+          { name: '黃馨逸', image: '/Images/cs/15.jpg', expertise: '模糊理論、排隊理論' },
+          { name: '盧永豐', image: '/Images/cs/16.jpg', expertise: 'Wireless embedded systems, Sensor networks, Embedded database systems, Network security, Neural network.' },
+          { name: '劉冠顯', image: '/Images/cs/17.jpg', expertise: 'Signal and Image Processing, Big Data Analytics, Computer Vision, Machine Learning and Deep Learning.' },
+          { name: '張家瑋', image: '/Images/cs/18.jpg', expertise: 'Natural language processing, Internet of things, Artificial intelligence, E-learning technologies.' }
     
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '許老師', image: '/Images/teacher.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
-          { name: '戴老師', image: '/Images/teacher2.png', expertise: '多媒體領域(含3D、VR/AR)、資訊系統' },
-          { name: '周老師', image: '/Images/teacher.png', expertise: '科技教育、擴增實境、人機互動設計' },
-          { name: '曾老師', image: '/Images/teacher2.png', expertise: '教育大數據、測驗統計與評量、數位學習' },
-          { name: '李老師', image: '/Images/teacher2.png', expertise: '人工智慧、創新顯示互動設計、眼動偵測分析、情感運算、生理資訊感測、行動運算、異質系統整合與開發' },
-          { name: '林老師', image: '/Images/teacher2.png', expertise: '新興科技應用、資訊管理、虛實整合、問題導向學習應用、STEAM跨領域教學策略' }
+          { name: '張鈞淯', image: '/Images/cs/19.jpg', expertise: '人工智慧、大數據分析、機器人/手臂控制、智慧製造、演化計算、IoT物聯網' },
+          { name: '黃祈勝', image: '/Images/cs/20.jpg', expertise: 'Database System, Data Warehouse, Big-Data Analysis, Scientific Computation, Cloud Computation' },
+          { name: '周孝興', image: '/Images/cs/21.jpg', expertise: 'IC電路設計、超大型類比積體電路設計、電源管理晶片設計' },
+          { name: '吳福興', image: '/Images/cs/22.jpg', expertise: '智慧健康/照護/醫療、資料探勘、機器學習、深度學習、系統整合(含3D、VR/AR)、資訊系統' },
+          { name: '張元嚴', image: '/Images/cs/23.jpg', expertise: '醫學影像電腦輔助診斷、深度學習、人工智慧、影像處理' },
+          { name: '馬豪尚', image: '/Images/cs/24.jpg', expertise: '資料探勘、社群網路與媒體分析、資料庫系統管理、巨量資料分析、人工智慧之創新應用、機器學習' },
+          { name: '陳奐瑀', image: '/Images/cs/25.jpg', expertise: 'Computer Vision、Image Processing、Pattern Recognition、Artificial Intelligence、Machine Learning、Deep Learning' },
+          { name: '李承翰', image: '/Images/cs/26.png', expertise: '入式系統、機電整合控制、自動化' }
           
         ]
       },
@@ -432,11 +432,14 @@ export default {
       electiveIcon: '/Images/IMG_0046.png',
         activeSection: '專題',  // 默認顯示 "專題" 部分
       topics: [
-        { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/Images/test.png' },
-        { rank: '第二名', title: '環控偵測防爆IoT', teacher: '陳老師', student: '小雯', image: '/Images/test.png' },
-        { rank: '第三名', title: '詐騙護手', teacher: '王老師', student: '阿呆', image: '/Images/test.png' },
-        { rank: '第四名', title: '蘋狗', teacher: '王老師', student: '嘿嘿', image: '/Images/test.png' },
-        { rank: '第五名', title: 'boombom', teacher: '王老師', student: '哇哇', image: '/Images/test.png' },
+        { rank: '第一名', title: '食在好孕', teacher: '姜琇森', student: '林桓平、詹龍傑、徐欣怡、楊孟翌、湯俊璋', image: '/Images/im/101.png' },
+        { rank: '第一名', title: '環控偵測防爆IoT', teacher: '陳弘明、盧永豐', student: '張楷群、石育綸、施閔啟、王鈺富', image: '/Images/im/102.png' },
+        { rank: '第二名', title: '以數位轉型改善偏鄉學生程式與資訊科技素養', teacher: '黃祈勝', student: '謝愷彥、陳德恩、吳孟鴻', image: '/Images/im/103.png' },
+        { rank: '第二名', title: '詐騙護手', teacher: '黃天麒', student: '李岳峰、黃品澍', image: '/Images/im/104.png' },
+        { rank: '第二名', title: '與穴共生', teacher: '姜琇森', student: '陳欣妤、陳意晴、邱郁珊、張紘綸、何佶恩', image: '/Images/im/106.png' },
+        { rank: '第三名', title: '蘋狗', teacher: '陳同孝、林煒凌', student: '黃鳳鳴、邱詠聖', image: '/Images/im/105.png' },
+        { rank: '第三名', title: '智能垃圾自動分類機', teacher: '張鈞淯', student: '魏承維、崔家偉、范景翔', image: '/Images/im/107.png' },
+        { rank: '第三名', title: 'LingoGPT 英文文章閱讀系統', teacher: '黃天麒、曾建維', student: '廖英淞、徐瑋辰、郭哲瑋、劉環儀', image: '/Images/im/108.png' },
       ],
       competitions: [
         { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/Images/test.jpg' },
@@ -774,15 +777,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

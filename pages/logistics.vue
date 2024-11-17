@@ -142,7 +142,7 @@
           <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
           <div class="modal-content" @click.stop>
             <p style=" text-align: left " v-html="creditMessage"></p><!-- 顯示訊息 -->
-            <button @click="closeCreditModal">關閉</button>
+            
           </div>
         </div>
           <div class="">
@@ -305,23 +305,23 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
-          { name: '柯老師', image: '/Images/teacher2.png', expertise: '資訊系統、資料分析、行動運算、知識管理與探勘' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、創造力培育、知識工程、教育科技、創客教育' },
-          { name: '連老師', image: '/Images/teacher.png', expertise: '資訊管理、電子商務、電子化企業、服務科學與設計思考、醫療資訊管理' },
+          { name: '楊志文', image: '/Images/logistics/1.jpg', expertise: '運輸規劃、旅運需求' },
+          { name: '張宏吉', image: '/Images/logistics/2.jpg', expertise: '作業研究' },
+          { name: '陳彥匡', image: '/Images/logistics/3.jpg', expertise: '作業研究與決策科學' },
+          { name: '林心慧', image: '/Images/logistics/4.jpg', expertise: '行銷管理、網路行銷' },
+          { name: '林泓毅', image: '/Images/logistics/5.jpg', expertise: '巨量資料分析' },
+          { name: '楊淑玲', image: '/Images/logistics/6.jpg', expertise: '公司理財、營運計畫管理' },
+          { name: '陳榮昌', image: '/Images/logistics/7.jpg', expertise: '物流與供應鏈管理' },
           ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
+          { name: '蔡子安', image: '/Images/logistics/8.jpg', expertise: '流通管理' },
+          { name: '黃國華', image: '/Images/logistics/9.jpg', expertise: '元宇宙議題、知識管理、數位學習、系統分析與設計' },
+          { name: '蕭衛鴻', image: '/Images/logistics/10.jpg', expertise: '智慧零售' },
           ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '許老師', image: '/Images/teacher2.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
+          { name: '劉彩霈', image: '/Images/logistics/11.jpg', expertise: '物流管理' },
+          { name: '林文祥', image: '/Images/logistics/12.jpg', expertise: '程式設計' },
+          { name: '黃郁琮', image: '/Images/logistics/13.jpg', expertise: '智慧物流、流程再造' },
           ]
       },
       selectedYear: '請選擇年級', // Default selected year
@@ -376,11 +376,14 @@ export default {
       electiveIcon: '/Images/IMG_0046.png',
         activeSection: '專題',  // 默認顯示 "專題" 部分
       topics: [
-        { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/Images/test.png' },
-        { rank: '第二名', title: '環控偵測防爆IoT', teacher: '陳老師', student: '小雯', image: '/Images/test.png' },
-        { rank: '第三名', title: '詐騙護手', teacher: '王老師', student: '阿呆', image: '/Images/test.png' },
-        { rank: '第四名', title: '蘋狗', teacher: '王老師', student: '嘿嘿', image: '/Images/test.png' },
-        { rank: '第五名', title: 'boombom', teacher: '王老師', student: '哇哇', image: '/Images/test.png' },
+        { rank: '第一名', title: '食在好孕', teacher: '姜琇森', student: '林桓平、詹龍傑、徐欣怡、楊孟翌、湯俊璋', image: '/Images/im/101.png' },
+        { rank: '第一名', title: '環控偵測防爆IoT', teacher: '陳弘明、盧永豐', student: '張楷群、石育綸、施閔啟、王鈺富', image: '/Images/im/102.png' },
+        { rank: '第二名', title: '以數位轉型改善偏鄉學生程式與資訊科技素養', teacher: '黃祈勝', student: '謝愷彥、陳德恩、吳孟鴻', image: '/Images/im/103.png' },
+        { rank: '第二名', title: '詐騙護手', teacher: '黃天麒', student: '李岳峰、黃品澍', image: '/Images/im/104.png' },
+        { rank: '第二名', title: '與穴共生', teacher: '姜琇森', student: '陳欣妤、陳意晴、邱郁珊、張紘綸、何佶恩', image: '/Images/im/106.png' },
+        { rank: '第三名', title: '蘋狗', teacher: '陳同孝、林煒凌', student: '黃鳳鳴、邱詠聖', image: '/Images/im/105.png' },
+        { rank: '第三名', title: '智能垃圾自動分類機', teacher: '張鈞淯', student: '魏承維、崔家偉、范景翔', image: '/Images/im/107.png' },
+        { rank: '第三名', title: 'LingoGPT 英文文章閱讀系統', teacher: '黃天麒、曾建維', student: '廖英淞、徐瑋辰、郭哲瑋、劉環儀', image: '/Images/im/108.png' },
       ],
       competitions: [
         { rank: '第一名', title: '食在好孕', teacher: '蔣老師', student: '王曉明', image: '/Images/test.jpg' },
@@ -711,15 +714,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {

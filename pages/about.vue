@@ -262,6 +262,7 @@ align-items: right;}
   overflow: auto; 
   padding-bottom: 100%;
   position: relative;
+  align-items: center;
   z-index: 999;
   overflow: visible;
   justify-content: center;

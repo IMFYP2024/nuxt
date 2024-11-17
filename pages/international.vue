@@ -151,7 +151,7 @@
           <div v-if="isCreditModalVisible" class="modal-overlay" @click="closeCreditModal">
           <div class="modal-content" @click.stop>
             <p style=" text-align: left " v-html="creditMessage"></p><!-- 顯示訊息 -->
-            <button @click="closeCreditModal">關閉</button>
+            
           </div>
         </div>
           <div class="">
@@ -314,31 +314,31 @@ export default {
       selectedProfessors: [], // 保存顯示的教授列表
       professorLists: {
         教授: [
-          { name: '姜老師', image: '/Images/teacher2.png', expertise: '資料探勘、數據分析、統計與計量方法、派翠網路、生物醫療、訊號處理' },
-          { name: '黃老師', image: '/Images/teacher.png', expertise: '數位學習、虛擬實境與擴增實境、智慧型資訊系統、電子商務' },
-          { name: '陳老師', image: '/Images/teacher.png', expertise: '網路協定與演算法、物聯網、功耗感知、即時系統、網際網路應用、無線網路、雲端運算' },
-          { name: '蕭老師', image: '/Images/teacher2.png', expertise: '電子商務、網路行銷、電子化企業、知識管理、科技管理、管理決策' },
+          { name: '林家慶', image: '/Images/international/1.jpg', expertise: '國際貿易' },
+          { name: '李隆生', image: '/Images/international/2.jpg', expertise: '經濟學、一般管理' },
+          { name: '郭永興', image: '/Images/international/3.jpg', expertise: '國際企業管理、東亞商業環境與區域經濟、國際企業個案研究' },
+          { name: '黃彥智', image: '/Images/international/4.jpg', expertise: '國際策略管理、國際企業管理、行銷管理' },
         ],
         副教授: [
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
-          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },
-          { name: '王老師', image: '/Images/teacher.png', expertise: '行動加值與應用、智慧型人機介面、雲端與網路服務系統、多變量分析、企業電子化系統' },
-          { name: '廖老師', image: '/Images/teacher2.png', expertise: '資訊視覺化、電腦視覺、計算機圖學' },
-          { name: '駱老師', image: '/Images/teacher2.png', expertise: '網路安全、資訊網路、網路應用、電子商務安全、醫療資訊安全' },
-          { name: '張老師', image: '/Images/teacher.png', expertise: '人力資源、職涯規劃、行銷管理' },
-          { name: '何老師', image: '/Images/teacher2.png', expertise: '專長及研究領域：組織行為、領導、建言行為、人力資源管理、動機取向' },
-          { name: '林老師', image: '/Images/teacher.png', expertise: '元宇宙學習應用、多媒體應用與開發、數位學習與應用、雲端系統應用與虛擬化、網路安全、行動通訊、計算機網路、智慧物聯網、AI教學應用' },
-          { name: '侯老師', image: '/Images/teacher.png', expertise: '數位學習與大數據分析、程式設計與應用、統計學、多變量分析' },          
+          { name: '郭雪貞', image: '/Images/international/5.jpg', expertise: '資料庫管理、資料結構、教育領導' },
+          { name: '林佳勳', image: '/Images/international/6.jpg', expertise: '研究方法、資料處理' },
+          { name: '陳香如', image: '/Images/international/7.jpg', expertise: '公司治理、財務決策' },
+          { name: '李金玲', image: '/Images/international/8.jpg', expertise: '英語教學、專業英文、人工智慧應用' },
+          { name: '李桂枝', image: '/Images/international/9.jpg', expertise: '投資學、國際金融' },
+          { name: '楊維娟', image: '/Images/international/10.jpg', expertise: '國際貿易、經營效率分析、環境經濟學' },
+          { name: '鄭美幸', image: '/Images/international/11.jpg', expertise: '投資學、市場微結構' },
+          { name: '吳佩勳', image: '/Images/international/12.jpg', expertise: '行銷管理、消費者決策' },
+          { name: '黃美卿', image: '/Images/international/13.jpg', expertise: '消費行為、一般管理' },
+          { name: '楊政郎', image: '/Images/international/14.jpg', expertise: '國際貿易、國際金融、計量經濟' },
+          { name: '黃俊儒', image: '/Images/international/15.jpg', expertise: '策略管理、動態競爭、研究方法' },
+          { name: '王韋能', image: '/Images/international/16.jpg', expertise: '總體經濟、環境經濟、總體政策分析' },
+          { name: '陳美如', image: '/Images/international/17.jpg', expertise: '電子商務、網路行銷' },
+          { name: '陳玉蒼', image: '/Images/international/18.jpg', expertise: '會展管理、會展行銷、非營利組織(NPO)管理' },          
         ],
         助理教授: [
-          { name: '羅老師', image: '/Images/teacher.png', expertise: '科技教育、資訊管理' },
-          { name: '邱老師', image: '/Images/teacher2.png', expertise: '資訊安全、網路安全、影像處理' },
-          { name: '許老師', image: '/Images/teacher2.png', expertise: '資料庫系統、資料探勘、資料分析與處理、推薦系統' },
+          { name: '張慈淑', image: '/Images/international/19.jpg', expertise: '電腦輔助教學、網頁設計、商務自動化' },
+          { name: '陳佳宜', image: '/Images/international/20.jpg', expertise: '初級會計、成本與管理會計、中級會計學' },
+          { name: '陳俊智', image: '/Images/international/21.jpg', expertise: '循環經濟、能源經濟/政策、人工智慧、機器學習' },
         ]
       },
       selectedYear: '請選擇年級', // Default selected year
@@ -734,15 +734,16 @@ export default {
 }
 
 .professor-card {
-  width: 45%;
+  width: 47%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .professor-image {
-  width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 .imin {
