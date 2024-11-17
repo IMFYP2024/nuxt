@@ -50,16 +50,16 @@
     </div>
     <div v-if="isComplete" class="container">
       <img src="public/Images/nutc.jpg" class="card-img">
-      <div>
+      <div class="head">
         <h1>學校故事</h1>
         <!-- <p>陽光大學在一個寧靜的下午所創立的，當時候陽光透過樹葉灑下斑駁的光影，微風輕輕拂過，帶來了花香的氣息。這樣的時刻，總是讓人心情愉悅，
           彷彿所有的煩惱都隨風而去。生活中的美好，往往藏在這些簡單而平凡的瞬間裡，只要我們用心去感受，就能找到無限的快樂。</p> -->
         <p>我們學校是1919年6月所創立的至今已經有一百零五年的歷史了，我們學校的全校學生總數: {{ totalStudentCount }} 人，教師總數: {{ totalTeacherCount }} 人，
           由此可見我們學校的師資以及學生是很龐大的。學校有幾個校區，其中三民校區是最為人所熟知的校區之一，該校區有多棟建築物，如行政大樓、資訊館、中正大樓、活動中心、昌明樓等，為學生提供優質的學習環境。</p>
-      </div>
-      <router-link to="/" class="nav-link">
+          <router-link to="/" class="nav-link">
           <Icon name="streamline:return-2-solid" class="large-icon" />
         </router-link>
+        </div>
     </div>
   </div>
 </template>
@@ -166,7 +166,7 @@ const checkPuzzleCompletion = () => {
 
 const fetchData = async () => {
   try {
-    const response = await fetch('http://163.17.135.197/nuxt_api.php');
+    const response = await fetch('https://nuxtapp.42web.io/');
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -248,7 +248,11 @@ align-items: right;}
   height: 80px;
   border: 0.5px solid lightblue;
 }
-
+.head{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .container {
   padding: 20px;
   border-radius: 10px;
@@ -256,10 +260,11 @@ align-items: right;}
   animation: fadeIn 1s forwards;
   perspective: 100%;
   overflow: auto; 
-  padding-bottom: 80px;
+  padding-bottom: 100%;
   position: relative;
   z-index: 999;
   overflow: visible;
+  justify-content: center;
 }
 .container1 {
   padding: 20px;
