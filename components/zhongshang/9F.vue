@@ -74,7 +74,7 @@ export default {
       height: 20,
       icon: 'bi:2-circle', 
       name: '普通教室', 
-      description: '',
+      description: '普通學生在普通的一天在普通的教室上課',
       image:"/Images/zhongshang/9f/9f2.JPEG",
       extraInfo: ''
   },
@@ -86,7 +86,7 @@ export default {
       height: 20, 
       icon: 'bi:3-circle', 
       name: '普通教室', 
-      description: '',
+      description: '普通學生在普通的一天在普通的教室上課',
       image:"/Images/zhongshang/9f/9f3.JPEG",
       extraInfo: ''
   },

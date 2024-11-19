@@ -74,7 +74,7 @@ export default {
       height: 20,
       icon: 'bi:2-circle', 
       name: '沙發區', 
-      description: '',
+      description: '吃飯聊天，吹牛還可以有沙發坐的地方',
       image:"/Images/zhongshang/7f/7f5.JPEG",
       extraInfo: ''
   },
@@ -86,7 +86,7 @@ export default {
       height: 20, 
       icon: 'bi:3-circle', 
       name: '討論區', 
-      description: '',
+      description: '可供學生開會討論的地方，也可以説是夢開始的地方',
       image:"/Images/zhongshang/7f/7f4.JPEG",
       extraInfo: ''
   },

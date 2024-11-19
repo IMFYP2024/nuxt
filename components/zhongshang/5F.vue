@@ -98,7 +98,7 @@
         height: 20, 
         icon: 'bi:4-circle', 
         name: '普通教室', 
-        description: '',
+        description: '普通學生在普通的一天在普通的教室上課',
         image:"/Images/zhongshang/5f/5f3.JPEG",
         extraInfo: ''
     },
