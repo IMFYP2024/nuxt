@@ -186,7 +186,7 @@ scene.add(westLight);
         child.receiveShadow = true;
       }
     });
-    mesh5.scale.set(4,4, 4);
+    mesh5.scale.set(4,6, 4);
     mesh5.position.set(4, 0, 4);
     mesh5.rotation.y = Math.PI /  2;
 
@@ -202,13 +202,13 @@ scene.add(westLight);
         child.receiveShadow = true;
       }
     });
-    mesh5.scale.set(4,4, 4);
+    mesh5.scale.set(4,6, 4);
     mesh5.position.set(2.5, 0, -3);
     mesh5.rotation.y = Math.PI /  2;
 
     scene.add(mesh5);
   });
-  // 第五个模型（漢英樓）
+  // 第六个模型（中技樓）
   loader.load('zhongji.glb', (gltf) => {
     const mesh5 = gltf.scene;
     mesh5.name = 'glbObject4';  // 设置名称
@@ -218,7 +218,7 @@ scene.add(westLight);
         child.receiveShadow = true;
       }
     });
-    mesh5.scale.set(4,4, 4);
+    mesh5.scale.set(4,7, 4);
     mesh5.position.set(8, 0, 0.8);
     mesh5.rotation.y = Math.PI /  -1;
 
