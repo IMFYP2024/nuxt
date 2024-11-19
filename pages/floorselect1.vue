@@ -21,8 +21,8 @@
       @closing="closeModal"
     >
       <template #itemText>
-        <img src="/Images/building.jpeg" alt="資訊舘圖片">
-        <p><b>1987年</b>新建「資訊館」破土典禮，由於它是與行政大樓緊挨的一起，所以他的入口比較特殊，是需要從行政大樓進入的</p>
+        <img src="/Images/zhongshang/zhongshang.jpg" alt="資訊舘圖片">
+        <p><b>2004年7月14日</b>新建「綜合教學大樓」也就是現在的中商大樓，正式開工破土典禮，與<b>2007年11月22日</b>舉行落成啓用儀式，并且正式全面開放使用</p>
       </template>
     </Modal>
   </div>

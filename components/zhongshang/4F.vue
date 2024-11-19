@@ -62,7 +62,7 @@
         height: 20, 
         icon: 'bi:1-circle', 
         name: '普通教室', 
-        description: '',
+        description: '普通學生在普通的一天在普通的教室上課',
         image:"/Images/zhongshang/4f/4f1.JPEG",
         extraInfo: ''
     },
@@ -86,7 +86,7 @@
         height: 20,
         icon: 'bi:2-circle', 
         name: '休閑區', 
-        description: '可以在該地方吃飯和休息的地方',
+        description: '有一個通天的涼亭休息時間都會有很多同學在那邊',
         image:"/Images/zhongshang/4f/4f2.JPEG",
         extraInfo: ''
     },
@@ -98,7 +98,7 @@
         height: 20, 
         icon: 'bi:4-circle', 
         name: '會資系系辦', 
-        description: '',
+        description: '老師很親切，會資系上的任何問題都可以到此詢問',
         image:"/Images/zhongshang/4f/4f4.JPEG",
         extraInfo: ''
     },

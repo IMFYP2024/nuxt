@@ -85,7 +85,7 @@
         width: 20, 
         height: 20,
         icon: 'bi:3-circle', 
-        name: '商學院辦公室', 
+        name: '商學院副院長室', 
         description: '',
         image:"/Images/zhongshang/5f/5f4.JPEG",
         extraInfo: ''

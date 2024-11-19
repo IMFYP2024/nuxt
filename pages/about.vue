@@ -166,7 +166,7 @@ const checkPuzzleCompletion = () => {
 
 const fetchData = async () => {
   try {
-    const response = await fetch('https://nuxtapp.42web.io/');
+    const response = await fetch('https://nuxt-proxy.jhlow123.workers.dev/');
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }

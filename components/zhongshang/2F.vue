@@ -62,7 +62,7 @@
         height: 25, 
         icon: 'bi:1-circle', 
         name: '商學院辦公室', 
-        description: 'XXXX',
+        description: '以培養培養「商學為本，科技為用」的跨域創新專業管理人才為發展目標',
         image:"/Images/zhongshang/2f/2f (3).JPEG",
         extraInfo: ''
     },
@@ -74,7 +74,7 @@
         height: 25, 
         icon: 'bi:2-circle', 
         name: '商學院院長室', 
-        description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
+        description: '顧名思義就是商學院的老大在的地方',
         image:"/Images/zhongshang/2f/2f (4).JPEG",
         extraInfo: ''
     },
@@ -86,7 +86,7 @@
         height: 25, 
         icon: 'bi:3-circle', 
         name: '討論室(大)', 
-        description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
+        description: '可供多位學生一起討論的地方',
         image:"/Images/zhongshang/2f/2f (1).JPEG",
         extraInfo: ''
     },
@@ -98,7 +98,7 @@
         height: 25, 
         icon: 'bi:4-circle', 
         name: '休閑區', 
-        description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
+        description: '吃飯聊天，吹牛的地方',
         image:"/Images/zhongshang/2f/2f (6).JPEG",
         extraInfo: ''
     },
@@ -111,7 +111,7 @@
         height: 25, 
         icon: 'bi:5-circle', 
         name: '討論室(大)', 
-        description: '可以列印在學證明，成績單以及購買冷氣卡和儲值',
+        description: '可供多位學生一起討論的地方',
         image:"/Images/zhongshang/2f/2f (5).JPEG",
         extraInfo: ''
     },

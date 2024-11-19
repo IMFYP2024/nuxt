@@ -137,7 +137,7 @@ scene.add(westLight);
       }
     });
     mesh1.scale.set(2, 2, 2);
-    mesh1.position.set(1.5, 0, -5.5);
+    mesh1.position.set(1.5, -0.1, -5.5);
     mesh1.rotation.y = Math.PI / 2;
 
     scene.add(mesh1);
@@ -163,7 +163,7 @@ scene.add(westLight);
   // 第三个模型（弘業樓）
   loader.load('hongye.glb', (gltf) => {
     const mesh5 = gltf.scene;
-    mesh5.name = 'glbObject2';  // 设置名称
+    mesh5.name = 'glbObject3';  // 设置名称
     mesh5.traverse((child) => {
       if (child.isMesh) {
         child.castShadow = true;
@@ -173,6 +173,54 @@ scene.add(westLight);
     mesh5.scale.set(2, 2, 2);
     mesh5.position.set(0.3, 0, 5);
     mesh5.rotation.y = Math.PI / -2;
+
+    scene.add(mesh5);
+  });
+  // 第四个模型（奇秀樓）
+  loader.load('qixiu.glb', (gltf) => {
+    const mesh5 = gltf.scene;
+    mesh5.name = 'glbObject4';  // 设置名称
+    mesh5.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh5.scale.set(4,4, 4);
+    mesh5.position.set(4, 0, 4);
+    mesh5.rotation.y = Math.PI /  2;
+
+    scene.add(mesh5);
+  });
+   // 第五个模型（漢英樓）
+   loader.load('hanying.glb', (gltf) => {
+    const mesh5 = gltf.scene;
+    mesh5.name = 'glbObject4';  // 设置名称
+    mesh5.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh5.scale.set(4,4, 4);
+    mesh5.position.set(2.5, 0, -3);
+    mesh5.rotation.y = Math.PI /  2;
+
+    scene.add(mesh5);
+  });
+  // 第五个模型（漢英樓）
+  loader.load('zhongji.glb', (gltf) => {
+    const mesh5 = gltf.scene;
+    mesh5.name = 'glbObject4';  // 设置名称
+    mesh5.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh5.scale.set(4,4, 4);
+    mesh5.position.set(8, 0, 0.8);
+    mesh5.rotation.y = Math.PI /  -1;
 
     scene.add(mesh5);
   });
