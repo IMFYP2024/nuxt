@@ -209,7 +209,7 @@ scene.add(westLight);
     scene.add(mesh5);
   });
   // 第六个模型（中技樓）
-  loader.load('zhongji.glb', (gltf) => {
+  loader.load('zhongjidalou.glb', (gltf) => {
     const mesh5 = gltf.scene;
     mesh5.name = 'glbObject4';  // 设置名称
     mesh5.traverse((child) => {
@@ -219,7 +219,7 @@ scene.add(westLight);
       }
     });
     mesh5.scale.set(4,7, 4);
-    mesh5.position.set(8, 0, 0.8);
+    mesh5.position.set(8, 0, 0);
     mesh5.rotation.y = Math.PI /  -1;
 
     scene.add(mesh5);
@@ -256,7 +256,69 @@ scene.add(westLight);
 
     scene.add(mesh4);
   });
-  
+  // 弘業樓標題
+  loader.load('hongyeword.glb', (gltf) => {
+    const mesh5 = gltf.scene;
+    mesh5.name = 'glbObject3';  // 设置名称
+    mesh5.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh5.scale.set(1, 1, 1);
+    mesh5.position.set(0.3, 3, 5);
+    mesh5.rotation.y = Math.PI / -2;
+
+    scene.add(mesh5);
+  });
+  // 奇秀樓標題
+  loader.load('qixiuword.glb', (gltf) => {
+    const mesh5 = gltf.scene;
+    mesh5.name = 'glbObject4';  // 设置名称
+    mesh5.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh5.scale.set(1,1, 1);
+    mesh5.position.set(4, 3, 4);
+    mesh5.rotation.y = Math.PI /  -1;
+
+    scene.add(mesh5);
+  });
+   // （漢英樓）標題
+   loader.load('hanyingword.glb', (gltf) => {
+    const mesh5 = gltf.scene;
+    mesh5.name = 'glbObject4';  // 设置名称
+    mesh5.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh5.scale.set(1,1, 1);
+    mesh5.position.set(2.5, 2, -3);
+
+    scene.add(mesh5);
+  });
+  // （中技樓）標題
+  loader.load('zhongjiword.glb', (gltf) => {
+    const mesh5 = gltf.scene;
+    mesh5.name = 'glbObject4';  // 设置名称
+    mesh5.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh5.scale.set(1,1,1);
+    mesh5.position.set(8, 4, 0);
+    mesh5.rotation.y = Math.PI /  -2;
+
+    scene.add(mesh5);
+  });
 
   // 添加事件监听器
   window.addEventListener('resize', onWindowResize);
