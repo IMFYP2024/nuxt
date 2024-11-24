@@ -209,7 +209,7 @@ scene.add(westLight);
     scene.add(mesh5);
   });
   // 第六个模型（中技樓）
-  loader.load('zhongjidalou.glb', (gltf) => {
+  loader.load('zhongji.glb', (gltf) => {
     const mesh5 = gltf.scene;
     mesh5.name = 'glbObject4';  // 设置名称
     mesh5.traverse((child) => {
