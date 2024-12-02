@@ -19,7 +19,7 @@
         <div v-if="currentDetail === '師資'">
           <!-- 圖表部分 -->
           <div class="chart-container card">
-            <h2><br>師資<i class="fi fi-rr-interrogation custom-icon" @click="showInfoModal"></i></h2>
+            <h2><br>師資<i class="fi fi-rr-interrogation custom-icon1" @click="showInfoModal"></i></h2>
             <canvas id="teacherChart"></canvas>
           </div>
           <div v-if="isInfoModalVisible" class="modal-overlay" @click="closeInfoModal">
@@ -1253,7 +1253,7 @@ h3 {
 .parent-container {
   overflow: visible; /* 確保子元素不會被裁剪 */
 }
-.custom-icon {
+.custom-icon1 {
   margin-left: 10px;
   font-size: 18px;
   color: #080808;
