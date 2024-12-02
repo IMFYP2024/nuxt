@@ -91,6 +91,7 @@
             <interior v-if="currentTab === 'interior'" :course="currentTab" @back="changeTab('design')" />
             <department v-if="currentTab === 'department'" :course="currentTab" @back="changeTab('business')" />
             <businessmanagement v-if="currentTab === 'businessmanagement'" :course="currentTab" @back="changeTab('smart')" />
+            <smartproduction v-if="currentTab === 'smartproduction'" :course="currentTab" @back="changeTab('smart')" />
             <english v-if="currentTab === 'english'" :course="currentTab" @back="changeTab('language')" />
             <chinese v-if="currentTab === 'chinese'" :course="currentTab" @back="changeTab('language')" />
             <japanese v-if="currentTab === 'japanese'" :course="currentTab" @back="changeTab('language')" />
@@ -122,6 +123,7 @@ import businessmanagement from './businessmanagement.vue';
 import english from './english.vue';
 import chinese from './chinese.vue';
 import japanese from './japanese.vue';
+import smartproduction from './smartproduction.vue';
 export default {
   name: 'Introduce',
   components: {
@@ -144,7 +146,8 @@ export default {
     businessmanagement,
     english,
     chinese,
-    japanese
+    japanese,
+    smartproduction
   },
   data() {
     return {
@@ -183,7 +186,7 @@ export default {
       ],
       smartItems: [
         { text: '商業經營系', link: 'businessmanagement', color: '#3B5C5B' },
-        { text: '智慧生產工程系', link: 'smart-production', color: '#3B5C5B' }
+        { text: '智慧生產工程系', link: 'smartproduction', color: '#3B5C5B' }
       ],
       languageItems: [
         { text: '應用英文系', link: 'english', color: '#2F4F4F' },
@@ -406,5 +409,43 @@ export default {
     margin-top: -4%
   }
 }
+.custom-icon {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #080808;
+  cursor: pointer;
+  display: inline-block;
+}
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 300px;
+}
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 </style>
