@@ -224,6 +224,38 @@ scene.add(westLight);
 
     scene.add(mesh5);
   });
+   // 第七个模型（中正樓）
+   loader.load('zhongzheng.glb', (gltf) => {
+    const mesh5 = gltf.scene;
+    mesh5.name = 'glbObject4';  // 设置名称
+    mesh5.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh5.scale.set(4,7, 4);
+    mesh5.position.set(-4.4, 0, 3.7);
+    mesh5.rotation.y = Math.PI /  -2;
+
+    scene.add(mesh5);
+  });
+  // 中正樓標題
+  loader.load('zhongzhengword.glb', (gltf) => {
+    const mesh5 = gltf.scene;
+    mesh5.name = 'glbObject4';  // 设置名称
+    mesh5.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+    mesh5.scale.set(1,1,1);
+    mesh5.position.set(-4.4, 3, 2);
+    mesh5.rotation.y = Math.PI /  2;
+
+    scene.add(mesh5);
+  });
     // 中商大樓標題
   loader.load('jsdl.glb', (gltf) => {
     const mesh3 = gltf.scene;
