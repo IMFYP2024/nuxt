@@ -203,7 +203,7 @@ align-items: right;}
 
 .turns-container{
     display: flex;
-    height: 15vh;
+    height: 10vh;
     flex-direction: row;
     align-items: center;
     align-content: center;
@@ -268,8 +268,6 @@ align-items: right;}
   justify-content: center;
 }
 .container1 {
-  padding: 20px;
-  border-radius: 10px;
   text-align: center;
   display: flex;
   flex-direction: row;
