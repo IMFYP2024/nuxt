@@ -19,9 +19,15 @@
         <div v-if="currentDetail === '師資'">
           <!-- 圖表部分 -->
           <div class="chart-container card">
-            <h2>師資</h2>
+            <h2><br>師資<i class="fi fi-rr-interrogation custom-icon" @click="showInfoModal"></i></h2>
             <canvas id="teacherChart"></canvas>
           </div>
+          <div v-if="isInfoModalVisible" class="modal-overlay" @click="closeInfoModal">
+          <div class="modal-content" @click.stop>
+            <span class="close-icon" @click="closeInfoModal">×</span>
+            <p>可以與統計圖互動哦!</p>
+          </div>
+        </div>
           <div class="card" style="margin-top:20px">
           <h3>{{ selectedTitle }}名單:</h3>
           <!-- 教授列表 -->
@@ -310,6 +316,7 @@ export default {
   el: '#app',
   data() {
     return {
+      isInfoModalVisible: false,
       isCreditModalVisible: false, // 控制彈出視窗的顯示
       creditMessage: '',
       isActive: false,
@@ -466,6 +473,12 @@ export default {
     },
   },
   methods: {
+    showInfoModal() {
+      this.isInfoModalVisible = true;
+    },
+    closeInfoModal() {
+      this.isInfoModalVisible = false;
+    },
      showCreditModal(message) {
       console.log('showCreditModal called');
   this.creditMessage = `一、二年級一學期不能小於16學分，<br>三、四年級一學期不可以小於9學分，<br>全年級一學期不可以多餘25。<br><br>
@@ -1282,5 +1295,44 @@ h3 {
 }
 .parent-container {
   overflow: visible; /* 確保子元素不會被裁剪 */
+}
+.custom-icon {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #080808;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 300px;
+}
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 </style>
