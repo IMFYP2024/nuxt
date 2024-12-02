@@ -48,7 +48,7 @@
         <p v-show="istoggleon"></p>
       </div>
     </div>
-    <div v-if="isComplete" class="container">
+    <div v-if="isComplete" class="container2">
       <img src="public/Images/nutc.jpg" class="card-img">
       <div class="head">
         <h1>學校故事</h1>
@@ -292,6 +292,22 @@ align-items: right;}
   transform: translateY(40px) scale(1.1);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
+.container2 {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s forwards;
+  perspective: 100%;
+  overflow: auto; 
+  position: relative;
+  align-items: center;
+  overflow: visible;
+  justify-content: center;
+}
+.container2 h1{
+  margin: 0%;
+  margin-top:10px ;
+}
 p {
     font-size: 0.9em;
     line-height: 1.8;
@@ -300,7 +316,7 @@ p {
     border: 1px solid #ddd;
     padding: 15px;
     border-radius: 10px;
-    margin: 20px auto;
+    margin-top: 10px;
     max-width: 600px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
