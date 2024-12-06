@@ -16,7 +16,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const threeContainer = ref(null);
 const loading = ref(true);
-const router = useRouter(); // Initialize the router// 使用 TextureLoader 加載背景紋理
+const router = useRouter(); // Initialize the router
 
 
 
