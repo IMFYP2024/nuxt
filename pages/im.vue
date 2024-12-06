@@ -26,6 +26,7 @@
           <div class="modal-content" @click.stop>
             <span class="close-icon" @click="closeInfoModal">×</span>
             <p>可以與統計圖互動哦!</p>
+            <p>點擊老師的頭像可以出現老師相關資訊。</p>
           </div>
         </div>
           <div class="card" style="margin-top:20px">
@@ -439,7 +440,7 @@ export default {
       competitions: [
         { rank: '第一名', title: '大專校院資訊應用服務創新競賽', teacher: '蔣老師', student: '王曉明', image: '/Images/im/109.png' },
         { rank: '第二名', title: 'GiCS 尋找資安女婕思', teacher: '陳老師', student: '小雯', image: '/Images/im/110.png' },
-        { rank: '第二名', title: '全國大專暨高中職學生專題製作競賽', teacher: '陳老師', student: '小雯', image: '/Images/test.png' },
+        { rank: '第二名', title: '全國大專暨高中職學生專題製作競賽', teacher: '陳老師', student: '小雯', image: '/Images/2024project.jpg' },
         
       ],
       studentCount: 0,

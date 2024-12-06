@@ -56,9 +56,15 @@
           彷彿所有的煩惱都隨風而去。生活中的美好，往往藏在這些簡單而平凡的瞬間裡，只要我們用心去感受，就能找到無限的快樂。</p> -->
         <p>我們學校是1919年6月所創立的至今已經有一百零五年的歷史了，我們學校的全校學生總數: {{ totalStudentCount }} 人，教師總數: {{ totalTeacherCount }} 人，
           由此可見我們學校的師資以及學生是很龐大的。學校有幾個校區，其中三民校區是最為人所熟知的校區之一，該校區有多棟建築物，如行政大樓、資訊館、中正大樓、活動中心、昌明樓等，為學生提供優質的學習環境。</p>
-          <router-link to="/" class="nav-link">
+
+        </div>
+        <div class="grid-container">
+          <router-link to="/" class="large-icon1">
           <Icon name="streamline:return-2-solid" class="large-icon" />
         </router-link>
+        <router-link to="/point" class="large-icon1">
+          <i class="fas fa-building"></i>
+      </router-link>
         </div>
     </div>
   </div>
@@ -190,17 +196,21 @@ onMounted(() => {
 </script>
 
 <style scoped>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 /* Your existing styles */
 
 .icon-trigger {
 margin-top: 10%;
 align-items: right;}
-.large-icon {
-  width: 36px;
-  height: 36px;
+.large-icon1{
   color: black;
+  text-align: center;
+  
 }
-
+.large-icon{
+  height: 36px;
+  width: 36px;
+}
 .turns-container{
     display: flex;
     height: 10vh;
@@ -322,7 +332,12 @@ p {
     transition: all 0.3s ease;
     position: relative;
 }
-
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  font-size: 32px;
+  color: black;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -110,7 +110,7 @@
         height: 20, 
         icon: 'bi:5-circle', 
         name: '保金服務中心', 
-        description: '',
+        description: '服務中心',
         image:"/Images/zhongshang/4f/4f5.JPEG",
         extraInfo: ''
     }
